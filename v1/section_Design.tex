@@ -1,0 +1,61 @@
+\section{Design}
+Intro
+
+
+
+\subsection{Classifier}
+Intro
+
+\paragraph{Good System}
+L2X 
+
+\paragraph{Medium System}
+Logistic Regression with binary (1 / -1) coefficients
+
+\paragraph{Bad System}
+Inverse L2X
+
+
+
+\subsection{Explanations}
+Intro
+
+\paragraph{Good System}
+L2X mutual information
+
+\paragraph{Medium System}
+randomly choosing k words from the words with positive (offensive) or negative (not offensive) class
+
+\paragraph{Bad System}
+Inverse good system
+
+
+
+\subsection{Graphical User Interface}
+asdasdasd
+
+
+
+\subsection{Subset Sampling}
+For evaluating the different system-explanation conditions, users have to experience the system. However, it is not feasible to present them with the complete testeset, since it has a size of 1665 Tweets. Consequently, a subset of Tweets needs to be drawn from the testset, with a size that a human observer can understand and process within the time frame of a user study.\newline
+We furthermore aim to find 10 suitable subsets and assign participants randomly to one of the subsets, in order to reduce possible side effects from biases specific to single Tweets.\newline
+There are several requirements for the subsamples, originating from the conflict of reducing the sample for a human observer, yet still yielding a good representation of the testset and classifier:\newline
+\begin{itemize}
+	\item A class balance of the true labels similar to the testset, 
+	\item a balance of correctly to incorrectly classified data points similar to the classifier's performance on the complete testset, 
+	\item no overlap of Tweets within the set of 10 subsets,
+	\item a feature distribution as close to the feature distribution in the complete testset.
+\end{itemize}
+We set the subsample size to 15 Tweets, which is enough to show accuracies to the first decimal place, yet assumably not too much to process for an observer in a user study.\newline
+To create a subset, 15 data points are randomly drawn from the testset. \newline
+First, the class balance of the subset is calculated. The difference to the class balance of the whole testset needs to be smaller than 0.1.\newline
+Additionally, for each classifier in the user study, the prediction accuracy on the subset is compared to the prediction accuracy on the complete testset. If, for all classifiers, the difference is smaller than 0.1, the next check is performed.\newline
+To ensure the uniqueness of the subsets, the randomly drawn Tweets are compared with the content of previously found subsets. The subset is only accepted if none of the contained Tweets appear in any previously found subset.\newline
+In the last step, the feature distribution of the subset is tested against the features of the complete testset using the \textit{Kullback-Leibler Divergence} (KLD) metric. As the focus is directed towards the explanations (i.e. the highlighted words within a Tweet), only the explanations are used to examine the feature distribution. First, the feature distribution of the complete testset is calculated by constructing a word vector with tuples of words and their respective word counts. The word counts are divided by the total amount of words in the set, such that the sum of regularised counts equals 1. Next, a copy of the word vector is used to count and regularise the word frequencies in the subset. The result are two comparable vectors, yet the vector of the subset is very likely to contain zero counts for words that appear in the complete set but were never selected as explanation in the subset. Since the KLD uses the logarithm, it is undefined for zero counts. We use Laplace smoothing with k=1 to handle zero counts. For each classifier, the KLD is calculated and summed to a total divergence score for the subset.\newline
+We generate a quantity of 100 such subsets and order them by their KLD sum. The 10 subsets with the smallest score are chosen as the final set of subsets.\newline
+
+
+
+
+
+
