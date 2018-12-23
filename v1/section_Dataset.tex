@@ -4,11 +4,76 @@ Intro
 
 
 \subsection{Dataset Selection}
-asd
+Few datasets with offensive language texts are publicly available. Table \ref{tab:StatsAllDatasets} presents an overview of four available datasets, their sizes and class balances. 
+%-------------------------------------------------------
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{llll}
+		\textbf{Corpus} & \textbf{Size} & \textbf{Classes} & \textbf{} \\ \hline
+		Davidson\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language} & 25,000 & \begin{tabular}[c]{@{}l@{}} hate speech\\offensive\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 6\%\\77\%\\17\%\end{tabular} \\ \hline
+		Imperium\footnote{https://www.kaggle.com/c/detecting-insults-in-social-commentary/data} & 3,947 & \begin{tabular}[c]{@{}l@{}} neutral\\insulting\end{tabular} & \begin{tabular}[c]{@{}l@{}} 73\%\\27\%\end{tabular} \\ \hline
+		Analytics Vidhya\footnote{https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/} & 31,962 & \begin{tabular}[c]{@{}l@{}} hate speech\\no hate speech\end{tabular} & \begin{tabular}[c]{@{}l@{}} 7\%\\93\%\end{tabular} \\ \hline
+		SwissText\footnote{https://www.swisstext.org/workshops/2018/Hackathon.html} & 159,570 & \begin{tabular}[c]{@{}l@{}} toxic\\severe\_toxic\\obscene\\threat\\insult\\hate speech\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 10\%\\1\%\\5\%\\0.3\%\\5\%\\1\%\\72.7\%\end{tabular} \\ \hline        
+	\end{tabular}
+	\caption{Publicly available datasets for offensive language texts}
+	\label{tab:StatsAllDatasets}
+\end{table}
+%-------------------------------------------------------
+While the dataset of SwissText has the most fine-grained labelling of its data points, details on how the labels were assigned (i.e. number of annotators, inter-annotator agreement score, definition of the classes) are not available. The same holds for the datasets of Analytics Vidhya and Imperium.\newline
+In contrast, Davidson's datasets comes with a description of how the data points were collected, how the classes are defined, and uses at least three annotators per text. Furthermore, Davidson's dataset contains the most data points labelled as offensive: roughly 20750 Tweets fall into this category, while the Analytics Vidhya dataset contains 2240 hate speech texts, SwissText 1600, and Imperium 1000.\newline
+Throughout the literature, different definitions of hate speech and offensive language are given. For using a dataset in a user study with the scenario of a social media administrator, the definition of the label has to be clear. We therefore chose to work with the dataset of Davidson et al., as it offers the most detailed description of its labels and how the labels were obtained.
+
 
 \subsection{Dataset Construction}
-asd
+The original dataset was collected by Davidson et al. \cite{davidson2017automated} for their research on defining and differentiating hate speech from offensive language. They constructed a dataset with offensive Tweets and hate speech by conducting a keyword search on Twitter, using keywords registered in the hatebase dictionary\footnote{https://www.hatebase.org}. The timelines of Twitter users identified with the keyword search were scraped, resulting in a dataset of over 8 million Tweets. They selected 25 000 Tweets at random and had at least 3 annotators from Figure Eight\footnote{https://www.figure-eight.com} (formerly Crowd Flower) who labelled each Tweet as containing hate speech, offensive language, or neither. They reached an inter-annotator agreement of 0.92 \cite{davidson2017automated}. The dataset is publicly available on GitHub\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language}.\newline
+The biggest class in the dataset are the offensive language Tweets (77\%), while non-offensive Tweets represent 17\%, and hate speech 6\% of the dataset. \newline
+For our research, we are only interested in offensive and not offensive Tweets. We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.
+%-------------------------------------------------------
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		\textbf{} & \textbf{Not Offensive Class} & \textbf{Offensive Class} \\ \hline
+		Size (absolute) & 4,162 & 4,162 \\
+		Size (relative) & 50.00\% & 50.00\% \\
+		Total words & 58,288 & 61,504 \\
+		Unique words & 6,437 & 9,855 \\
+		\begin{tabular}[c]{@{}l@{}}Average words\\per Tweet\end{tabular} & 14.00 & 14.78 \\ \hline         
+	\end{tabular}
+	\caption{Statistical characteristics of the constructed dataset}
+	\label{tab:StatsDataset}
+\end{table}
+%-------------------------------------------------------
+
+
+
 
 \subsection{Dataset Preprocessing}
-asd
+Paragraph about common Tweet preprocessing\newline
+
+The following preprocessing steps are taken in chronological order:
+\begin{enumerate}
+	\item Convert all texts to lower cases
+	\item Replace URLs by a dummy URL ('http://website.com/website')
+	\item Replace referenced user names and handles by a dummy handle ('@username')
+	\item This dataset encodes emojis in unicode decimal codes, e.g. ``\&\#128512;" for a grinning face. In order to keep the information contained in emojis, each emoji is replaced by its textual description (without whitespaces to ensure unity for tokenizing)\footnote{https://www.quackit.com/character\_sets/emoji/}.
+	\item Resolve contractions such as ``we're" or ``don't" by replacing contractions with their long version\footnote{https://en.wikipedia.org/wiki/Wikipedia:List\_of\_English\_contractions}.
+	\item This dataset uses a few signifiers such as ``english translation" to mark a Tweet that has been translated to English, or ``rt" to mark a Retweet (i.e. a response to a previous Tweet). Since those information have been added retrospectively, we discard them here and delete the signifiers from the texts.
+	\item Replace all characters that are non-alphabetic and not a hashtag by a whitespace
+	\item Replace more than one subsequent whitespace by a single whitespace
+\end{enumerate}
+
+Example of a processed Tweet:\newline
+original:\newline
+\medskip \hrule \medskip
+\begin{verbatim}
+	"@WBUR: A smuggler explains how he helped fighters along the \end{verbatim}\begin{verbatim}"Jihadi Highway": http://t.co/UX4anxeAwd"
+\end{verbatim}
+\medskip \hrule \medskip
+after processing:\newline
+\medskip \hrule \medskip
+\begin{verbatim}
+@username a smuggler explains how he helped fighters along the \end{verbatim}\begin{verbatim}jihadi highway http://website.com/website
+\end{verbatim}
+\medskip \hrule \medskip
 

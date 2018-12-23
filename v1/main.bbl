@@ -13,4 +13,11 @@ Leila Arras, Franziska Horn, Gr{\'e}goire Montavon, Klaus-Robert M{\"u}ller,
   learning approach.
 \newblock {\em PloS one}, 12(8):e0181142, 2017.
 
+\bibitem{davidson2017automated}
+Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
+\newblock Automated hate speech detection and the problem of offensive
+  language.
+\newblock In {\em Proceedings of the 11th International AAAI Conference on Web
+  and Social Media}, ICWSM '17, pages 512--515, 2017.
+
 \end{thebibliography}
