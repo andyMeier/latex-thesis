@@ -49,31 +49,44 @@ For our research, we are only interested in offensive and not offensive Tweets. 
 
 
 \subsection{Dataset Preprocessing}
-Paragraph about common Tweet preprocessing\newline
-
+Tweets exhibit some special characteristics. First, the maximum length of a single Tweet is 140 characters. Twitter doubled the length in November 2017, yet the dataset was collected before this data and therefore contains only Tweets of 140 characters or shorter. Twitter users found creative ways to make use of the 140 characters given, leading to the usage of short URLs instead of original URLs \cite{xiang2012detecting}, intentional reductions of words (e.g. ``nite" instead of ``night") \cite{xiang2012detecting}, abbreviations \cite{gupta2018proposed}, emojis \cite{ghorai2016information} \cite{watanabe2018hate} and smilies \cite{smailovic2013predictive} \cite{hovelmann2017fasttext}.\newline
+Furthermore, social media content can be unstructured, with word creations that are non in standard dictionaries, like slang words \cite{gupta2018proposed} \cite{watanabe2018hate}, intentional repetitions \cite{xiang2012detecting} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs} \cite{rother2018ulmfit} (e.g. ``hhheeeey"), contractions of words \cite{smailovic2013predictive} \cite{hemalatha2012preprocessing}, and spelling mistakes. Although those new word formations do not appear in the dictionary, they are ``intuitive and popular in social media" \cite{hu2012text}. \newline
+On Twitter, it is custom to mention other users within a Tweet by adding ``@"+username \cite{xiang2012detecting} \cite{montani2018tuwienkbs} \cite{watanabe2018hate} \cite{rother2018ulmfit}, retweeting (i.e. answering to) a Tweet \cite{xiang2012detecting} \cite{hemalatha2012preprocessing}, and summarizing a Tweet's topic with ``\#"+topic \cite{xiang2012detecting} \cite{watanabe2018hate}. \newline
+Other problems in text mining are the handling of stop words \cite{xiang2012detecting} \cite{ghorai2016information} \cite{gupta2018proposed}, language detection \cite{xiang2012detecting}, punctuation \cite{ghorai2016information} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs}, negation \cite{watanabe2018hate}, and case folding \cite{ghorai2016information} \cite{gupta2018proposed} \cite{rother2018ulmfit}.\newline
+Researchers have developed different strategies for preprocessing Tweets. One possible approach is to simply remove URLs, username, hashtags, emoticons, stop words, or punctuation \cite{xiang2012detecting} \cite{ghorai2016information} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs} \cite{gupta2018proposed} \cite{watanabe2018hate}. A reason to eliminate those tokens can be that they assumably do not hold information relevant to the classification goal \cite{hemalatha2012preprocessing}. Words that only exist for syntactic reasons (this concerns primarily stop words) can be omitted when focussing on sentiment or other semantic characteristics \cite{ghorai2016information}. Mentions of other users are likewise not informative for sentiment analysis and are often removed from the texts \cite{xiang2012detecting} \cite{watanabe2018hate}. Depending on the dataset size, normalising the texts strongly by removing punctuation and emojis, as well as lowercasing the texts, can decrease the vocabulary size \cite{ghorai2016information}. Especially on Twitter with its restricted text size, users tend to use shortened URLs. Short URLs have a concise, but often cryptic form, and redirect to the website with the original, long URL. While website links can encode some information on a topic, this information is lost when using a shortened URL. Removing the shortened URLs without replacement can be a step in preprocessing Tweets \cite{xiang2012detecting}.\newline
+Rather than removing tokens, they can also be replaced by a signifier token, e.g. a complete link by ``$<<<$hyperlink$>>>$" \cite{hovelmann2017fasttext}. In Tweets, such signifier tokens are used for mentions of usernames \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, URLs \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, smilies \cite{hovelmann2017fasttext} or negations \cite{smailovic2013predictive}. Using signifier tokens eliminates some information, i.e. which user was mentioned or which website was linked, but retains the information that a mention or link exists. Tokens can also be grouped by using signifier tokens, i.e. tokens with similar content are summarised with a single token. \cite{hovelmann2017fasttext} uses this technique to group smilies with similar sentiment and Twitter usernames related to the same company.\newline 
+Case folding is often addressed by converting Tweets to lower case \cite{ghorai2016information} \cite{hovelmann2017fasttext} \cite{gupta2018proposed}.\medskip\newline
 The following preprocessing steps are taken in chronological order:
 \begin{enumerate}
-	\item Convert all texts to lower cases
-	\item Replace URLs by a dummy URL ('http://website.com/website')
-	\item Replace referenced user names and handles by a dummy handle ('@username')
-	\item This dataset encodes emojis in unicode decimal codes, e.g. ``\&\#128512;" for a grinning face. In order to keep the information contained in emojis, each emoji is replaced by its textual description (without whitespaces to ensure unity for tokenizing)\footnote{https://www.quackit.com/character\_sets/emoji/}.
-	\item Resolve contractions such as ``we're" or ``don't" by replacing contractions with their long version\footnote{https://en.wikipedia.org/wiki/Wikipedia:List\_of\_English\_contractions}.
+	\item Conversion of all texts to lower cases
+	\item Replacement of URLs by a dummy URL (``URL")
+	\item Replacement of referenced user names and handles by a dummy handle (``USERNAME")
+	\item This dataset encodes emojis in unicode decimal codes, e.g. ``\&\#128512;" for a grinning face. In order to keep the information contained in emojis, each emoji is replaced by its textual description (upper cased and without whitespaces to ensure unity for tokenizing)\footnote{https://www.quackit.com/character\_sets/emoji/}.
+	\item Resolving contractions such as ``we're" or ``don't" by replacing contractions with their long version\footnote{https://en.wikipedia.org/wiki/Wikipedia:List\_of\_English\_contractions}.
 	\item This dataset uses a few signifiers such as ``english translation" to mark a Tweet that has been translated to English, or ``rt" to mark a Retweet (i.e. a response to a previous Tweet). Since those information have been added retrospectively, we discard them here and delete the signifiers from the texts.
-	\item Replace all characters that are non-alphabetic and not a hashtag by a whitespace
-	\item Replace more than one subsequent whitespace by a single whitespace
+	\item Replacement of all characters that are non-alphabetic and not a hashtag by a whitespace
+	\item Replacement of more than one subsequent whitespace by a single whitespace
+	\item Tokenization on whitespaces
 \end{enumerate}
+After training the classifiers, the URL and username tokens are replaced by a more readable version (``http://website.com/website" and ``@username", respectively) to make it easier for participants of the user study to envision themselves in the scenario of a social media administrator reading real-world Tweets. Replacing the tokens by their original URLs and usernames would give the participants more information than the classifiers had; we therefore chose to use a dummy URL and username.\medskip\newline
 
-Example of a processed Tweet:\newline
-original:\newline
+Following the preprocessing steps, the following Tweet is processed from its original form:
 \medskip \hrule \medskip
 \begin{verbatim}
 	"@WBUR: A smuggler explains how he helped fighters along the \end{verbatim}\begin{verbatim}"Jihadi Highway": http://t.co/UX4anxeAwd"
 \end{verbatim}
 \medskip \hrule \medskip
-after processing:\newline
+into a cleaned version:
 \medskip \hrule \medskip
 \begin{verbatim}
 @username a smuggler explains how he helped fighters along the \end{verbatim}\begin{verbatim}jihadi highway http://website.com/website
 \end{verbatim}
 \medskip \hrule \medskip
+
+
+
+
+
+
+
 
