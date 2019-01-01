@@ -11,16 +11,75 @@ Intro
 asd
 
 \subsubsection{Application Areas}
-asd
+decisions that affect people’s lives in critical domains like criminal
+justice, fair lending, and medicine. [52]\newline
+safety-critical industries (self-driving cars, robotic assistants, personalised medicine) [3]\newline
 
-\subsubsection{Examplary Failures}
-asd
+sensitive data processed by algorithms (banks, insurances, health data) [3]\newline
+
+scientific research (making discoveries by understanding data) [3]\newline
+
+individual performance monitoring, health care, economic situation analysis, personal preferences \& interests, location \& movement [1]\newline
+
+
+
+
+
+\subsubsection{Issues \& Examplary Failures}
+issues:
+\begin{itemize}
+	\item high cost of errors in high-risk domains [2]
+	\item automated discrimination [2]
+	\item censorship [2]
+	\item development: fine-tuning parameters with trial-and-error [4]
+\end{itemize}
+
+
+
+
+[3]:
+\begin{itemize}
+	\item St Georges hospital - racist application procedure 
+	\item COMPASS crime prediction - racist against blacks (counterargument made in [55]: ``group differences in scores may reflect true differences in recidivism risk")
+	\item Amazon prime district selection - defavorising neighborhoods with ethnic minorities
+	\item Automated target identification - decision driven by weather condition
+	\item Animal race 
+	\item Mortgage rates of major US banks rate very differently - sign for bad algorithms?
+\end{itemize}
+``Discrimination, is at some level, inherent to profiling: the point of profiling is to treat some people differently" [57]:
+\begin{itemize}
+	\item Discrimination of women: ads of higher-paid jobs more often shown to men than to women (but no reason given, may be intentional)
+\end{itemize}
+[54]
+\begin{itemize}
+	\item researcher group is the main reason for variance, not classifier etc., hence human bias in ML
+\end{itemize}
+
 
 \subsubsection{Regulations}
-asd
+General Data Prodection Regulation (GDPR): law about processing of personal (related to identifiable person) data, no matter if manually or automatically processed [1] \newline
+Sensitive data / protected traits: race, ethnicity, religion, nationality, gender, sexuality, disability, marital status, age [2] \newline
+Real-life data contains society's structures and biases, and as classification means separation into groups based on that data, biases are taken into the model [1] \newline
+\begin{itemize}
+	\item minimal interpretation: delete sensitive data from dataset
+	\item maximum interpretation: delete sensitive data and correlated variables from dataset
+\end{itemize}
+``right to explanation" [1], argument against such interpretation [58] and positive interpretation [37]. Key issue: ``data subjects receive meaningful, but properly limited, information" [58] is ambiguous, plus no clear definition of explanation, meaningful, and information. Summary: Precedents are needed to clarify the boundaries.\newline
+Problem with explanations: ML algorithms show statistical correlation, not causality [1]\newline
+
+
+\subsubsection{Accountability}
+information worth disclosing for more accountability [2]:
+\begin{itemize}
+	\item human involvement: who controls the algorithm, who designed it etc., leading to control through social pressure
+	\item data statistics (accuracy, completeness, uncertainty, representativeness), labelling \& collection process, preprocessing of data
+	\item model: input, weights, parameters, hidden information
+	\item inferencing: covariance matrix to estimate risk, prevention measures for known errors, confidence score 
+	\item algorithmic presence: visibility, filtering, reach of algorithm
+\end{itemize}
+
 
 \subsubsection{Use Case Scenario}
-asd
 definition of offensive language 
 
 
@@ -30,7 +89,7 @@ definition of offensive language
 Intro
 
 \subsubsection{Explanation Types}
-asd
+associations between antecedent and consequent, contrast and differences, causal mechanisms [10] \newline
 
 \subsubsection{Social Sciences}
 asd
@@ -42,10 +101,61 @@ asd
 
 %------------------------------------------------------------------
 \subsection{Explanations in AI}
-Intro
+Right for the right reasons: not enough to just be correct, the reasons need to be correct. Example of things going wrong without noticing: [56] \newline
+xAI problems: reverse engineering (model, decision, visualisation/representation) and design of explanations [3] \newline
+xAI = communication with agents about their reasoning [12] \newline
+
+
+
+\subsubsection{Interpretability}
+\textbf{Definition Interpretability:}
+\begin{itemize}
+	\item Accurate proxy for model AND comprehensible for humans [3]
+	\item Dimensions: scope (global vs local), time to understand (target user, use case), prior knowledge (user expertise), dimensionality, accuracy, fidelity (accuracy of explanation / accuracy of model), fairness, privacy, monotonicity, usability [3]
+	\item operations can be understood by a human [10]
+\end{itemize}
+Interpretability vs. justification: Why it is a correct decision, not how it came along [10]\newline
+
+
+
+\subsubsection{Goals of Explanations}
+Scrutability, trust, effectiveness, efficiency, satisfaction, persuasiveness [2] \newline
+Explainability improves the user's confidence in the system, user's trust, user's judgement ability on prediction correctness, user satisfaction, user acceptance [10] \newline
+Understanding and analysis 
+
+
+
+\subsubsection{Barriers to Interpretability}
+intentional concealment, lack of technical expertise, computational complexity vs. human-scale reasoning abilities [1] \newline
+minimum explainability: how features (values) relate to predictions [1] \newline
+
+
+
 
 \subsubsection{Explanation Focus}
-asd
+Focus:\newline
+[10]:
+\begin{itemize}
+	\item feature-level: feature influence, intersection of actual \& expected contribution per feature
+	\item sample-level: explanation vector, linguistic explanation for textual data using BOW, subtext as justification for class (trained independently), caption generation 
+	\item model-level: rule extraction, prototypes \& criticism samples representing model, proxy model (inherently interpretable) with comparable accuracy (NOTE: supposedly meant decision generation, not simple accuracy)
+\end{itemize}
+single focus: feature-based explanation best for recommender systems (as compared to similar previous decisions and similar neighbor decisions) [10] \newline
+
+Inherently interpretable / transparent models:
+\begin{itemize}
+	\item decision trees (graphical representation), rules (textual representation), linear models (feature magnitude and sign) [3]
+	\item shallow rule-based models, decision lists, decision trees, feature selection, compositional generative models [10]
+	\item 
+\end{itemize}
+
+
+
+
+\subsubsection{Explanation Systems}
+counterfactual explanation [12] with fact \& foil
+
+
 
 \subsubsection{Explanations for Texts}
 asd
@@ -57,13 +167,17 @@ asd
 Intro
 
 \subsubsection{Persuasiveness}
-asd
+persuasiveness of explanation != actual explanation [10]\newline
+``High-fidelity explanations, also referred to as faithful, have a strong correspondence between the explanation model and the underlying machine learning model" [51]\newline
+``[Persuasive explanations] are less faithful to the underlying model than descriptive explanations in a tradeoff for more freedom on the explanation complexity, structure, and parameters. This freedom permits explanations better tailored to human cognitive function, making them more functionally interpretable." [51]\newline
+``Descriptive explanations best satisfy the ethical goal of transparency" [51]\newline
 
-\subsubsection{Accountability}
-asd
 
 \subsubsection{Trust}
-asd
+willingness to put oneself at a risk and believing that the other will be benevolent [TRUST 03]\newline
+Placed in agent, not a characteristic inherent to an agent [TRUST 03]\newline
+dynamic: evolves as relationship matures [TRUST 03]\newline
+attribution of characteristics, e.g. dependability (repeated confirmation in risky situations), reliability (consistency or recurrent behaviour) [TRUST 03]\newline
 
 
 

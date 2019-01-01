@@ -1,18 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{allahyari2011user}
-Hiva Allahyari and Niklas Lavesson.
-\newblock User-oriented assessment of classification model understandability.
-\newblock In {\em 11th scandinavian conference on Artificial intelligence}. IOS
-  Press, 2011.
-
-\bibitem{arras2017relevant}
-Leila Arras, Franziska Horn, Gr{\'e}goire Montavon, Klaus-Robert M{\"u}ller,
-  and Wojciech Samek.
-\newblock " what is relevant in a text document?": An interpretable machine
-  learning approach.
-\newblock {\em PloS one}, 12(8):e0181142, 2017.
-
 \bibitem{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 \newblock Automated hate speech detection and the problem of offensive
