@@ -21,22 +21,37 @@ scientific research (making discoveries by understanding data) [3]\newline
 
 individual performance monitoring, health care, economic situation analysis, personal preferences \& interests, location \& movement [1]\newline
 
+replacing human decision making in advertising, recommendations, finances (loans) [6] \newline
 
+health care, recommender systems, planning, HRI [15]\newline
 
+medicine, finances, criminal justice [19] \newline
 
 
 \subsubsection{Issues \& Examplary Failures}
-issues:
+issues / need for explainability:
 \begin{itemize}
-	\item high cost of errors in high-risk domains [2]
-	\item automated discrimination [2]
+	\item high cost of errors in high-risk domains [2] [8] [17]
+	\item human safety in safety-critical tasks [6] [15]
+	\item automated discrimination [2], biased training data [6] [15]
 	\item censorship [2]
 	\item development: fine-tuning parameters with trial-and-error [4]
+	\item imperceptibly altered input data or altered model: criminals / hackers [6]
+	\item unintuitive systematic errors [6] [56]
+	\item regulations: right to explanation [1] [6] [8]
+	\item source of knowledge that should be accessible if needed [8] [15]
+	\item inappropriate trust into the system (either too much or too little) [15] [14] [17]
+\end{itemize}
+need dependent on consequences of classification results [15]:
+\begin{itemize}
+	\item \textbf{no need} for interpretability if no consequences arise from faulty decisions
+	\item interpretability is \textbf{beneficial} if consequences for individuals arise from faulty decisions
+	\item interpretability is \textbf{critical} if serious consequences arise from faulty decisions
 \end{itemize}
 
 
 
-
+examples of failures due to missing explanation:
 [3]:
 \begin{itemize}
 	\item St Georges hospital - racist application procedure 
@@ -53,6 +68,10 @@ issues:
 [54]
 \begin{itemize}
 	\item researcher group is the main reason for variance, not classifier etc., hence human bias in ML
+\end{itemize}
+[14]
+\begin{itemize}
+	\item Google Flue Trends: systematic modelling error 
 \end{itemize}
 
 
@@ -86,24 +105,73 @@ definition of offensive language
 
 %------------------------------------------------------------------
 \subsection{Explanations}
-Intro
+Explanation = reasons or justification for an action or belief [14]\newline
+
+Function of explanations:\newline
+\begin{itemize}
+	\item prediction of consequences of (similar) events in the future [11] [5]
+	\item control of events  [5]
+	\item building and refining inner knowledge model [5]
+	\item restauration / prevention of states or events [11]
+	\item comparison of methods [11]
+	\item reproduction of states or events [11]
+	\item assigning guilt [11] [5]
+	\item justification [11] [5]
+	\item persuasion [5]
+	\item pleasure / appreciation [11]
+\end{itemize}
+
+\subsubsection{Social Sciences}
+explanations are not mental model but rather the interpretation of relations [11]\newline
+explanations are less general than theories and are application-focussed [11] \newline
+explanations are a cognitive and social process: The challenge of explaining includes finding a complete but compressed explanation, and transferring the explanation from the explainer to the explainee [5].\newline
+Complete explanation == all relevant causes explained [5] \newline
+
+Explanation aspects [11]:
+\begin{itemize}
+	\item causal pattern content: common-cause, common-effect, linear chain, homeostatics
+	\item explanatory stance types: mechanical, design, intention stance [5]. Atypical stances can lead to distorted understanding.
+	\item explanatory domain: different fields have different preferences of explanation types
+	\item social-emotional content: can alter acceptance threshold and influence recipient's perception of explained event 
+\end{itemize}
+What constitutes a \textbf{good explanation}? [11] describes good explanations as being non-circular, showing coherence, and having a high relevance for the recipient. Circularity are causal chains where an effect is given as cause to itself (with zero or more causal steps in between). Explanations can, but do not have to, explain causal relations [11]. Especially in the case of machine learning algorithms, the learned model shows correlation, not causation. Explanations for statistical models therefore cannot draw on typical causal explanations as found in human-human communication {\color{red}[REF NEEDED]}. The probabilistic interpretation of causality comes closest to the patterns learned in statistical models: If an even $A$ caused an event $B$, then the occurrence of $A$ increases the probability of $B$ occurring. Statistical facts are not satisfactory elements of an explanation, unless explaining the event of observing a fact [5]. Arguably, this holds true for statistical learning. Coherence refers to the systemacity of explanation elements: good explanations do not hold contradicting elements, but elements that influence each other [11]. Finally, relevance is driven by the level of detail given in the explanation. The sender has to adapt the explanation to the recipient's prior knowledge level and cognitive ability to understand the explanation [5], which can mean to generalise and to omit information - [11] calls this adaptation process the ``common informational grounding". The act of explaining also includes a broader grounding of shared beliefs and meanings of events and the world [5]. The ``compression problem" poses a major challenge in constructing explanations for humans. Humans tend to not comprise all possible causes and aspects of the high-dimensional real world in an explanation, suggesting that there are compression strategies (on the sender's side) and coping strategies (on the recipient's side) in place [11]. \newline
+[5] notes that besides presenting likely causes, and coherence, a good explanation is simple and general. The latter two characteristics refer to the agreement widely accepted in science that a simple theory (or, in this case, an explanation) is favoured over a more complicated theory if both explain an equal set of events or states.\newline
+[21] defines a good explanation as sound, complete, but nor overwhelming. While soundness refers to the level of truthfulness, completeness describes the level of disclosure [21]. In order to avoid overwhelming the explainee, the informational grounding process takes place, i.e. a common understanding of related elements and an adaptation of the explanation's detailedness to the explainee's knowledge level.\newline
+
+Generally, the more diverse the given evidence, the higher the recipient's \textbf{acceptance} of the explanation [11].\newline
+
+Cultural differences exist for the preference of an explanation type, although all explanation types can be understood [11].\newline
+
 
 \subsubsection{Explanation Types}
 associations between antecedent and consequent, contrast and differences, causal mechanisms [10] \newline
+material cause, formal / categorical cause, efficient cause, final cause [5] \newline
 
-\subsubsection{Social Sciences}
-asd
-
-\subsubsection{Psychology}
-asd
 
 
 
 %------------------------------------------------------------------
 \subsection{Explanations in AI}
-Right for the right reasons: not enough to just be correct, the reasons need to be correct. Example of things going wrong without noticing: [56] \newline
-xAI problems: reverse engineering (model, decision, visualisation/representation) and design of explanations [3] \newline
 xAI = communication with agents about their reasoning [12] \newline
+xAI problems: reverse engineering (model, decision, visualisation/representation) and design of explanations [3] \newline
+``Mixed initiative guidance" = human expert working alongside the ML system [4] \newline
+xAI challenge: completeness and interpretability simultaneously (tradeoff), transparency vs. persuasiveness [6] \newline
+General trend: the higher the accuracy, the lower the explainability [15], or: complexity reduces interpretability [19] \newline
+Stakeholders: users and engineers, and at least one of those - explanations are user-dependent (not monolithic) [14] \newline
+[17] found in a user study that users prefer more information and a higher information density (more soundness and completeness) as well as more general explanations rather than an explanation of each action\newline
+
+\subsubsection{Why Explanations in AI?}
+To achive transparency and accountability [14] \newline
+Right for the right reasons: not enough to just be correct, the reasons need to be correct. Example of things going wrong without noticing: [56] \newline
+for users: trust, for engineers: debugging and improving [14]\newline
+
+
+
+
+\subsubsection{User-Related Goals of Explanations}
+Scrutability, trust, effectiveness, efficiency, satisfaction, persuasiveness [2] \newline
+Explainability improves the user's confidence in the system, user's trust, user's judgement ability on prediction correctness, user satisfaction, user acceptance [10] \newline
+
 
 
 
@@ -113,15 +181,10 @@ xAI = communication with agents about their reasoning [12] \newline
 	\item Accurate proxy for model AND comprehensible for humans [3]
 	\item Dimensions: scope (global vs local), time to understand (target user, use case), prior knowledge (user expertise), dimensionality, accuracy, fidelity (accuracy of explanation / accuracy of model), fairness, privacy, monotonicity, usability [3]
 	\item operations can be understood by a human [10]
+	\item descriptions understandable to humans [6]
 \end{itemize}
 Interpretability vs. justification: Why it is a correct decision, not how it came along [10]\newline
-
-
-
-\subsubsection{Goals of Explanations}
-Scrutability, trust, effectiveness, efficiency, satisfaction, persuasiveness [2] \newline
-Explainability improves the user's confidence in the system, user's trust, user's judgement ability on prediction correctness, user satisfaction, user acceptance [10] \newline
-Understanding and analysis 
+Interpretability vs. explainability: Subgroup, showing reasons for behaviour [6] \newline 
 
 
 
@@ -141,6 +204,61 @@ Focus:\newline
 	\item model-level: rule extraction, prototypes \& criticism samples representing model, proxy model (inherently interpretable) with comparable accuracy (NOTE: supposedly meant decision generation, not simple accuracy)
 \end{itemize}
 single focus: feature-based explanation best for recommender systems (as compared to similar previous decisions and similar neighbor decisions) [10] \newline
+[4]:
+\begin{itemize}
+	\item understanding and reassurance (right for the right reasons)
+	\item diagnosis (of errors, inacceptable performance or behaviour)
+	\item refinement (improving robustness and performance)
+\end{itemize}
+[6]:
+\begin{itemize}
+	\item representation of data \& features
+	\item processing of data (operations)
+	\item explanation generation (within model)
+\end{itemize}
+[5]:
+\begin{itemize}
+	\item computational / operations level
+	\item representational level
+	\item hardware level
+\end{itemize}
+[8]:
+\begin{itemize}
+	\item learning algorithm behaviour
+	\item model parameters
+	\item model itself
+	\item representation
+\end{itemize}
+[15]:
+\begin{itemize}
+	\item within algorithm, directly based on model
+	\item feature-based
+	\item secondary, add-on explanation system separate from learning algorithm
+	\item representation
+\end{itemize}
+[14]:
+\begin{itemize}
+	\item inner workings for transparency
+	\item post-hoc prediction visualisation, e.g. heat maps
+\end{itemize}
+
+
+
+\subsubsection{When to explain?}
+[15] stresses that different explainability needs call for different timings of the explanation. Showing the explanation \textbf{before} a classification or generation task is useful for justifying the next step or explaining the plan. {\color{green}\textbf{During} a task, information about the operations and features can help identifying errors for correction and foster trust.} Explaining the results of a task \textbf{after} the process is useful for reporting and knowledge discovery.
+
+
+
+\subsubsection{Explanation Systems}
+For models that are not inherently interpretable, the explanation can only be an approximation and cannot be complete (definition of non interpretable) [5]. There can be approximations for the computation / operations detecting properties and categorisations, and approximations of the decision behaviour [5].\newline
+
+counterfactual explanation [12] with fact \& foil \newline
+[4] for overview over solutions for understanding, diagnosis, refinement \newline
+[6] for overview of solutions for explaining features, operations, generative explanations \newline
+[14] for set of programs (MYCIN, NEOMYCIN, CENTAUR, EES) that try to model explanations alongside with system \newline
+[19] presenting the L2X system\newline
+
+For feature-based models, [19] suggests salience map masks on input features, comparable cases (input and output) as reference (or very dissimilar cases as counterfactuals), and mutual information analysis per feature. For the latter, they use the Kullback-Leibler divergence to calculate the mutual information of two vectors: Learning to explain (L2X).\newline
 
 Inherently interpretable / transparent models:
 \begin{itemize}
@@ -149,17 +267,37 @@ Inherently interpretable / transparent models:
 	\item 
 \end{itemize}
 
+[15] suggests to develop a new class of learning algorithms that have an inherent ``explainability hyperparameter" to achieve high accuracy AND high explainability.\newline
+
+\textbf{explanations for texts}:
+[7] solution to recent development in text mining, where texts are represented in a high-dimensional vector space (e.g. fasttext, word2vec) and classified with neural nets. Compared to BOW/SVM, the W2V/CCN they used yields equally good results, because the CNN is better at identifying characteristic words.\newline
+[19] designed a system that uses deep neural networks for classification and mutual information for getting the input feature importance (in their case, single words). \newline
 
 
+\textbf{Relevant words}: A word is relevant to the text if removing it from the texts and classifying again results in a decrease of the classification score across all texts
 
-\subsubsection{Explanation Systems}
-counterfactual explanation [12] with fact \& foil
+ 
 
 
-
-\subsubsection{Explanations for Texts}
-asd
-
+\subsubsection{Evaluation of Explanations}
+[6]:
+\begin{itemize}
+	\item application grounded: true context, true task, users
+	\item human-grounded: usability tests, human performance tests
+	\item functionally grounded: no users, proxy
+\end{itemize}
+[8] evaluation of model interpretability:
+\begin{itemize}
+	\item heuristics: number of rules, number of nodes, minimum description length (model parameters)
+	\item generics: ability to select features, ability to produce class-typical data points, ability to provide information about decision boundaries
+	\item specifics: user testing / perception (BUT: evaluation of visuals and perceived model rather than actual model), e.g. by measuring accuracy of prediction, answer time, answer confidence, understanding of model
+\end{itemize}
+[15] rather combination than only a single one:
+\begin{itemize}
+	\item algorithm performance score
+	\item user performance score
+	\item user satisfaction score 
+\end{itemize}
 
 
 %------------------------------------------------------------------
@@ -178,10 +316,16 @@ willingness to put oneself at a risk and believing that the other will be benevo
 Placed in agent, not a characteristic inherent to an agent [TRUST 03]\newline
 dynamic: evolves as relationship matures [TRUST 03]\newline
 attribution of characteristics, e.g. dependability (repeated confirmation in risky situations), reliability (consistency or recurrent behaviour) [TRUST 03]\newline
+inappropriate trust can be harmful [17]\newline
 
 
 
 %------------------------------------------------------------------
 \subsection{Summary}
-Summary\\
+Summary\newline
+\begin{itemize}
+	\item summary scenario
+	\item systems
+	\item evaluation of explanations and of trust
+\end{itemize}
 Hypotheses
