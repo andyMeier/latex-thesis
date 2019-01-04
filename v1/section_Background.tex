@@ -27,20 +27,24 @@ health care, recommender systems, planning, HRI [15]\newline
 
 medicine, finances, criminal justice [19] \newline
 
+education, health care, manufacturing, retail, when machine learning based support systems are used [16] \newline
 
-\subsubsection{Issues \& Examplary Failures}
+high-risk domains: medical diagnosis, terrorism detection [24] \newline
+
+
+\subsubsection{Need for Explainability}
 issues / need for explainability:
 \begin{itemize}
 	\item high cost of errors in high-risk domains [2] [8] [17]
 	\item human safety in safety-critical tasks [6] [15]
-	\item automated discrimination [2], biased training data [6] [15]
+	\item automated discrimination [2], biased training data [6] [15] [24]
 	\item censorship [2]
 	\item development: fine-tuning parameters with trial-and-error [4]
 	\item imperceptibly altered input data or altered model: criminals / hackers [6]
-	\item unintuitive systematic errors [6] [56]
+	\item unintuitive systematic errors [6] [56] [24]
 	\item regulations: right to explanation [1] [6] [8]
 	\item source of knowledge that should be accessible if needed [8] [15]
-	\item inappropriate trust into the system (either too much or too little) [15] [14] [17]
+	\item (inappropriate) trust into the system (either too much or too little) [15] [14] [17] [24]
 \end{itemize}
 need dependent on consequences of classification results [15]:
 \begin{itemize}
@@ -50,7 +54,7 @@ need dependent on consequences of classification results [15]:
 \end{itemize}
 
 
-
+\subsubsection{Exemplary Failures}
 examples of failures due to missing explanation:
 [3]:
 \begin{itemize}
@@ -142,6 +146,8 @@ Generally, the more diverse the given evidence, the higher the recipient's \text
 
 Cultural differences exist for the preference of an explanation type, although all explanation types can be understood [11].\newline
 
+Humans build \textbf{mental models} of the world, a mental representation of events or elements. Mental models are needed to explain and predict. We do not need to have complete, holistic mental models in order to use an artifact, but a ``functional" model is needed to tell us how to use and make use of it, while a ``structural" model stores information about the composition and how it is built [21]. \newline
+
 
 \subsubsection{Explanation Types}
 associations between antecedent and consequent, contrast and differences, causal mechanisms [10] \newline
@@ -152,18 +158,24 @@ material cause, formal / categorical cause, efficient cause, final cause [5] \ne
 
 %------------------------------------------------------------------
 \subsection{Explanations in AI}
+``augmented intelligence" = machines supporting humans in cognitive tasks [16]\newline
 xAI = communication with agents about their reasoning [12] \newline
 xAI problems: reverse engineering (model, decision, visualisation/representation) and design of explanations [3] \newline
 ``Mixed initiative guidance" = human expert working alongside the ML system [4] \newline
 xAI challenge: completeness and interpretability simultaneously (tradeoff), transparency vs. persuasiveness [6] \newline
+xAI challenge: attention span of users \& perceived understanding rather than actual understanding [21] \newline
 General trend: the higher the accuracy, the lower the explainability [15], or: complexity reduces interpretability [19] \newline
+[29] user study shows that users do not necessarily perceive simpler systems as more understandably, presumably due to missing information\newline
 Stakeholders: users and engineers, and at least one of those - explanations are user-dependent (not monolithic) [14] \newline
-[17] found in a user study that users prefer more information and a higher information density (more soundness and completeness) as well as more general explanations rather than an explanation of each action\newline
+[17] found in a user study that users prefer more information and a higher information density (more soundness and completeness) as well as more general explanations rather than an explanation of each action. \newline
+Including experts in the modelling and training process is not only a way to integrate expert knowledge that is otherwise difficult to model, but can also increase user trust [16]. \newline
+
 
 \subsubsection{Why Explanations in AI?}
 To achive transparency and accountability [14] \newline
 Right for the right reasons: not enough to just be correct, the reasons need to be correct. Example of things going wrong without noticing: [56] \newline
 for users: trust, for engineers: debugging and improving [14]\newline
+trust when it comes to critical decisions (e.g. medical diagnosis) [29] \newline
 
 
 
@@ -171,6 +183,7 @@ for users: trust, for engineers: debugging and improving [14]\newline
 \subsubsection{User-Related Goals of Explanations}
 Scrutability, trust, effectiveness, efficiency, satisfaction, persuasiveness [2] \newline
 Explainability improves the user's confidence in the system, user's trust, user's judgement ability on prediction correctness, user satisfaction, user acceptance [10] \newline
+acceptance, trust, perceived competence [59] \newline
 
 
 
@@ -182,10 +195,11 @@ Explainability improves the user's confidence in the system, user's trust, user'
 	\item Dimensions: scope (global vs local), time to understand (target user, use case), prior knowledge (user expertise), dimensionality, accuracy, fidelity (accuracy of explanation / accuracy of model), fairness, privacy, monotonicity, usability [3]
 	\item operations can be understood by a human [10]
 	\item descriptions understandable to humans [6]
+	\item algorithm capability of producing patterns understandable to humans [16]
 \end{itemize}
 Interpretability vs. justification: Why it is a correct decision, not how it came along [10]\newline
 Interpretability vs. explainability: Subgroup, showing reasons for behaviour [6] \newline 
-
+interpretation = making inferences about underlying data [16] 
 
 
 \subsubsection{Barriers to Interpretability}
@@ -241,6 +255,16 @@ single focus: feature-based explanation best for recommender systems (as compare
 	\item inner workings for transparency
 	\item post-hoc prediction visualisation, e.g. heat maps
 \end{itemize}
+[16]:
+\begin{itemize}
+	\item dataset / features
+	\item optimizer / learning algorithm
+	\item model 
+	\item prediction / result
+	\item evaluator
+\end{itemize}
+
+\textbf{Explanation selection}: it is not possible to show every case, parameter, feature importance to the user, therefore a selection of exemplary cases needs to be made [24]. Global explanation can originate from a set of representative cases [24].
 
 
 
@@ -255,8 +279,10 @@ For models that are not inherently interpretable, the explanation can only be an
 counterfactual explanation [12] with fact \& foil \newline
 [4] for overview over solutions for understanding, diagnosis, refinement \newline
 [6] for overview of solutions for explaining features, operations, generative explanations \newline
+[16] for solutions for dataset, optimizer, model, predictor and evaluator \newline
 [14] for set of programs (MYCIN, NEOMYCIN, CENTAUR, EES) that try to model explanations alongside with system \newline
 [19] presenting the L2X system\newline
+[24] Explanation software: LIME, ELUCIDEBUG
 
 For feature-based models, [19] suggests salience map masks on input features, comparable cases (input and output) as reference (or very dissimilar cases as counterfactuals), and mutual information analysis per feature. For the latter, they use the Kullback-Leibler divergence to calculate the mutual information of two vectors: Learning to explain (L2X).\newline
 
@@ -275,6 +301,7 @@ Inherently interpretable / transparent models:
 
 
 \textbf{Relevant words}: A word is relevant to the text if removing it from the texts and classifying again results in a decrease of the classification score across all texts
+
 
  
 
@@ -310,14 +337,44 @@ persuasiveness of explanation != actual explanation [10]\newline
 ``[Persuasive explanations] are less faithful to the underlying model than descriptive explanations in a tradeoff for more freedom on the explanation complexity, structure, and parameters. This freedom permits explanations better tailored to human cognitive function, making them more functionally interpretable." [51]\newline
 ``Descriptive explanations best satisfy the ethical goal of transparency" [51]\newline
 
-
 \subsubsection{Trust}
+[25] notes that there exists no precise definition of trust in the field of computer science\newline
 willingness to put oneself at a risk and believing that the other will be benevolent [TRUST 03]\newline
 Placed in agent, not a characteristic inherent to an agent [TRUST 03]\newline
+Trust is a subjective experience rather than objectively measurable [TRUST 05] [23]. \newline
 dynamic: evolves as relationship matures [TRUST 03]\newline
 attribution of characteristics, e.g. dependability (repeated confirmation in risky situations), reliability (consistency or recurrent behaviour) [TRUST 03]\newline
 inappropriate trust can be harmful [17]\newline
+Trust as experience, trustworthiness is the characteristic and in case of computer programs consists of factors such as security, privacy, dependability, usability, correctness [TRUST 05] [TRUST 06]. Trust relates to the assurance that a system performs as expected [TRUST 05]. \newline
+Trust in a system can be misused: e-crime with negative side effects, e.g. data misuse [TRUST 05]. \newline
+Trust factors: appeal, competence (privacy, security, functionality), transparency, duration (relationship, affiliation), reputation [23] \newline
+Concerning algorithms, users can put global trust into the system, which means trusting the model itself. Trust can also be assigned locally, into an individual decision. [24] \newline
+Trust dimensions of web systems: target (the entity being evaluated), representation (encoding of trust via social warranty, certificates, etc.), method (security), management (the entity putting trust into the system), computation (evaluation metric), purpose [25] \newline
+For classification: expectation mismatch leads to direct decrease in trust [30], strength of decrease depends on the type of mismatch. Data-related mismatch weights less strongly than logic-driven mismatch. [30] \newline 
 
+\subsubsection{Trust Measures}
+[23]: using experts to assign a weighted label to each element on a website or GUI and calculating a score
+\begin{itemize}
+	\item [-1] irritant
+	\item [1] chaotic
+	\item [2] assuring
+	\item [3] motivating
+	\item [0] not present
+\end{itemize}
+But user study showed that experts find it problematic to assign discrete trust values. The advantage of this approach, however, is that it is possible to compare multiple websites [23]. \newline
+user study with closed and open questions [24]:
+\begin{itemize}
+	\item Do you trust this algorithm to work well in the real world?
+	\item Why do you trust this algorithm to work well in the real world?
+	\item How do you think the algorithm distinguished between the two classes?
+	\item How certain are you of the correctness of your explanation? 
+\end{itemize}
+
+
+\subsubsection{Perceived Understanding}
+Perceived understanding important for trust (rather than actual understanding):\newline
+``Findings show that the transparent version was perceived as more understandable and perceived understanding correlated with perceived competence, trust and acceptance of the system. Future research is necessary to evaluate the effects of transparency on trust in and acceptance of user-adaptive systems" [59] \newline
+Most questionnaires use factual statements to investigate perceived understanding. Participants rate the statements according to their confidence of understanding [UND 03] [UND 07] or directly their subjective understanding [UND 01] [UND 02] [UND 04] [UND 05]
 
 
 %------------------------------------------------------------------
