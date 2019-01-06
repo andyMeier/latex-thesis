@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{allahyari2011user}
+Hiva Allahyari and Niklas Lavesson.
+\newblock User-oriented assessment of classification model understandability.
+\newblock In {\em 11th scandinavian conference on Artificial intelligence}. IOS
+  Press, 2011.
+
 \bibitem{bibal2016interpretability}
 Adrien Bibal and Beno{\^\i}t Fr{\'e}nay.
 \newblock Interpretability of machine learning models and representations: an
@@ -16,6 +22,12 @@ Jenna Burrell.
 \newblock How the machine ‘thinks’: Understanding opacity in machine
   learning algorithms.
 \newblock {\em Big Data \& Society}, 3(1):2053951715622512, 2016.
+
+\bibitem{chen2018learning}
+Jianbo Chen, Le~Song, Martin~J Wainwright, and Michael~I Jordan.
+\newblock Learning to explain: An information-theoretic perspective on model
+  interpretation.
+\newblock 80:883--892, 10--15 Jul 2018.
 
 \bibitem{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
@@ -63,6 +75,12 @@ I~Hemalatha, GP~Saradhi Varma, and A~Govardhan.
 \newblock {\em International Journal of Emerging Trends \& Technology in
   Computer Science (IJETTCS)}, 1(2):58--61, 2012.
 
+\bibitem{hendricks2018generating}
+Lisa~Anne Hendricks, Ronghang Hu, Trevor Darrell, and Zeynep Akata.
+\newblock Generating counterfactual explanations with natural language.
+\newblock In {\em ICML Workshop on Human Interpretability in Machine Learning},
+  2018.
+
 \bibitem{hovelmann2017fasttext}
 Leonard H{\"o}velmann and Christoph~M Friedrich.
 \newblock Fasttext and gradient boosted trees at germeval-2017 on relevance
@@ -81,11 +99,25 @@ Sotiris~B Kotsiantis, I~Zaharakis, and P~Pintelas.
 \newblock {\em Emerging artificial intelligence applications in computer
   engineering}, 160:3--24, 2007.
 
+\bibitem{kulesza2013too}
+Todd Kulesza, Simone Stumpf, Margaret Burnett, Sherry Yang, Irwin Kwan, and
+  Weng-Keen Wong.
+\newblock Too much, too little, or just right? ways explanations impact end
+  users' mental models.
+\newblock In {\em Visual Languages and Human-Centric Computing (VL/HCC), 2013
+  IEEE Symposium on}, pages 3--10. IEEE, 2013.
+
 \bibitem{lipton2016mythos}
 Zachary Lipton.
 \newblock The mythos of model interpretability.
 \newblock In {\em ICML Workshop on Human Interpretability in Machine Learning
   (WHI 2016)}. ICML, 2016.
+
+\bibitem{liu2017towards}
+Shixia Liu, Xiting Wang, Mengchen Liu, and Jun Zhu.
+\newblock Towards better analysis of machine learning models: A visual
+  analytics perspective.
+\newblock {\em Visual Informatics}, 1(1):48--56, 2017.
 
 \bibitem{melville2009sentiment}
 Prem Melville, Wojciech Gryc, and Richard~D Lawrence.
@@ -98,6 +130,20 @@ Prem Melville, Wojciech Gryc, and Richard~D Lawrence.
 Joaqu{\i}n~Padilla Montani.
 \newblock Tuwienkbs at germeval 2018: German abusive tweet detection.
 \newblock {\em Austrian Academy of Sciences, Vienna September 21, 2018}, 2018.
+
+\bibitem{preece2018asking}
+Alun Preece.
+\newblock Asking ‘why’in ai: Explainability of intelligent
+  systems--perspectives and challenges.
+\newblock {\em Intelligent Systems in Accounting, Finance and Management},
+  25(2):63--72, 2018.
+
+\bibitem{richardson2018survey}
+Ariella Richardson and Avi Rosenfeld.
+\newblock A survey of interpretability and explainability in human-agent
+  systems.
+\newblock In {\em XAI Workshop on Explainable Artificial Intelligence}, pages
+  137--143, 2018.
 
 \bibitem{rother2018ulmfit}
 Kristian Rother, Marker Allee, and Achim Rettberg.
@@ -115,6 +161,12 @@ Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
 \newblock Predictive sentiment analysis of tweets: A stock market application.
 \newblock In {\em Human-computer interaction and knowledge discovery in
   complex, unstructured, Big Data}, pages 77--88. Springer, 2013.
+
+\bibitem{van2018contrastive}
+J~van~der Waa, J~van Diggelen, K~van~den Bosch, and M~Neerincx.
+\newblock Contrastive explanations for reinforcement learning in terms of
+  expected consequences.
+\newblock {\em XAI 2018}, page 165.
 
 \bibitem{ventocilla2018taxonomy}
 Elio Ventocilla, Tove Helldin, Maria Riveiro, Juhee Bae, Veselka Boeva,
