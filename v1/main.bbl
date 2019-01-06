@@ -1,5 +1,22 @@
 \begin{thebibliography}{10}
 
+\bibitem{bibal2016interpretability}
+Adrien Bibal and Beno{\^\i}t Fr{\'e}nay.
+\newblock Interpretability of machine learning models and representations: an
+  introduction.
+\newblock In {\em Proceedings on ESANN}, pages 77--82, 2016.
+
+\bibitem{biran2017explanation}
+Or~Biran and Courtenay Cotton.
+\newblock Explanation and justification in machine learning: A survey.
+\newblock In {\em IJCAI-17 Workshop on Explainable AI (XAI)}, page~8, 2017.
+
+\bibitem{burrell2016machine}
+Jenna Burrell.
+\newblock How the machine ‘thinks’: Understanding opacity in machine
+  learning algorithms.
+\newblock {\em Big Data \& Society}, 3(1):2053951715622512, 2016.
+
 \bibitem{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 \newblock Automated hate speech detection and the problem of offensive
@@ -7,12 +24,30 @@ Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 \newblock In {\em Proceedings of the 11th International AAAI Conference on Web
   and Social Media}, ICWSM '17, pages 512--515, 2017.
 
+\bibitem{domingos2012few}
+Pedro Domingos.
+\newblock A few useful things to know about machine learning.
+\newblock {\em Communications of the ACM}, 55(10):78--87, 2012.
+
 \bibitem{ghorai2016information}
 T.~Ghorai.
 \newblock An information retrieval system for fire 2016 microblog track.
 \newblock In {\em Workshop Proceedings working notes of Forum for Information
   Retrieval Evaluation (FIRE)}, volume 1737 of {\em CEUR '16}, pages 81--83.
   CEUR-WS.org, 2016.
+
+\bibitem{gilpin2018explaining}
+Leilani~H Gilpin, David Bau, Ben~Z Yuan, Ayesha Bajwa, Michael Specter, and
+  Lalana Kagal.
+\newblock Explaining explanations: An approach to evaluating interpretability
+  of machine learning.
+\newblock {\em arXiv preprint arXiv:1806.00069}, 2018.
+
+\bibitem{guidotti2018survey}
+Riccardo Guidotti, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca
+  Giannotti, and Dino Pedreschi.
+\newblock A survey of methods for explaining black box models.
+\newblock {\em ACM Computing Surveys (CSUR)}, 51(5):93, 2018.
 
 \bibitem{gupta2018proposed}
 Priya Gupta, Aditi Kamra, Richa Thakral, Mayank Aggarwal, Sohail Bhatti, and
@@ -29,7 +64,7 @@ I~Hemalatha, GP~Saradhi Varma, and A~Govardhan.
   Computer Science (IJETTCS)}, 1(2):58--61, 2012.
 
 \bibitem{hovelmann2017fasttext}
-Leonard H{\"o}velmann, Stockholmer Allee, and Christoph~M Friedrich.
+Leonard H{\"o}velmann and Christoph~M Friedrich.
 \newblock Fasttext and gradient boosted trees at germeval-2017 on relevance
   classification and document-level polarity.
 \newblock {\em Shared Task on Aspect-based Sentiment in Social Media Customer
@@ -39,6 +74,25 @@ Leonard H{\"o}velmann, Stockholmer Allee, and Christoph~M Friedrich.
 Xia Hu and Huan Liu.
 \newblock Text analytics in social media.
 \newblock In {\em Mining text data}, pages 385--414. Springer, 2012.
+
+\bibitem{kotsiantis2007supervised}
+Sotiris~B Kotsiantis, I~Zaharakis, and P~Pintelas.
+\newblock Supervised machine learning: A review of classification techniques.
+\newblock {\em Emerging artificial intelligence applications in computer
+  engineering}, 160:3--24, 2007.
+
+\bibitem{lipton2016mythos}
+Zachary Lipton.
+\newblock The mythos of model interpretability.
+\newblock In {\em ICML Workshop on Human Interpretability in Machine Learning
+  (WHI 2016)}. ICML, 2016.
+
+\bibitem{melville2009sentiment}
+Prem Melville, Wojciech Gryc, and Richard~D Lawrence.
+\newblock Sentiment analysis of blogs by combining lexical knowledge with text
+  classification.
+\newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
+  on Knowledge discovery and data mining}, pages 1275--1284. ACM, 2009.
 
 \bibitem{montani2018tuwienkbs}
 Joaqu{\i}n~Padilla Montani.
@@ -51,6 +105,10 @@ Kristian Rother, Marker Allee, and Achim Rettberg.
   classification of hate speech in german tweets.
 \newblock {\em Austrian Academy of Sciences, Vienna September 21, 2018}, 2018.
 
+\bibitem{ruping2006learning}
+S~R{\"u}ping.
+\newblock Learning interpretable models, 2006.
+
 \bibitem{smailovic2013predictive}
 Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
   {\v{Z}}nidar{\v{s}}i{\v{c}}.
@@ -58,11 +116,25 @@ Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
 \newblock In {\em Human-computer interaction and knowledge discovery in
   complex, unstructured, Big Data}, pages 77--88. Springer, 2013.
 
+\bibitem{ventocilla2018taxonomy}
+Elio Ventocilla, Tove Helldin, Maria Riveiro, Juhee Bae, Veselka Boeva,
+  G{\"o}ran Falkmann, and Niklas Lavesson.
+\newblock Towards a taxonomy for interpretable and interactive machine
+  learning.
+\newblock In {\em XAI Workshop on Explainable Artificial Intelligence}, pages
+  151--157, 2018.
+
 \bibitem{watanabe2018hate}
 Hajime Watanabe, Mondher Bouazizi, and Tomoaki Ohtsuki.
 \newblock Hate speech on twitter: A pragmatic approach to collect hateful and
   offensive expressions and perform hate speech detection.
 \newblock {\em IEEE Access}, 6:13825--13835, 2018.
+
+\bibitem{weihs2003combining}
+Claus Weihs and UM~Sondhauss.
+\newblock Combining mental fit and data fit for classification rule selection.
+\newblock In {\em Exploratory Data Analysis in Empirical Research}, pages
+  188--203. Springer, 2003.
 
 \bibitem{xiang2012detecting}
 Guang Xiang, Bin Fan, Ling Wang, Jason Hong, and Carolyn Rose.

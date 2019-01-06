@@ -9,3 +9,6 @@ A level-1 auxiliary file: section_Discussion.aux
 A level-1 auxiliary file: section_Conclusion.aux
 The style file: plain.bst
 Database file #1: mybib.bib
+Warning--entry type for "ruping2006learning" isn't style-file defined
+--line 474 of file mybib.bib
+(There was 1 warning)
