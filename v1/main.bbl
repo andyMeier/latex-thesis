@@ -29,12 +29,24 @@ Jianbo Chen, Le~Song, Martin~J Wainwright, and Michael~I Jordan.
   interpretation.
 \newblock 80:883--892, 10--15 Jul 2018.
 
+\bibitem{cramer2008effects}
+Henriette Cramer, Vanessa Evers, Satyan Ramlal, Maarten Van~Someren, Lloyd
+  Rutledge, Natalia Stash, Lora Aroyo, and Bob Wielinga.
+\newblock The effects of transparency on trust in and acceptance of a
+  content-based art recommender.
+\newblock {\em User Modeling and User-Adapted Interaction}, 18(5):455, 2008.
+
 \bibitem{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 \newblock Automated hate speech detection and the problem of offensive
   language.
 \newblock In {\em Proceedings of the 11th International AAAI Conference on Web
   and Social Media}, ICWSM '17, pages 512--515, 2017.
+
+\bibitem{diakopoulos2016accountability}
+Nicholas Diakopoulos.
+\newblock Accountability in algorithmic decision making.
+\newblock {\em Communications of the ACM}, 59(2):56--62, 2016.
 
 \bibitem{domingos2012few}
 Pedro Domingos.
@@ -54,6 +66,12 @@ Leilani~H Gilpin, David Bau, Ben~Z Yuan, Ayesha Bajwa, Michael Specter, and
 \newblock Explaining explanations: An approach to evaluating interpretability
   of machine learning.
 \newblock {\em arXiv preprint arXiv:1806.00069}, 2018.
+
+\bibitem{goodman16eu}
+Bryce Goodman and Seth Flaxman.
+\newblock Eu regulations on algorithmic decision-making and a "right to
+  explanation".
+\newblock {\em AI Magazine}, 38, 06 2016.
 
 \bibitem{guidotti2018survey}
 Riccardo Guidotti, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca
@@ -138,6 +156,13 @@ Alun Preece.
 \newblock {\em Intelligent Systems in Accounting, Finance and Management},
   25(2):63--72, 2018.
 
+\bibitem{ribeiro2016should}
+Marco~Tulio Ribeiro, Sameer Singh, and Carlos Guestrin.
+\newblock Why should i trust you?: Explaining the predictions of any
+  classifier.
+\newblock In {\em Proceedings of the 22nd ACM SIGKDD international conference
+  on knowledge discovery and data mining}, pages 1135--1144. ACM, 2016.
+
 \bibitem{richardson2018survey}
 Ariella Richardson and Avi Rosenfeld.
 \newblock A survey of interpretability and explainability in human-agent
@@ -175,6 +200,13 @@ Elio Ventocilla, Tove Helldin, Maria Riveiro, Juhee Bae, Veselka Boeva,
   learning.
 \newblock In {\em XAI Workshop on Explainable Artificial Intelligence}, pages
   151--157, 2018.
+
+\bibitem{vorm2018assessing}
+Eric~S Vorm.
+\newblock Assessing demand for transparency in intelligent systems using
+  machine learning.
+\newblock In {\em 2018 Innovations in Intelligent Systems and Applications
+  (INISTA)}, pages 1--7. IEEE, 2018.
 
 \bibitem{watanabe2018hate}
 Hajime Watanabe, Mondher Bouazizi, and Tomoaki Ohtsuki.

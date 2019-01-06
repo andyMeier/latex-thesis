@@ -36,49 +36,25 @@ If the human cognition is augmented by a machine learning system, talking about 
 
 %------------------------------------------------------------------
 \subsection{Need for Explainability in AI}
-A subfield of artificial intelligence research revolves solely around the explainability of intelligent systems: \textit{xAI}, explainable artificial intelligence, for the purpose of enabling communication with agents about their reasoning \cite{hendricks2018generating}. xAI systems face a trade-off challenge: Their explanation has to be complete and interpretable at the same time \cite{gilpin2018explaining}. The attention span an cognitive abilities of humans therefore become an important factor to consider in the design of a xAI systemm \cite{kulesza2013too}. Furthermore, the goal of explaining the system is twofold: create actual knowledge and persuade the user that the knowledge is sound and complete. Actual understanding and perceived understanding however do not always go hand in hand: Persuasive systems can convince the user without creating actual transparency \cite{gilpin2018explaining}. Bad explanations likewise ``provide an understanding that is at best incomplete and at worst false reassurance" \cite{burrell2016machine}. Next to examining possible explanations for white box (inherently interpretable) and black box (inherently non-interpretable) systems, the design and communication of explanations need to be considered as well. \cite{guidotti2018survey}\newline
+A subfield of artificial intelligence research revolves solely around the explainability of intelligent systems: \textit{xAI}, explainable artificial intelligence, for the purpose of enabling communication with agents about their reasoning \cite{hendricks2018generating}. xAI systems face a trade-off challenge: Their explanation has to be complete and interpretable at the same time \cite{gilpin2018explaining}. The attention span an cognitive abilities of humans therefore become an important factor to consider in the design of a xAI systemm \cite{kulesza2013too}. Furthermore, the goal of explaining the system is twofold: create actual knowledge and persuade the user that the knowledge is sound and complete. Actual understanding and perceived understanding however do not always go hand in hand: Persuasive systems can convince the user without creating actual transparency \cite{gilpin2018explaining}. {\color{red}---Paragraph about persuasiveness} Bad explanations likewise ``provide an understanding that is at best incomplete and at worst false reassurance" \cite{burrell2016machine}. Next to examining possible explanations for white box (inherently interpretable) and black box (inherently non-interpretable) systems, the design and communication of explanations need to be considered as well. \cite{guidotti2018survey}\newline
 In recent years, machine learning algorithms employed in the wild show a trend towards increasing accuracy but also increasing complexity. In general, the higher the accuracy and complexity, the lower the explainability \cite{richardson2018survey} \cite{chen2018learning} in machine learning. However, users do not necessarily perceive systems with simple explanations as more understandable \cite{allahyari2011user}. The authors of the user study in \cite{allahyari2011user} hypothesise that users detect missing information in simple explanations, which in turn leads to the perception of incomprehensibility. \cite{van2018contrastive} examined user preferences in more detail and concluded that users overall preferred more soundness and completeness over simplicity, as well as global explanations over local explanations.\newline
 Humans involved in the explanation process are not only users, but also domain experts and engineers during the design and training phase. As explanations are user-dependent (not monolithic) \cite{preece2018asking}, the design and evaluation of explanation needs to be conducted in reference to the target users. Including experts in the modelling and training process is not only a way to integrate expert knowledge that is otherwise difficult to model, but can also increase user trust \cite{ventocilla2018taxonomy}. \cite{liu2017towards} call the situation where a human expert works alongside the machine learning system to improve it ``mixed initiative guidance". \newline
 
-\paragraph{Goals of Explainability}
-To achive transparency and accountability [14] \newline
-Right for the right reasons: not enough to just be correct, the reasons need to be correct. Example of things going wrong without noticing: [56] \newline
-for users: trust, for engineers: debugging and improving [14]\newline
-trust when it comes to critical decisions (e.g. medical diagnosis) [29] \newline
-
-user-related goals: \newline
-Scrutability, trust, effectiveness, efficiency, satisfaction, persuasiveness [2] \newline
-Explainability improves the user's confidence in the system, user's trust, user's judgement ability on prediction correctness, user satisfaction, user acceptance [10] \newline
-acceptance, trust, perceived competence [59] \newline
-acceptance, appropriate trust [38] \newline
-
-\paragraph{Issues with Opacity}
-\begin{itemize}
-	\item high cost of errors in high-risk domains [2] [8] [17]
-	\item human safety in safety-critical tasks [6] [15]
-	\item automated discrimination [2], biased training data [6] [15] [24]
-	\item censorship [2]
-	\item development: fine-tuning parameters with trial-and-error [4]
-	\item imperceptibly altered input data or altered model: criminals / hackers [6]
-	\item unintuitive systematic errors [6] [56] [24]
-	\item regulations: right to explanation [1] [6] [8]
-	\item source of knowledge that should be accessible if needed [8] [15]
-	\item (inappropriate) trust into the system (either too much or too little) [15] [14] [17] [24]
-	\item implementation involves a lot of human work [33]
-\end{itemize}
-need dependent on consequences of classification results [15]:
+\subsubsection{Explanation Goals}
+Machine learning systems are able to achieve high accuracy on classification tasks, for example in information retrieval, data mining, speech recognition, and computer graphics \cite{liu2017towards}. Explainability is a means to ensure that machine learning systems are not only right in a high number of cases, but right for the right reasons \cite{preece2018asking}. High accuracy does not necessarily mean that correct generalisations were learned from the dataset or that no biases were present in the data.\newline
+The need for interpretability is dependent on the role of the explanation user and the severity of the consequences of the classification result and possible errors. Since explanations are not monolithic, i.e. have to be adapted to the target user's level of expertise, preferences for explanation types, and cognitive capabilities, the need for interpretability is also dependent on the targeted audience. Furthermore, different users can have different data access rights and have different goals to achieve in their interaction with the system \cite{vorm2018assessing}. While an engineer could be interested in technical details, a bank employee assessing loan credibility could be interested in similar cases and relevant characteristics of a single decision case. \cite{richardson2018survey} separates a general need for interpretability into three categories:
 \begin{itemize}
 	\item \textbf{no need} for interpretability if no consequences arise from faulty decisions
 	\item interpretability is \textbf{beneficial} if consequences for individuals arise from faulty decisions
 	\item interpretability is \textbf{critical} if serious consequences arise from faulty decisions
 \end{itemize}
-need also dependent on user role [38] \newline
+The three classes of interpretability needs give an overview about possible consequences, yet are too general to serve as guideline for practitioners. More details about decisive factors are needed.\newline
+For users of an automatic decision system, having insights into the system functioning and decision process increases trust \cite{preece2018asking} \cite{diakopoulos2016accountability} \cite{biran2017explanation} \cite{cramer2008effects} \cite{vorm2018assessing}, even in critical decisions such as medical diagnosis \cite{allahyari2011user}. The level of trust should be in relation to the soundness and completeness of an explanation. Having too much or too little trust in a system can hinder fruitful interaction between the user and the system \cite{preece2018asking} \cite{richardson2018survey} \cite{van2018contrastive} \cite{ribeiro2016should}. Other positive effects on users are satisfaction and acceptance \cite{biran2017explanation} \cite{cramer2008effects} \cite{vorm2018assessing} as well as the ability to predict the system's performance correctly \cite{biran2017explanation}.\newline
+Explanations also help engineers and experts to design, debug, and improve an automatic decision system \cite{preece2018asking}. Explanations facilitate the identification of unintuitive, systematic errors \cite{gilpin2018explaining} \cite{ribeiro2016should} in the design and redundantise time-consuming trial-and-error procedures for parameter optimisation \cite{liu2017towards}. Unethical biases in training data leading to automated discrimination \cite{diakopoulos2016accountability} can be identified and examined via explanations \cite{gilpin2018explaining} \cite{richardson2018survey} \cite{ribeiro2016should}. Ultimately, the early identification of errors avoids costly errors in high-risk domains \cite{diakopoulos2016accountability} \cite{bibal2016interpretability} \cite{van2018contrastive} and ensures human safety in safety-critical tasks \cite{gilpin2018explaining} \cite{richardson2018survey}.\newline
+Besides helping users and engineers, explanations also serve general goals of protection, conformity, and knowledge management. Criminals or hackers that aim to disturb the system or take advantage of it can make imperceptible changes to the input data or model at hidden levels. Having a system capable of explaining its behaviour and inner structure helps to identify unwanted alterations \cite{gilpin2018explaining}. With the European General Data Prodection Regulation (GDPR) put into place in 2018, a debate on a \textit{right to explanation} started, which will be discussed in the following section. Although the specific implications of the right to explanation remain unclear, it should still be noted that designing interpretability follows up on that regulation \cite{goodman16eu} \cite{gilpin2018explaining} \cite{bibal2016interpretability}. Finally, the most general goal of implementing explanations for automatic decision systems is the opening and accessibility of a knowledge source \cite{bibal2016interpretability} \cite{richardson2018survey}. The relations derived by a machine learner (stored in the model) can deliver relevant knowledge about the data at hand.\newline
 
-\paragraph{Barriers to Interpretability}
-intentional concealment, lack of technical expertise, computational complexity vs. human-scale reasoning abilities [1] \newline
-minimum explainability: how features (values) relate to predictions [1] \newline
 
-\paragraph{Regulations}
+\subsubsection{Regulations and Accountability}
 General Data Prodection Regulation (GDPR): law about processing of personal (related to identifiable person) data, no matter if manually or automatically processed [1] \newline
 Sensitive data / protected traits: race, ethnicity, religion, nationality, gender, sexuality, disability, marital status, age [2] \newline
 Real-life data contains society's structures and biases, and as classification means separation into groups based on that data, biases are taken into the model [1] \newline
@@ -312,7 +288,7 @@ Inherently interpretable / transparent models:
 [19] designed a system that uses deep neural networks for classification and mutual information for getting the input feature importance (in their case, single words). \newline
 
 \textbf{Relevant words}: A word is relevant to the text if removing it from the texts and classifying again results in a decrease of the classification score across all texts
-
+[56] take the opposite approach by eliminating irrelevant words, which leaves the relevant ones but show that this method does not work for neural classifiers
 
 
 
