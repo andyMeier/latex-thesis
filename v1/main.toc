@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Background}{4}
+\contentsline {subsection}{\numberline {2.1}Interpretability in AI}{4}
+\contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{7}
+\contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{8}
+\contentsline {paragraph}{Accountability}{9}
+\contentsline {subsection}{\numberline {2.3}Application Areas}{9}
+\contentsline {subsubsection}{\numberline {2.3.1}Application Areas}{9}
+\contentsline {subsubsection}{\numberline {2.3.2}Exemplary Failures}{10}
+\contentsline {subsection}{\numberline {2.4}Explanations}{10}
+\contentsline {subsubsection}{\numberline {2.4.1}Human-Human Explanations}{11}
+\contentsline {paragraph}{Explanation Types}{12}
+\contentsline {subsubsection}{\numberline {2.4.2}AI-Human Explanations}{13}
+\contentsline {subsubsection}{\numberline {2.4.3}When to explain?}{14}
+\contentsline {subsubsection}{\numberline {2.4.4}Explanation Systems}{14}
+\contentsline {subsubsection}{\numberline {2.4.5}Explanation Evaluation}{16}
+\contentsline {subsection}{\numberline {2.5}Trust in AI}{16}
+\contentsline {subsubsection}{\numberline {2.5.1}Gaining User Trust}{17}
+\contentsline {subsubsection}{\numberline {2.5.2}Trust Evaluation}{17}
+\contentsline {subsubsection}{\numberline {2.5.3}Perceived Understanding}{18}
+\contentsline {subsection}{\numberline {2.6}Use Case Scenario}{18}
+\contentsline {subsection}{\numberline {2.7}Summary}{18}
+\contentsline {section}{\numberline {3}Dataset}{19}
+\contentsline {subsection}{\numberline {3.1}Dataset Selection}{19}
+\contentsline {subsection}{\numberline {3.2}Dataset Construction}{19}
+\contentsline {subsection}{\numberline {3.3}Dataset Preprocessing}{20}
+\contentsline {section}{\numberline {4}Design}{23}
+\contentsline {subsection}{\numberline {4.1}Classifier}{23}
+\contentsline {paragraph}{Good System}{23}
+\contentsline {paragraph}{Medium System}{23}
+\contentsline {paragraph}{Bad System}{23}
+\contentsline {subsection}{\numberline {4.2}Explanations}{23}
+\contentsline {paragraph}{Good System}{23}
+\contentsline {paragraph}{Medium System}{23}
+\contentsline {paragraph}{Bad System}{23}
+\contentsline {subsection}{\numberline {4.3}Graphical User Interface}{23}
+\contentsline {subsection}{\numberline {4.4}Subset Sampling}{23}
+\contentsline {section}{\numberline {5}Experiment 1: Explanation Evaluation}{25}
+\contentsline {subsection}{\numberline {5.1}Method}{25}
+\contentsline {subsection}{\numberline {5.2}Results}{25}
+\contentsline {section}{\numberline {6}Experiment 2: Trust Evaluation}{25}
+\contentsline {subsection}{\numberline {6.1}Method}{25}
+\contentsline {paragraph}{Participants}{25}
+\contentsline {paragraph}{Apparatus}{25}
+\contentsline {paragraph}{Procedure}{25}
+\contentsline {paragraph}{Design \& Analysis}{25}
+\contentsline {subsection}{\numberline {6.2}Results}{26}
+\contentsline {section}{\numberline {7}Discussion}{27}
+\contentsline {section}{\numberline {8}Conclusion}{28}

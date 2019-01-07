@@ -99,6 +99,11 @@ Lisa~Anne Hendricks, Ronghang Hu, Trevor Darrell, and Zeynep Akata.
 \newblock In {\em ICML Workshop on Human Interpretability in Machine Learning},
   2018.
 
+\bibitem{herman2017promise}
+B~Herman.
+\newblock The promise and peril of human evaluation for model interpretability.
+\newblock In {\em NIPS 2017 Symposium on Interpretable Machine Learning}, 2017.
+
 \bibitem{hovelmann2017fasttext}
 Leonard H{\"o}velmann and Christoph~M Friedrich.
 \newblock Fasttext and gradient boosted trees at germeval-2017 on relevance
