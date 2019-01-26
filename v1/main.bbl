@@ -6,6 +6,13 @@ Hiva Allahyari and Niklas Lavesson.
 \newblock In {\em 11th scandinavian conference on Artificial intelligence}. IOS
   Press, 2011.
 
+\bibitem{baldoni2016computational}
+Matteo Baldoni, Cristina Baroglio, Katherine~M May, Roberto Micalizio, and
+  Stefano Tedeschi.
+\newblock Computational accountability.
+\newblock In {\em CEUR Workshop Proceedings}, volume 1802, pages 56--62. CEUR
+  Workshop Proceedings, 2016.
+
 \bibitem{bibal2016interpretability}
 Adrien Bibal and Beno{\^\i}t Fr{\'e}nay.
 \newblock Interpretability of machine learning models and representations: an
@@ -185,6 +192,11 @@ Kristian Rother, Marker Allee, and Achim Rettberg.
 S~R{\"u}ping.
 \newblock Learning interpretable models, 2006.
 
+\bibitem{selbst2017meaningful}
+Andrew~D Selbst and Julia Powles.
+\newblock Meaningful information and the right to explanation.
+\newblock {\em International Data Privacy Law}, 7(4):233--242, 2017.
+
 \bibitem{smailovic2013predictive}
 Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
   {\v{Z}}nidar{\v{s}}i{\v{c}}.
@@ -212,6 +224,12 @@ Eric~S Vorm.
   machine learning.
 \newblock In {\em 2018 Innovations in Intelligent Systems and Applications
   (INISTA)}, pages 1--7. IEEE, 2018.
+
+\bibitem{wachter2017right}
+Sandra Wachter, Brent Mittelstadt, and Luciano Floridi.
+\newblock Why a right to explanation of automated decision-making does not
+  exist in the general data protection regulation.
+\newblock {\em International Data Privacy Law}, 7(2):76--99, 2017.
 
 \bibitem{watanabe2018hate}
 Hajime Watanabe, Mondher Bouazizi, and Tomoaki Ohtsuki.

@@ -28,7 +28,7 @@ In the context of interpretability for machine learning systems, the terms \text
 	\caption{Relation of terms connected to interpretability}
 	\label{fig:definitions}
 \end{figure}
-If the human cognition is augmented by a machine learning system, talking about interpretability should also include discussing the interpretability of the human in the loop. \cite{lipton2016mythos} argues that human behaviour is often mistakenly identified as interpretable, since humans can explain their actions and beliefs. However, the actual operations of the human brain remain opaque, which refutes interpretability \cite{lipton2016mythos}. Human interpretability is not the focus of this paper and will therefore not be discussed in the remainder, yet it should serve as a point of reference for the general discussion of algorithmic interpretability.\newline
+If the human cognition is augmented by a machine learning system, talking about interpretability should also include discussing the interpretability of the human in the loop. \cite{lipton2016mythos} argues that human behaviour is often mistakenly identified as interpretable because humans can explain their actions and beliefs. Yet the actual operations of the human brain remain opaque, which contradicts the concept of interpretability \cite{lipton2016mythos}. If human interpretability is taken as a point of reference for the discussion of algorithmic interpretability, \cite{lipton2016mythos}'s argument should be taken into account. Human interpretability, however, is not the focus of this paper and will therefore not be discussed in more detail here.\newline
 
 
 
@@ -56,26 +56,18 @@ Besides helping users and engineers, explanations also serve general goals of pr
 
 
 \subsubsection{Regulations and Accountability}
-General Data Prodection Regulation (GDPR): law about processing of personal (related to identifiable person) data, no matter if manually or automatically processed [1] \newline
-Sensitive data / protected traits: race, ethnicity, religion, nationality, gender, sexuality, disability, marital status, age [2] \newline
-Real-life data contains society's structures and biases, and as classification means separation into groups based on that data, biases are taken into the model [1] \newline
+The General Data Protection Regulation (GDPR) is a European law dealing with the processing of personal data within the European Economic Area (EEA, includes also all countries of the EU). The law holds for all companies within the EEA, companies with subsidiaries in the EEA, and any company processing personal data of a citizen of the EEA. In this context, ``processing" does not only relate to automatic systems but also spans to manual processing of personal data \cite{goodman16eu}. The GDPR defines personal data as data relating to an identifiable natural person, i.e. data that can be used to identify a person {\color{red}[REF TO LAW TEXT]}. Names, location data, or personal identification numbers are all examples of personal data that falls under the GDPR. \cite{goodman16eu} identifies two consequences of the GDPR: the legal right to non-discrimination, and a right to explanation.\newline
+Algorithmic decisions must not be based on sensitive, personal data (GDPR article 22 paragraph 4) that are nowadays used to identify groups of people with similar characteristics, such as ethnicity, religion, gender, disability, sexuality, and more \cite{diakopoulos2016accountability}. Sensitive information can, however, correlate with non-sensitive data. Real-life data almost always reflects a society's structures and biases - explicitly through sensitive information, or implicitly via dependent information. As the task of classification means separating single instances into groups based on the available data, the biases are recovered in the model \cite{goodman16eu}. A guarantee non-discrimination is therefore difficult to achieve. The GDPR does not specify whether only sensitive data or also correlated variables have to be considered when following the law. \cite{goodman16eu} identifies both interpretations as possible.\newline
+While article 13 of the GDPR specifies a right to obtain information about one's personal information and the processing of that personal information, it assures ``meaningful information about the logic involved" in profiling without further defining meaningfulness. Based on the ambiguity of ``meaningful", several interpretations exist, ranging from denial of the ``right to explanation" \cite{wachter2017right} to a positive interpretation \cite{selbst2017meaningful}. In summary, precedents are needed to clarify the boundaries of the law.\newline
+Besides legal regulations, ethical considerations also play a role in augmented intelligence. Accountability is the ethical value of acknowledging responsibility for decisions and actions towards another party \cite{baldoni2016computational}. It is an inherent factor in human-human interaction; artificial intelligence employed to interact with humans or collaborate with humans in augmented intelligence settings therefore bring about the challenge of ``computational accountability" \cite{baldoni2016computational}. It is important to note that accountability is not a general issue in the digital world: For something to be held accountable of its own decisions or actions, it needs to act autonomously v. In order to determine autonomy of an algorithm and work towards accountability, \cite{diakopoulos2016accountability} suggests to disclose the following information for machine learning systems: 
 \begin{itemize}
-	\item minimal interpretation: delete sensitive data from dataset
-	\item maximum interpretation: delete sensitive data and correlated variables from dataset
+	\item \textit{Human involvement}: who controls the algorithm, who designed it etc., leading to control through social pressure
+	\item \textit{Data statistics}: accuracy, completeness, uncertainty, representativeness, labelling \& collection process, preprocessing of data
+	\item \textit{Model}: input, weights, parameters, hidden information
+	\item \textit{Inferencing}: covariance matrix to estimate risk, prevention measures for known errors, confidence score 
+	\item \textit{Algorithmic presence}: visibility, filtering, reach of algorithm
 \end{itemize}
-``right to explanation" [1], argument against such interpretation [58] and positive interpretation [37]. Key issue: ``data subjects receive meaningful, but properly limited, information" [58] is ambiguous, plus no clear definition of explanation, meaningful, and information. Summary: Precedents are needed to clarify the boundaries.\newline
-Problem with explanations: ML algorithms show statistical correlation, not causality [1]\newline
-
-
-\paragraph{Accountability}
-information worth disclosing for more accountability [2]:
-\begin{itemize}
-	\item human involvement: who controls the algorithm, who designed it etc., leading to control through social pressure
-	\item data statistics (accuracy, completeness, uncertainty, representativeness), labelling \& collection process, preprocessing of data
-	\item model: input, weights, parameters, hidden information
-	\item inferencing: covariance matrix to estimate risk, prevention measures for known errors, confidence score 
-	\item algorithmic presence: visibility, filtering, reach of algorithm
-\end{itemize}
+\cite{baldoni2016computational} argues that causality is a necessary prerequisite for accountability. Machine learning algorithms often learn statistical relations between input features, which at best leads to probabilistic causality, but not certainly to deterministic causality. Whether an automatic decision system itself can be held accountable for its decisions is therefore debatable.
 
 
 
@@ -366,15 +358,6 @@ Most questionnaires use factual statements to investigate perceived understandin
 
 
 
-%------------------------------------------------------------------
-\subsection{Use Case Scenario}
-definition of offensive language [34] \newline
-hate speech detection systems \newline
-
-
-
-
-
 
 
 
@@ -382,7 +365,7 @@ hate speech detection systems \newline
 \subsection{Summary}
 Summary\newline
 \begin{itemize}
-	\item summary scenario
+	\item summary 
 	\item systems
 	\item evaluation of explanations and of trust
 \end{itemize}
