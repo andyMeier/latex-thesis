@@ -42,6 +42,7 @@ In recent years, machine learning algorithms employed in the wild show a trend t
 Humans involved in the explanation process are not only users, but also domain experts and engineers during the design and training phase. As explanations are user-dependent (not monolithic) \cite{preece2018asking}, the design and evaluation of explanation needs to be conducted in reference to the target users. Including experts in the modelling and training process is not only a way to integrate expert knowledge that is otherwise difficult to model, but can also increase user trust \cite{ventocilla2018taxonomy}. \cite{liu2017towards} call the situation where a human expert works alongside the machine learning system to improve it ``mixed initiative guidance". \newline
 
 \subsubsection{Explanation Goals}
+\label{subsubsec:Explanation Goals}
 Machine learning systems are able to achieve high accuracy on classification tasks, for example in information retrieval, data mining, speech recognition, and computer graphics \cite{liu2017towards}. Explainability is a means to ensure that machine learning systems are not only right in a high number of cases, but right for the right reasons \cite{preece2018asking}. High accuracy does not necessarily mean that correct generalisations were learned from the dataset or that no biases were present in the data.\newline
 The need for interpretability is dependent on the role of the explanation user and the severity of the consequences of the classification result and possible errors. Since explanations are not monolithic, i.e. have to be adapted to the target user's level of expertise, preferences for explanation types, and cognitive capabilities, the need for interpretability is also dependent on the targeted audience. Furthermore, different users can have different data access rights and have different goals to achieve in their interaction with the system \cite{vorm2018assessing}. While an engineer could be interested in technical details, a bank employee assessing loan credibility could be interested in similar cases and relevant characteristics of a single decision case. \cite{richardson2018survey} separates a general need for interpretability into three categories:
 \begin{itemize}
@@ -77,44 +78,20 @@ Besides legal regulations, ethical considerations also play a role in augmented 
 
 %------------------------------------------------------------------
 \subsection{Application Areas}
-
-\subsubsection{Application Areas}
-decisions that affect people’s lives in critical domains like criminal
-justice, fair lending, and medicine. [52]\newline
-safety-critical industries (self-driving cars, robotic assistants, personalised medicine) [3]\newline
-
-sensitive data processed by algorithms (banks, insurances, health data) [3]\newline
-
-scientific research (making discoveries by understanding data) [3]\newline
-
-individual performance monitoring, health care, economic situation analysis, personal preferences \& interests, location \& movement [1]\newline
-
-replacing human decision making in advertising, recommendations, finances (loans) [6] \newline
-
-health care, recommender systems, planning, HRI [15]\newline
-
-medicine, finances, criminal justice [19] \newline
-
-education, health care, manufacturing, retail, when machine learning based support systems are used [16] \newline
-
-high-risk domains: medical diagnosis, terrorism detection [24] \newline
-
-``socially consequential mechanisms of classification and ranking" [33] \newline
-
-spam detection, finances (fraud detection, loan), search engines, news trends, marketing, insurance [33] [36] \newline
-
-\subsubsection{Exemplary Failures}
-examples of failures due to missing explanation:
-[3]:
+Artificial intelligence and machine learning algorithms are nowadays employed in a variety of areas. As described in \ref{subsubsec:Explanation Goals}, the need for interpretability depends on the potential consequences of the decisions made by an automatic system. \cite{burrell2016machine} summarises the application area as all systems with ``socially consequential mechanisms of classification and ranking", pointing in particular to the consequences for humans. A similar view is expressed in \cite{poursabzi2017manipulating} and \cite{ribeiro2016should}, while \cite{guidotti2018survey} restricts the application areas in need for interpretability to those that process sensitive, i.e. personal data. In more detail, the following areas in need of interpretable intelligent systems are mentioned in literature:
 \begin{itemize}
-	\item St Georges hospital - racist application procedure 
-	\item COMPASS crime prediction - racist against blacks (counterargument made in [55]: ``group differences in scores may reflect true differences in recidivism risk")
-	\item Amazon prime district selection - defavorising neighborhoods with ethnic minorities
-	\item Automated target identification - decision driven by weather condition
-	\item Animal race 
-	\item Mortgage rates of major US banks rate very differently - sign for bad algorithms?
+	\item Societal safety: criminal justice [52] [19], terrorism detection [24]	
+	\item Processing sensitive data: banking, e.g. loans [52] [6] [19] [33] [36], medicine \& health data [52] [3] [1] [15] [19] [16] [24], insurances [3] [33] [36], navigation [1]
+	\item Physical safety: autonomous robotics [3] [15]
+	\item Knowledge: education [16], knowledge discovery in research [3]	
+	\item Economy: manufacturing [16], individual performance monitoring [1], economic situation analysis [1], marketing [6] [33] [36]	
 \end{itemize}
-``Discrimination, is at some level, inherent to profiling: the point of profiling is to treat some people differently" [57]:
+But not only systems treating personal data or interacting directly with humans profit from interpretability- \cite{ventocilla2018taxonomy} suggest all machine learning based support systems as suitable candidates for interpretability. Machine learning is already employed in IT-services such as spam detection and search engines \cite{burrell2016machine} \cite{domingos2012few}, as well as in recommender systems \cite{gilpin2018explaining} \cite{richardson2018survey}.\newline
+In the past, several machine learning systems have failed due to undetected systematic errors or automated discrimination. \cite{guidotti2018survey} lists incidents with machine learning systems, ranging from discrimination in the job application procedure and faulty target identification in automated weapons due to training data biases, to high differences in mortgage decisions by banks. An interesting case is the American COMPAS system for automated crime prediction. The system predicted a significantly higher relapse rate for black convicts than for whites, which is assumed to result from human bias in the training data \cite{guidotti2018survey}. The argument of human bias is often used to object the perceived impartiality of computer systems, and other examples of discrimination of ethnic minorities exist \cite{guidotti2018survey}, yet \cite{skeem2016risk} counter-argues that ``group differences in scores may reflect true differences". Furthermore, the goal of profiling and classification is to separate a data set into groups \cite{goodman16eu}; discrimination is therefore ``at some level inherent to profiling" \cite{datta2015automated}. 
+
+
+
+
 \begin{itemize}
 	\item Discrimination of women: ads of higher-paid jobs more often shown to men than to women (but no reason given, may be intentional)
 \end{itemize}

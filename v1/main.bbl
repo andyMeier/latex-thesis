@@ -161,6 +161,12 @@ Joaqu{\i}n~Padilla Montani.
 \newblock Tuwienkbs at germeval 2018: German abusive tweet detection.
 \newblock {\em Austrian Academy of Sciences, Vienna September 21, 2018}, 2018.
 
+\bibitem{poursabzi2017manipulating}
+Forough Poursabzi-Sangdeh, Daniel~G Goldstein, Jake~M Hofman, Jennifer~Wortman
+  Vaughan, and Hanna Wallach.
+\newblock Manipulating and measuring model interpretability.
+\newblock In {\em NIPS 2017 Symposium on Interpretable Machine Learning}, 2017.
+
 \bibitem{preece2018asking}
 Alun Preece.
 \newblock Asking ‘why’in ai: Explainability of intelligent
