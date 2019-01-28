@@ -36,7 +36,8 @@ If the human cognition is augmented by a machine learning system, talking about 
 
 %------------------------------------------------------------------
 \subsection{Need for Explainability in AI}
-A subfield of artificial intelligence research revolves solely around the explainability of intelligent systems: \textit{xAI}, explainable artificial intelligence, for the purpose of enabling communication with agents about their reasoning \cite{hendricks2018generating}. xAI systems face a trade-off challenge: Their explanation has to be complete and interpretable at the same time \cite{gilpin2018explaining}. The attention span an cognitive abilities of humans therefore become an important factor to consider in the design of a xAI systemm \cite{kulesza2013too}. Furthermore, the goal of explaining the system is twofold: create actual knowledge and convince the user that the knowledge is sound and complete. Actual understanding and perceived understanding however do not always go hand in hand: Persuasive systems can convince the user without creating actual transparency \cite{gilpin2018explaining}. The persuasiveness of an explanation is uncoupled from the actual information content of an explanation \cite{biran2017explanation} and needs to be taken into account in user studies. As users can only report on their perception of the explanation, an objective measure to evaluate the fidelity of an explanation is needed. High-fidelity (also called descriptive) explanations are faithful, in that they represent truthful information about the underlying machine learning model \cite{herman2017promise}. Persuasive explanations, on the opposite, are less faithful to the underlying model, yet open up possibilities for abstraction, simplification, analogies, and other stylistic devices for communication. \cite{herman2017promise} notes a dilemma in explanation fidelity: ``This freedom permits explanations better tailored to human cognitive function, making them more functionally interpretable", but ``descriptive explanations best satisfy the ethical goal of transparency". The xAI practitioner therefore needs to consider a tradeoff between fidelity and interpretability. \newline 
+\label{subsec:explainability}
+A subfield of artificial intelligence research revolves solely around the explainability of intelligent systems: \textit{xAI}, explainable artificial intelligence, for the purpose of enabling communication with agents about their reasoning \cite{hendricks2018generating}. xAI systems face a trade-off challenge: Their explanation has to be complete and interpretable at the same time \cite{gilpin2018explaining}. The attention span and cognitive abilities of humans therefore become an important factor to consider in the design of a xAI systemm \cite{kulesza2013too}. Furthermore, the goal of explaining the system is twofold: create actual knowledge and convince the user that the knowledge is sound and complete. Actual understanding and perceived understanding however do not always go hand in hand: Persuasive systems can convince the user without creating actual transparency \cite{gilpin2018explaining}. The persuasiveness of an explanation is uncoupled from the actual information content of an explanation \cite{biran2017explanation} and needs to be taken into account in user studies. As users can only report on their perception of the explanation, an objective measure to evaluate the fidelity of an explanation is needed. High-fidelity (also called descriptive) explanations are faithful, in that they represent truthful information about the underlying machine learning model \cite{herman2017promise}. Persuasive explanations, on the opposite, are less faithful to the underlying model, yet open up possibilities for abstraction, simplification, analogies, and other stylistic devices for communication. \cite{herman2017promise} notes a dilemma in explanation fidelity: ``This freedom permits explanations better tailored to human cognitive function, making them more functionally interpretable", but ``descriptive explanations best satisfy the ethical goal of transparency". The xAI practitioner therefore needs to consider a tradeoff between fidelity and interpretability. \newline 
 Besides low-fidelity persuasiveness, badly designed explanations likewise ``provide an understanding that is at best incomplete and at worst false reassurance" \cite{burrell2016machine}. Therefore, not only possible explanations for white box (inherently interpretable) and black box (inherently non-interpretable) systems need to be examined, but also the (visual) design and communication of explanations \cite{guidotti2018survey}. \newline
 In recent years, machine learning algorithms employed in the wild show a trend towards increasing accuracy but also increasing complexity. In general, the higher the accuracy and complexity, the lower the explainability \cite{richardson2018survey} \cite{chen2018learning} in machine learning. However, users do not necessarily perceive systems with simple explanations as more understandable \cite{allahyari2011user}. The authors of the user study in \cite{allahyari2011user} hypothesise that users detect missing information in simple explanations, which in turn leads to the perception of incomprehensibility. \cite{van2018contrastive} examined user preferences in more detail and concluded that users overall preferred more soundness and completeness over simplicity, as well as global explanations over local explanations.\newline
 Humans involved in the explanation process are not only users, but also domain experts and engineers during the design and training phase. As explanations are user-dependent (not monolithic) \cite{preece2018asking}, the design and evaluation of explanation needs to be conducted in reference to the target users. Including experts in the modelling and training process is not only a way to integrate expert knowledge that is otherwise difficult to model, but can also increase user trust \cite{ventocilla2018taxonomy}. \cite{liu2017towards} call the situation where a human expert works alongside the machine learning system to improve it ``mixed initiative guidance". \newline
@@ -74,88 +75,55 @@ Besides legal regulations, ethical considerations also play a role in augmented 
 
 
 
-
-
 %------------------------------------------------------------------
-\subsection{Application Areas}
+\subsubsection{Application Areas}
 Artificial intelligence and machine learning algorithms are nowadays employed in a variety of areas. As described in \ref{subsubsec:Explanation Goals}, the need for interpretability depends on the potential consequences of the decisions made by an automatic system. \cite{burrell2016machine} summarises the application area as all systems with ``socially consequential mechanisms of classification and ranking", pointing in particular to the consequences for humans. A similar view is expressed in \cite{poursabzi2017manipulating} and \cite{ribeiro2016should}, while \cite{guidotti2018survey} restricts the application areas in need for interpretability to those that process sensitive, i.e. personal data. In more detail, the following areas in need of interpretable intelligent systems are mentioned in literature:
 \begin{itemize}
-	\item Societal safety: criminal justice [52] [19], terrorism detection [24]	
-	\item Processing sensitive data: banking, e.g. loans [52] [6] [19] [33] [36], medicine \& health data [52] [3] [1] [15] [19] [16] [24], insurances [3] [33] [36], navigation [1]
-	\item Physical safety: autonomous robotics [3] [15]
-	\item Knowledge: education [16], knowledge discovery in research [3]	
-	\item Economy: manufacturing [16], individual performance monitoring [1], economic situation analysis [1], marketing [6] [33] [36]	
+	\item \textit{Societal safety}: criminal justice [52] [19], terrorism detection [24]	
+	\item \textit{Processing sensitive data}: banking, e.g. loans [52] [6] [19] [33] [36], medicine \& health data [52] [3] [1] [15] [19] [16] [24], insurances [3] [33] [36], navigation [1]
+	\item \textit{Physical safety}: autonomous robotics [3] [15]
+	\item \textit{Knowledge}: education [16], knowledge discovery in research [3]	
+	\item \textit{Economy}: manufacturing [16], individual performance monitoring [1], economic situation analysis [1], marketing [6] [33] [36]	
 \end{itemize}
 But not only systems treating personal data or interacting directly with humans profit from interpretability- \cite{ventocilla2018taxonomy} suggest all machine learning based support systems as suitable candidates for interpretability. Machine learning is already employed in IT-services such as spam detection and search engines \cite{burrell2016machine} \cite{domingos2012few}, as well as in recommender systems \cite{gilpin2018explaining} \cite{richardson2018survey}.\newline
-In the past, several machine learning systems have failed due to undetected systematic errors or automated discrimination. \cite{guidotti2018survey} lists incidents with machine learning systems, ranging from discrimination in the job application procedure and faulty target identification in automated weapons due to training data biases, to high differences in mortgage decisions by banks. An interesting case is the American COMPAS system for automated crime prediction. The system predicted a significantly higher relapse rate for black convicts than for whites, which is assumed to result from human bias in the training data \cite{guidotti2018survey}. The argument of human bias is often used to object the perceived impartiality of computer systems, and other examples of discrimination of ethnic minorities exist \cite{guidotti2018survey}, yet \cite{skeem2016risk} counter-argues that ``group differences in scores may reflect true differences". Furthermore, the goal of profiling and classification is to separate a data set into groups \cite{goodman16eu}; discrimination is therefore ``at some level inherent to profiling" \cite{datta2015automated}. 
-
-
-
-
-\begin{itemize}
-	\item Discrimination of women: ads of higher-paid jobs more often shown to men than to women (but no reason given, may be intentional)
-\end{itemize}
-[54]
-\begin{itemize}
-	\item researcher group is the main reason for variance, not classifier etc., hence human bias in ML
-\end{itemize}
-[14]
-\begin{itemize}
-	\item Google Flue Trends: systematic modelling error 
-\end{itemize}
-
-
-
-
+In the past, several machine learning systems have failed due to undetected systematic errors or automated discrimination. \cite{guidotti2018survey} lists incidents with machine learning systems, ranging from discrimination in the job application procedure and faulty target identification in automated weapons due to training data biases, to high differences in mortgage decisions by banks.\newline
+An interesting case is the American COMPAS system for automated crime prediction. The system predicted a significantly higher relapse rate for black convicts than for whites, which is assumed to result from human bias in the training data \cite{guidotti2018survey}. The argument of human bias is often used to object the perceived impartiality of computer systems, and other examples of discrimination of ethnic minorities exist \cite{guidotti2018survey}, yet \cite{skeem2016risk} counter-argues that differences found in the data set possibly reflect actual differences existing in the real world - which would shift the discussion about auto-discrimination to the field of ethics. Furthermore, the goal of profiling and classification is to separate a data set into groups \cite{goodman16eu}; discrimination is therefore ``at some level inherent to profiling" \cite{datta2015automated}.\newline
+In a study of 600.000 advertisements delivered by Google, \cite{datta2015automated} found a bias against women. Advertisements of higher-paid jobs were more often shown to men than they were to women. Google's targeted advertisements make use of profiling, i.e. delivering content to users depending on their gender, age, income, location, and other characteristics. In the study, the researchers did not have access to the algorithm and can therefore not determine whether the bias was introduced with the data set, the model, or simply by conforming to the advertisement client's requirement for profiling.\newline
+Besides biased training data, systematic modelling errors can account for failures of machine learning systems. Google Flue Trends predicted the amount of humans infected with flue based on the received search queries, leading to large overestimates of actual flue cases \cite{preece2018asking}. \cite{shepperd2014researcher} investigated the work of different research groups on the same data set, finding that the main reason for variance in results originates from the composition of the group. Compared to the group composition, the choice of classifier accounted for minor variance. They therefore concluded that the human bias in machine learning systems is the main factor influencing the results.\newline
+Deciding whether an automatic decision system meets legal and ethical standards requires knowledge about the system. In the case of Google's targeted advertisements, it is impossible to determine if the algorithm is discriminating women on purpose due to advertiser's requirements, or if the system has internal flaws that lead to unfair treatment. With the GDPR, judging the fairness of an automatic system is not only a concern of the company using machine learning techniques, but also the right of any data subject in the training set and the application. 
 
 
 
 %------------------------------------------------------------------
 \subsection{Explanations}
-Explanation = reasons or justification for an action or belief [14]\newline
+In the previous sections, we used ``explanations" as a generic term. In this section, the concept of an explanation is described in more detail.\newline
+In general, an explanation is one or more reasons or justification for an action or belief \cite{preece2018asking}. Humans need explanations to build up knowledge about events, evaluate events, and ultimately to take control of the course of events.\newline
+When being confronted with a new event, artifact, or information in general, humans start building internal models. These mental models are not necessarily truthful nor complete, but represent an individual's interpretation about the event. Explanations are a tool to build and refine the inner knowledge model \cite{miller2017explanation}.\newline
+Explanations also help to assess events that are happening: We are able to compare methods or events with each other, justify the outcome of an event, and assign responsibility and guilt for past events \cite{miller2017explanation} \cite{keil2006explanation}. Explanations also serve to persuade someone of a belief \cite{miller2017explanation}, and can lead to appreciation through understanding \cite{keil2006explanation}.\newline
+Having understood what brings a certain event about, humans can use their knowledge model to predict the consequences of (similar) events in the future \cite{miller2017explanation}. For an engineer working on a machine learning system, understanding underlying principles and consequences of the system's behaviour is a necessary step in designing a system that is ``right for the right reasons" \cite{preece2018asking}. Similarly, the knowledge model can serve to prevent unwanted states or events, restore wanted states, and reproduce observed states or events \cite{keil2006explanation}.
 
-Function of explanations:\newline
-\begin{itemize}
-	\item prediction of consequences of (similar) events in the future [11] [5]
-	\item control of events  [5]
-	\item building and refining inner knowledge model [5]
-	\item restauration / prevention of states or events [11]
-	\item comparison of methods [11]
-	\item reproduction of states or events [11]
-	\item assigning guilt [11] [5]
-	\item justification [11] [5]
-	\item persuasion [5]
-	\item pleasure / appreciation [11]
-\end{itemize}
 
 \subsubsection{Human-Human Explanations}
-explanations are not mental model but rather the interpretation of relations [11]\newline
-explanations are less general than theories and are application-focussed [11] \newline
-explanations are a cognitive and social process: The challenge of explaining includes finding a complete but compressed explanation, and transferring the explanation from the explainer to the explainee [5].\newline
-Complete explanation == all relevant causes explained [5] \newline
-
-Explanation aspects [11]:
+Humans build mental models of the world, an inner, mental representation of events or elements. It might be noteworthy to point out the difference between the inner knowledge model and an explanation. The mental model is a subjective set of relations resulting from an individual's thought process. An explanation, however, is the interpretation of such relations \cite{keil2006explanation}. Both the mental model and an explanation do not have to be truthful to the real world. We do not need to have complete, holistic mental models in order to use an artifact, but a \textit{functional} model is needed to tell us how to use and make use of it, while a \textit{structural} model stores information about the composition and how it is built \cite{kulesza2013too}.\newline
+Explanations are a cognitive and social process: The challenge of explaining includes finding a complete but compressed explanation, and transferring the explanation from the explainer to the explainee \cite{miller2017explanation}. In its purest sense, ``complete" means an explanation that uncovers all relevant causes \cite{miller2017explanation}, which is rarely the case in the real world.\newline
+\cite{keil2006explanation} summarises four aspects of explanations:
 \begin{itemize}
-	\item causal pattern content: common-cause, common-effect, linear chain, homeostatics
-	\item explanatory stance types: mechanical, design, intention stance [5]. Atypical stances can lead to distorted understanding.
-	\item explanatory domain: different fields have different preferences of explanation types
-	\item social-emotional content: can alter acceptance threshold and influence recipient's perception of explained event 
+	\item \textit{Causal pattern content}: an explanation can reveal information about a common cause with several effects, a common effect brought about by several causes, a linear chain of events influencing each other chronologically, or causes that relate to the inner state of living things (homeostatics), e.g. intent
+	\item \textit{Explanatory stance}: refers to the mechanics, the design, and intention \cite{miller2017explanation}. Atypical explanatory stances can lead to distorted understanding.
+	\item \textit{Explanatory domain}: different fields have different preferences of explanation stances
+	\item \textit{Social-emotional content}: can alter acceptance threshold and influence recipient's perception of explained event 
 \end{itemize}
-What constitutes a \textbf{good explanation}? [11] describes good explanations as being non-circular, showing coherence, and having a high relevance for the recipient. Circularity are causal chains where an effect is given as cause to itself (with zero or more causal steps in between). Explanations can, but do not have to, explain causal relations [11]. Especially in the case of machine learning algorithms, the learned model shows correlation, not causation. Explanations for statistical models therefore cannot draw on typical causal explanations as found in human-human communication {\color{red}[REF NEEDED]}. The probabilistic interpretation of causality comes closest to the patterns learned in statistical models: If an even $A$ caused an event $B$, then the occurrence of $A$ increases the probability of $B$ occurring. Statistical facts are not satisfactory elements of an explanation, unless explaining the event of observing a fact [5]. Arguably, this holds true for statistical learning. Coherence refers to the systemacity of explanation elements: good explanations do not hold contradicting elements, but elements that influence each other [11]. Finally, relevance is driven by the level of detail given in the explanation. The sender has to adapt the explanation to the recipient's prior knowledge level and cognitive ability to understand the explanation [5], which can mean to generalise and to omit information - [11] calls this adaptation process the ``common informational grounding". The act of explaining also includes a broader grounding of shared beliefs and meanings of events and the world [5]. The ``compression problem" poses a major challenge in constructing explanations for humans. Humans tend to not comprise all possible causes and aspects of the high-dimensional real world in an explanation, suggesting that there are compression strategies (on the sender's side) and coping strategies (on the recipient's side) in place [11]. \newline
-[5] notes that besides presenting likely causes, and coherence, a good explanation is simple and general. The latter two characteristics refer to the agreement widely accepted in science that a simple theory (or, in this case, an explanation) is favoured over a more complicated theory if both explain an equal set of events or states.\newline
-[21] defines a good explanation as sound, complete, but not overwhelming. While soundness refers to the level of truthfulness, completeness describes the level of disclosure [21]. In order to avoid overwhelming the explainee, the informational grounding process takes place, i.e. a common understanding of related elements and an adaptation of the explanation's detailedness to the explainee's knowledge level.\newline
+What constitutes a good explanation? \cite{keil2006explanation} describes good explanations as being non-circular, showing coherence, and having a high relevance for the recipient. Circularity are causal chains where an effect is given as cause to itself (with zero or more causal steps in between). Explanations can, but do not have to, explain causal relations \cite{keil2006explanation}. Especially in the case of machine learning algorithms, the learned model shows correlation, not causation. Explanations for statistical models therefore cannot draw on typical causal explanations as found in human-human communication {\color{red}[REF NEEDED]}. The probabilistic interpretation of causality comes closest to the patterns learned in statistical models: If an even $A$ caused an event $B$, then the occurrence of $A$ increases the probability of $B$ occurring. Statistical facts are not satisfactory elements of an explanation, unless explaining the event of observing a fact \cite{miller2017explanation}. Arguably, this holds true for statistical learning. Coherence refers to the systemacity of explanation elements: good explanations do not hold contradicting elements, but elements that influence each other \cite{keil2006explanation}. Finally, relevance is driven by the level of detail given in the explanation. The sender has to adapt the explanation to the recipient's prior knowledge level and cognitive ability to understand the explanation \cite{miller2017explanation}, which can mean to generalise and to omit information - \cite{keil2006explanation} calls this adaptation process the ``common informational grounding". The act of explaining also includes a broader grounding of shared beliefs and meanings of events and the world \cite{miller2017explanation}. The ``compression problem" poses a major challenge in constructing explanations for humans. Humans tend to not comprise all possible causes and aspects of the high-dimensional real world in an explanation, suggesting that there are compression strategies (on the sender's side) and coping strategies (on the recipient's side) in place \cite{keil2006explanation}. \newline
+\cite{miller2017explanation} notes that besides presenting likely causes, and coherence, a good explanation is simple and general. The latter two characteristics refer to the agreement widely accepted in science that a simple theory (or, in this case, an explanation) is favoured over a more complicated theory if both explain an equal set of events or states.\newline
+\cite{kulesza2013too} defines a good explanation as sound, complete, but not overwhelming. While soundness refers to the level of truthfulness, completeness describes the level of disclosure \cite{kulesza2013too}. In order to avoid overwhelming the explainee, the informational grounding process takes place, i.e. a common understanding of related elements and an adaptation of the explanation's detailedness to the explainee's knowledge level. In general, the more diverse the given evidence, the higher the recipient's acceptance of the explanation \cite{keil2006explanation}.\newline
+Explainees' cultural background is known to influence their preference for an explanation type - explaining foremost the mechanics, the design, or the intention of an event or artifact. Although different explanation types are preferred in different cultures, all explanation types can be understood by all cultures in general \cite{keil2006explanation}.\newline
 
-Generally, the more diverse the given evidence, the higher the recipient's \textbf{acceptance} of the explanation [11].\newline
-
-Cultural differences exist for the preference of an explanation type, although all explanation types can be understood [11].\newline
-
-Humans build \textbf{mental models} of the world, a mental representation of events or elements. Mental models are needed to explain and predict. We do not need to have complete, holistic mental models in order to use an artifact, but a ``functional" model is needed to tell us how to use and make use of it, while a ``structural" model stores information about the composition and how it is built [21]. \newline
 
 mindlessness and explanations [32]\newline
 
 \paragraph{Explanation Types}
 associations between antecedent and consequent, contrast and differences, causal mechanisms [10] \newline
-material cause, formal / categorical cause, efficient cause, final cause [5] \newline
+material cause, formal / categorical cause, efficient cause, final cause \cite{miller2017explanation} \newline
 
 
 \subsubsection{AI-Human Explanations}
@@ -179,7 +147,7 @@ single focus: feature-based explanation best for recommender systems (as compare
 	\item processing of data (operations)
 	\item explanation generation (within model)
 \end{itemize}
-[5]:
+\cite{miller2017explanation}:
 \begin{itemize}
 	\item computational / operations level
 	\item representational level
@@ -223,7 +191,7 @@ single focus: feature-based explanation best for recommender systems (as compare
 
 
 \subsubsection{Explanation Systems}
-For models that are not inherently interpretable, the explanation can only be an approximation and cannot be complete (definition of non interpretable) [5]. There can be approximations for the computation / operations detecting properties and categorisations, and approximations of the decision behaviour [5].\newline
+For models that are not inherently interpretable, the explanation can only be an approximation and cannot be complete (definition of non interpretable) \cite{miller2017explanation}. There can be approximations for the computation / operations detecting properties and categorisations, and approximations of the decision behaviour \cite{miller2017explanation}.\newline
 
 counterfactual explanation [12] with fact \& foil \newline
 [4] for overview over solutions for understanding, diagnosis, refinement \newline

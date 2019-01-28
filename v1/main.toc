@@ -4,20 +4,19 @@
 \contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{6}
 \contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{7}
 \contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{8}
-\contentsline {subsection}{\numberline {2.3}Application Areas}{9}
-\contentsline {subsubsection}{\numberline {2.3.1}Exemplary Failures}{10}
-\contentsline {subsection}{\numberline {2.4}Explanations}{11}
-\contentsline {subsubsection}{\numberline {2.4.1}Human-Human Explanations}{11}
+\contentsline {subsubsection}{\numberline {2.2.3}Application Areas}{9}
+\contentsline {subsection}{\numberline {2.3}Explanations}{11}
+\contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{12}
 \contentsline {paragraph}{Explanation Types}{13}
-\contentsline {subsubsection}{\numberline {2.4.2}AI-Human Explanations}{13}
-\contentsline {subsubsection}{\numberline {2.4.3}When to explain?}{15}
-\contentsline {subsubsection}{\numberline {2.4.4}Explanation Systems}{15}
-\contentsline {subsubsection}{\numberline {2.4.5}Explanation Evaluation}{16}
-\contentsline {subsection}{\numberline {2.5}Trust in AI}{17}
-\contentsline {subsubsection}{\numberline {2.5.1}Gaining User Trust}{17}
-\contentsline {subsubsection}{\numberline {2.5.2}Trust Evaluation}{18}
-\contentsline {subsubsection}{\numberline {2.5.3}Perceived Understanding}{18}
-\contentsline {subsection}{\numberline {2.6}Summary}{19}
+\contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{13}
+\contentsline {subsubsection}{\numberline {2.3.3}When to explain?}{15}
+\contentsline {subsubsection}{\numberline {2.3.4}Explanation Systems}{15}
+\contentsline {subsubsection}{\numberline {2.3.5}Explanation Evaluation}{16}
+\contentsline {subsection}{\numberline {2.4}Trust in AI}{17}
+\contentsline {subsubsection}{\numberline {2.4.1}Gaining User Trust}{17}
+\contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{18}
+\contentsline {subsubsection}{\numberline {2.4.3}Perceived Understanding}{19}
+\contentsline {subsection}{\numberline {2.5}Summary}{19}
 \contentsline {section}{\numberline {3}Method}{20}
 \contentsline {subsection}{\numberline {3.1}Use Case Scenario}{20}
 \contentsline {section}{\numberline {4}Implementation}{21}

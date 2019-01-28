@@ -43,6 +43,12 @@ Henriette Cramer, Vanessa Evers, Satyan Ramlal, Maarten Van~Someren, Lloyd
   content-based art recommender.
 \newblock {\em User Modeling and User-Adapted Interaction}, 18(5):455, 2008.
 
+\bibitem{datta2015automated}
+Amit Datta, Michael~Carl Tschantz, and Anupam Datta.
+\newblock Automated experiments on ad privacy settings.
+\newblock {\em Proceedings on Privacy Enhancing Technologies}, 2015(1):92--112,
+  2015.
+
 \bibitem{davidson2017automated}
 Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 \newblock Automated hate speech detection and the problem of offensive
@@ -123,6 +129,11 @@ Xia Hu and Huan Liu.
 \newblock Text analytics in social media.
 \newblock In {\em Mining text data}, pages 385--414. Springer, 2012.
 
+\bibitem{keil2006explanation}
+Frank~C Keil.
+\newblock Explanation and understanding.
+\newblock {\em Annu. Rev. Psychol.}, 57:227--254, 2006.
+
 \bibitem{kotsiantis2007supervised}
 Sotiris~B Kotsiantis, I~Zaharakis, and P~Pintelas.
 \newblock Supervised machine learning: A review of classification techniques.
@@ -155,6 +166,12 @@ Prem Melville, Wojciech Gryc, and Richard~D Lawrence.
   classification.
 \newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 1275--1284. ACM, 2009.
+
+\bibitem{miller2017explanation}
+Tim Miller.
+\newblock Explanation in artificial intelligence: insights from the social
+  sciences.
+\newblock {\em arXiv preprint arXiv:1706.07269}, 2017.
 
 \bibitem{montani2018tuwienkbs}
 Joaqu{\i}n~Padilla Montani.
@@ -202,6 +219,18 @@ S~R{\"u}ping.
 Andrew~D Selbst and Julia Powles.
 \newblock Meaningful information and the right to explanation.
 \newblock {\em International Data Privacy Law}, 7(4):233--242, 2017.
+
+\bibitem{shepperd2014researcher}
+Martin Shepperd, David Bowes, and Tracy Hall.
+\newblock Researcher bias: The use of machine learning in software defect
+  prediction.
+\newblock {\em IEEE Transactions on Software Engineering}, 40(6):603--616,
+  2014.
+
+\bibitem{skeem2016risk}
+Jennifer Skeem and Christopher Lowenkamp.
+\newblock Risk, race, and recidivism: Predictive bias and disparate impact.
+\newblock {\em Criminology}, 54, 11 2016.
 
 \bibitem{smailovic2013predictive}
 Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
