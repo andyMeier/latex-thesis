@@ -148,6 +148,12 @@ Todd Kulesza, Simone Stumpf, Margaret Burnett, Sherry Yang, Irwin Kwan, and
 \newblock In {\em Visual Languages and Human-Centric Computing (VL/HCC), 2013
   IEEE Symposium on}, pages 3--10. IEEE, 2013.
 
+\bibitem{langer1978mindlessness}
+Ellen~J Langer, Arthur Blank, and Benzion Chanowitz.
+\newblock The mindlessness of ostensibly thoughtful action: The role of"
+  placebic" information in interpersonal interaction.
+\newblock {\em Journal of personality and social psychology}, 36(6):635, 1978.
+
 \bibitem{lipton2016mythos}
 Zachary Lipton.
 \newblock The mythos of model interpretability.
@@ -277,6 +283,11 @@ Claus Weihs and UM~Sondhauss.
 \newblock Combining mental fit and data fit for classification rule selection.
 \newblock In {\em Exploratory Data Analysis in Empirical Research}, pages
   188--203. Springer, 2003.
+
+\bibitem{weller2017challenges}
+Adrian Weller.
+\newblock Challenges for transparency.
+\newblock {\em arXiv preprint arXiv:1708.01870}, 2017.
 
 \bibitem{xiang2012detecting}
 Guang Xiang, Bin Fan, Ling Wang, Jason Hong, and Carolyn Rose.

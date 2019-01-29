@@ -53,7 +53,13 @@ The need for interpretability is dependent on the role of the explanation user a
 \end{itemize}
 The three classes of interpretability needs give an overview about possible consequences, yet are too general to serve as guideline for practitioners. More details about decisive factors are needed.\newline
 For users of an automatic decision system, having insights into the system functioning and decision process increases trust \cite{preece2018asking} \cite{diakopoulos2016accountability} \cite{biran2017explanation} \cite{cramer2008effects} \cite{vorm2018assessing}, even in critical decisions such as medical diagnosis \cite{allahyari2011user}. The level of trust should be in relation to the soundness and completeness of an explanation. Having too much or too little trust in a system can hinder fruitful interaction between the user and the system \cite{preece2018asking} \cite{richardson2018survey} \cite{van2018contrastive} \cite{ribeiro2016should}. Other positive effects on users are satisfaction and acceptance \cite{biran2017explanation} \cite{cramer2008effects} \cite{vorm2018assessing} as well as the ability to predict the system's performance correctly \cite{biran2017explanation}.\newline
-Explanations also help engineers and experts to design, debug, and improve an automatic decision system \cite{preece2018asking}. Explanations facilitate the identification of unintuitive, systematic errors \cite{gilpin2018explaining} \cite{ribeiro2016should} in the design and redundantise time-consuming trial-and-error procedures for parameter optimisation \cite{liu2017towards}. Unethical biases in training data leading to automated discrimination \cite{diakopoulos2016accountability} can be identified and examined via explanations \cite{gilpin2018explaining} \cite{richardson2018survey} \cite{ribeiro2016should}. Ultimately, the early identification of errors avoids costly errors in high-risk domains \cite{diakopoulos2016accountability} \cite{bibal2016interpretability} \cite{van2018contrastive} and ensures human safety in safety-critical tasks \cite{gilpin2018explaining} \cite{richardson2018survey}.\newline
+\cite{liu2017towards} identifies three goals of explanability in machine learning:
+\begin{itemize}
+	\item \textit{Understanding and reassurance}: right for the right reasons
+	\item \textit{Diagnosis}: analysis of errors, unacceptable performance, or behaviour
+	\item \textit{Refinement}: improving robustness and performance
+\end{itemize}
+From the point of view of engineers and experts, explanations help to design, debug, and improve an automatic decision system \cite{preece2018asking}. Explanations facilitate the identification of unintuitive, systematic errors \cite{gilpin2018explaining} \cite{ribeiro2016should} in the design and redundantise time-consuming trial-and-error procedures for parameter optimisation \cite{liu2017towards}. Unethical biases in training data leading to automated discrimination \cite{diakopoulos2016accountability} can be identified and examined via explanations \cite{gilpin2018explaining} \cite{richardson2018survey} \cite{ribeiro2016should}. Ultimately, the early identification of errors avoids costly errors in high-risk domains \cite{diakopoulos2016accountability} \cite{bibal2016interpretability} \cite{van2018contrastive} and ensures human safety in safety-critical tasks \cite{gilpin2018explaining} \cite{richardson2018survey}.\newline
 Besides helping users and engineers, explanations also serve general goals of protection, conformity, and knowledge management. Criminals or hackers that aim to disturb the system or take advantage of it can make imperceptible changes to the input data or model at hidden levels. Having a system capable of explaining its behaviour and inner structure helps to identify unwanted alterations \cite{gilpin2018explaining}. With the European General Data Prodection Regulation (GDPR) put into place in 2018, a debate on a \textit{right to explanation} started, which will be discussed in the following section. Although the specific implications of the right to explanation remain unclear, it should still be noted that designing interpretability follows up on that regulation \cite{goodman16eu} \cite{gilpin2018explaining} \cite{bibal2016interpretability}. Finally, the most general goal of implementing explanations for automatic decision systems is the opening and accessibility of a knowledge source \cite{bibal2016interpretability} \cite{richardson2018survey}. The relations derived by a machine learner (stored in the model) can deliver relevant knowledge about the data at hand.\newline
 
 
@@ -61,7 +67,7 @@ Besides helping users and engineers, explanations also serve general goals of pr
 The General Data Protection Regulation (GDPR) is a European law dealing with the processing of personal data within the European Economic Area (EEA, includes also all countries of the EU). The law holds for all companies within the EEA, companies with subsidiaries in the EEA, and any company processing personal data of a citizen of the EEA. In this context, ``processing" does not only relate to automatic systems but also spans to manual processing of personal data \cite{goodman16eu}. The GDPR defines personal data as data relating to an identifiable natural person, i.e. data that can be used to identify a person {\color{red}[REF TO LAW TEXT]}. Names, location data, or personal identification numbers are all examples of personal data that falls under the GDPR. \cite{goodman16eu} identifies two consequences of the GDPR: the legal right to non-discrimination, and a right to explanation.\newline
 Algorithmic decisions must not be based on sensitive, personal data (GDPR article 22 paragraph 4) that are nowadays used to identify groups of people with similar characteristics, such as ethnicity, religion, gender, disability, sexuality, and more \cite{diakopoulos2016accountability}. Sensitive information can, however, correlate with non-sensitive data. Real-life data almost always reflects a society's structures and biases - explicitly through sensitive information, or implicitly via dependent information. As the task of classification means separating single instances into groups based on the available data, the biases are recovered in the model \cite{goodman16eu}. A guarantee non-discrimination is therefore difficult to achieve. The GDPR does not specify whether only sensitive data or also correlated variables have to be considered when following the law. \cite{goodman16eu} identifies both interpretations as possible.\newline
 While article 13 of the GDPR specifies a right to obtain information about one's personal information and the processing of that personal information, it assures ``meaningful information about the logic involved" in profiling without further defining meaningfulness. Based on the ambiguity of ``meaningful", several interpretations exist, ranging from denial of the ``right to explanation" \cite{wachter2017right} to a positive interpretation \cite{selbst2017meaningful}. In summary, precedents are needed to clarify the boundaries of the law.\newline
-Besides legal regulations, ethical considerations also play a role in augmented intelligence. Accountability is the ethical value of acknowledging responsibility for decisions and actions towards another party \cite{baldoni2016computational}. It is an inherent factor in human-human interaction; artificial intelligence employed to interact with humans or collaborate with humans in augmented intelligence settings therefore bring about the challenge of ``computational accountability" \cite{baldoni2016computational}. It is important to note that accountability is not a general issue in the digital world: For something to be held accountable of its own decisions or actions, it needs to act autonomously v. In order to determine autonomy of an algorithm and work towards accountability, \cite{diakopoulos2016accountability} suggests to disclose the following information for machine learning systems: 
+Besides legal regulations, ethical considerations also play a role in augmented intelligence. Accountability is the ethical value of acknowledging responsibility for decisions and actions towards another party \cite{baldoni2016computational}. It is an inherent factor in human-human interaction; artificial intelligence employed to interact with humans or collaborate with humans in augmented intelligence settings therefore bring about the challenge of ``computational accountability" \cite{baldoni2016computational}. It is important to note that accountability is not a general issue in the digital world: For something to be held accountable of its own decisions or actions, it needs to act autonomously {\color{red}[REF WENT MISSING; CHECK AGAIN IN NOTES]}. In order to determine autonomy of an algorithm and work towards accountability, \cite{diakopoulos2016accountability} suggests to disclose the following information for machine learning systems: 
 \begin{itemize}
 	\item \textit{Human involvement}: who controls the algorithm, who designed it etc., leading to control through social pressure
 	\item \textit{Data statistics}: accuracy, completeness, uncertainty, representativeness, labelling \& collection process, preprocessing of data
@@ -117,69 +123,42 @@ What constitutes a good explanation? \cite{keil2006explanation} describes good e
 \cite{miller2017explanation} notes that besides presenting likely causes, and coherence, a good explanation is simple and general. The latter two characteristics refer to the agreement widely accepted in science that a simple theory (or, in this case, an explanation) is favoured over a more complicated theory if both explain an equal set of events or states.\newline
 \cite{kulesza2013too} defines a good explanation as sound, complete, but not overwhelming. While soundness refers to the level of truthfulness, completeness describes the level of disclosure \cite{kulesza2013too}. In order to avoid overwhelming the explainee, the informational grounding process takes place, i.e. a common understanding of related elements and an adaptation of the explanation's detailedness to the explainee's knowledge level. In general, the more diverse the given evidence, the higher the recipient's acceptance of the explanation \cite{keil2006explanation}.\newline
 Explainees' cultural background is known to influence their preference for an explanation type - explaining foremost the mechanics, the design, or the intention of an event or artifact. Although different explanation types are preferred in different cultures, all explanation types can be understood by all cultures in general \cite{keil2006explanation}.\newline
+An experiment by \cite{langer1978mindlessness} shows that humans have behavioural \textit{scripts} in place when confronted with an explanation. The pure presence of an explanation, regardless of the informational content, can make a difference in how people react to requests. In the experiment, people busy with making copies at a copy machine were asked to let another person go ahead. Three conditions were examined: issuing the request of skipping line with a reasonable explanation (``because I am in a rush"), with placebic information (using the structure of an explanation without giving actual explanatory information: ``because I need to make copies"), and without any explanation. The compliance rate for cases without any explanation was significantly lower than the compliance in cases where any kind of explanation (placebic or informative) was given, with little difference between the two explanation types \cite{langer1978mindlessness}. \cite{weller2017challenges} points out the advantage of such explanation - no matter the informative content -: ``[t]o make a user (the audience) feel comfortable with a prediction or decision so that they keep using the system". \cite{langer1978mindlessness} explains this behaviour with behavioural scripts that are triggered when people find themselves in a state of \textit{mindlessness}. In a mindless state, the automatic script ``comply if reason is given" is triggered, no matter what the reason is. The mindless state, however, is revoked if the consequences of complying become more severe. In an attentive state, the explanation does make a difference: People were more likely to comply when an informative explanation was given, as compared to the placebic explanation \cite{langer1978mindlessness}. 
 
-
-mindlessness and explanations [32]\newline
-
-\paragraph{Explanation Types}
-associations between antecedent and consequent, contrast and differences, causal mechanisms [10] \newline
-material cause, formal / categorical cause, efficient cause, final cause \cite{miller2017explanation} \newline
 
 
 \subsubsection{AI-Human Explanations}
-Focus:\newline
-[10]:
+Understanding what brought about a machine learning decision can be complex. For explaining the reasons that led to a specific classification, or the classifier in general, different aspects can be highlighted.\newline
+{\color{blue}Do I need to introduce machine learning systems here? E.g. explain basic concepts like the dataset, features, the algorithm, model, etc? Or can we assume that our readers are already familiar with such concepts?}\newline
+A machine learning system generating automatic decisions contains five elements \cite{ventocilla2018taxonomy}:
 \begin{itemize}
-	\item feature-level: feature influence, intersection of actual \& expected contribution per feature
-	\item sample-level: explanation vector, linguistic explanation for textual data using BOW, subtext as justification for class (trained independently), caption generation 
-	\item model-level: rule extraction, prototypes \& criticism samples representing model, proxy model (inherently interpretable) with comparable accuracy (NOTE: supposedly meant decision generation, not simple accuracy)
+	\item Dataset and subsequent features
+	\item Optimizer or learning algorithm
+	\item Model 
+	\item Prediction, or more generally, the result
+	\item Evaluator
 \end{itemize}
+All elements are chosen or designed by the system engineer and hence 
+\cite{biran2017explanation} categorises aspects of a machine learning decisions and respective explanation suggestions into three layers:
+\begin{itemize}
+	\item \textit{Feature-level}: feature meaning and influence, actual vs. expected contribution per feature
+	\item \textit{Sample-level}: explanation vector, linguistic explanation for textual data using bag-of-words, subtext as justification for class (trained independently), caption generation (similar to image captions) 
+	\item \textit{Model-level}: rule extraction, prototypes \& criticism samples representing model, proxy model (inherently interpretable) with comparable accuracy (author's note: supposedly meant comparable decision generation, not simple accuracy)
+\end{itemize}
+The categories from \cite{biran2017explanation} make a distinction between the input (feature-level), a local explanation focussing on a single instance (sample-level), and a global view that comprises the whole model and its behaviour (model-level). While those aspects focus rather on the artifacts that play a role in automated decision systems, others divide the aspects of explainable AI systems based on the processes and steps \cite{bibal2016interpretability} \cite{gilpin2018explaining} \cite{miller2017explanation} \cite{preece2018asking} \cite{richardson2018survey} \cite{ventocilla2018taxonomy}:
+\begin{itemize}
+	\item \textit{Data \& features}: representation of data 
+	\item \textit{Operations}: processing of data, computations, learning algorithm
+	\item \textit{Model}: parameters, representation
+	\item \textit{Prediction}: visualisation, e.g. heat maps
+	\item \textit{Secondary / add-on system}: generation of explanation via behaviour, learning algorithm behaviour
+\end{itemize}
+\cite{richardson2018survey} stress that different explainability needs call for different timings of the explanation. Showing the explanation \textbf{before} a classification or generation task is useful for justifying the next step or explaining the plan. \textbf{During} a task, information about the operations and features can help identifying errors for correction and foster trust. Explaining the results of a task \textbf{after} the process is useful for reporting and knowledge discovery.
+
+
+
 single focus: feature-based explanation best for recommender systems (as compared to similar previous decisions and similar neighbor decisions) [10] \newline
-[4]:
-\begin{itemize}
-	\item understanding and reassurance (right for the right reasons)
-	\item diagnosis (of errors, inacceptable performance or behaviour)
-	\item refinement (improving robustness and performance)
-\end{itemize}
-[6]:
-\begin{itemize}
-	\item representation of data \& features
-	\item processing of data (operations)
-	\item explanation generation (within model)
-\end{itemize}
-\cite{miller2017explanation}:
-\begin{itemize}
-	\item computational / operations level
-	\item representational level
-	\item hardware level
-\end{itemize}
-[8]:
-\begin{itemize}
-	\item learning algorithm behaviour
-	\item model parameters
-	\item model itself
-	\item representation
-\end{itemize}
-[15]:
-\begin{itemize}
-	\item within algorithm, directly based on model
-	\item feature-based
-	\item secondary, add-on explanation system separate from learning algorithm
-	\item representation
-\end{itemize}
-[14]:
-\begin{itemize}
-	\item inner workings for transparency
-	\item post-hoc prediction visualisation, e.g. heat maps
-\end{itemize}
-[16]:
-\begin{itemize}
-	\item dataset / features
-	\item optimizer / learning algorithm
-	\item model 
-	\item prediction / result
-	\item evaluator
-\end{itemize}
+
 
 \textbf{Explanation selection}: it is not possible to show every case, parameter, feature importance to the user, therefore a selection of exemplary cases needs to be made [24]. Global explanation can originate from a set of representative cases [24].
 
