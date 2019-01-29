@@ -8,9 +8,8 @@
 \contentsline {subsection}{\numberline {2.3}Explanations}{11}
 \contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{12}
 \contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{14}
-\contentsline {subsubsection}{\numberline {2.3.3}When to explain?}{15}
-\contentsline {subsubsection}{\numberline {2.3.4}Explanation Systems}{16}
-\contentsline {subsubsection}{\numberline {2.3.5}Explanation Evaluation}{17}
+\contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{15}
+\contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{16}
 \contentsline {subsection}{\numberline {2.4}Trust in AI}{17}
 \contentsline {subsubsection}{\numberline {2.4.1}Gaining User Trust}{18}
 \contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{18}

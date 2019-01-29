@@ -129,7 +129,6 @@ An experiment by \cite{langer1978mindlessness} shows that humans have behavioura
 
 \subsubsection{AI-Human Explanations}
 Understanding what brought about a machine learning decision can be complex. For explaining the reasons that led to a specific classification, or the classifier in general, different aspects can be highlighted.\newline
-{\color{blue}Do I need to introduce machine learning systems here? E.g. explain basic concepts like the dataset, features, the algorithm, model, etc? Or can we assume that our readers are already familiar with such concepts?}\newline
 A machine learning system generating automatic decisions contains five elements \cite{ventocilla2018taxonomy}:
 \begin{itemize}
 	\item Dataset and subsequent features
@@ -138,14 +137,14 @@ A machine learning system generating automatic decisions contains five elements 
 	\item Prediction, or more generally, the result
 	\item Evaluator
 \end{itemize}
-All elements are chosen or designed by the system engineer and hence 
-\cite{biran2017explanation} categorises aspects of a machine learning decisions and respective explanation suggestions into three layers:
+All five elements have their share in the automatic decision process and hence hold the potential for explanations. Depending on the recipient of the explanation, purely technical descriptions may not be enough to explain the system's behaviour and mechanisms. While a data scientist or system engineer might need a very complete and sound explanation, a user aiming to judge whether he or she has been treated fairly by the algorithm could be overwhelmed with such an explanation. Furthermore, it is not always possible to show all cases, parameters, and features to a lay user. A selection of information is therefore needed \cite{ribeiro2016should}. Explanations becomes more difficult to understand with increasing complexity of the system; Showing the underlying reasons for a single decision (local explanation) can be less complex than showing a holistic explanation of the whole model (global decision). However, global explanation can originate from a set of representative cases \cite{ribeiro2016should}.\newline
+Several suggestions of aspects that can be explained in an automatic decision system context have been made. \cite{biran2017explanation} categorises aspects of a machine learning decisions and respective explanation suggestions into three layers:
 \begin{itemize}
 	\item \textit{Feature-level}: feature meaning and influence, actual vs. expected contribution per feature
 	\item \textit{Sample-level}: explanation vector, linguistic explanation for textual data using bag-of-words, subtext as justification for class (trained independently), caption generation (similar to image captions) 
 	\item \textit{Model-level}: rule extraction, prototypes \& criticism samples representing model, proxy model (inherently interpretable) with comparable accuracy (author's note: supposedly meant comparable decision generation, not simple accuracy)
 \end{itemize}
-The categories from \cite{biran2017explanation} make a distinction between the input (feature-level), a local explanation focussing on a single instance (sample-level), and a global view that comprises the whole model and its behaviour (model-level). While those aspects focus rather on the artifacts that play a role in automated decision systems, others divide the aspects of explainable AI systems based on the processes and steps \cite{bibal2016interpretability} \cite{gilpin2018explaining} \cite{miller2017explanation} \cite{preece2018asking} \cite{richardson2018survey} \cite{ventocilla2018taxonomy}:
+The categories from \cite{biran2017explanation} make a distinction between the input (feature-level), a local explanation focussing on a single instance (sample-level), and a global view that comprises the whole model and its behaviour (model-level). While those aspects focus rather on the artifacts that play a role in automated decision systems, others divide the explainable elements of AI systems based on the processes and steps \cite{bibal2016interpretability} \cite{gilpin2018explaining} \cite{miller2017explanation} \cite{preece2018asking} \cite{richardson2018survey} \cite{ventocilla2018taxonomy}:
 \begin{itemize}
 	\item \textit{Data \& features}: representation of data 
 	\item \textit{Operations}: processing of data, computations, learning algorithm
@@ -153,19 +152,9 @@ The categories from \cite{biran2017explanation} make a distinction between the i
 	\item \textit{Prediction}: visualisation, e.g. heat maps
 	\item \textit{Secondary / add-on system}: generation of explanation via behaviour, learning algorithm behaviour
 \end{itemize}
-\cite{richardson2018survey} stress that different explainability needs call for different timings of the explanation. Showing the explanation \textbf{before} a classification or generation task is useful for justifying the next step or explaining the plan. \textbf{During} a task, information about the operations and features can help identifying errors for correction and foster trust. Explaining the results of a task \textbf{after} the process is useful for reporting and knowledge discovery.
+\cite{richardson2018survey} stress that different explainability needs call for different timings of the explanation. Showing the explanation \textbf{before} a classification or generation task is useful for justifying the next step or explaining the plan. \textbf{During} a task, information about the operations and features can help identifying errors for correction and foster trust. Explaining the results of a task \textbf{after} the process is useful for reporting and knowledge discovery.\newline
 
 
-
-single focus: feature-based explanation best for recommender systems (as compared to similar previous decisions and similar neighbor decisions) [10] \newline
-
-
-\textbf{Explanation selection}: it is not possible to show every case, parameter, feature importance to the user, therefore a selection of exemplary cases needs to be made [24]. Global explanation can originate from a set of representative cases [24].
-
-
-
-\subsubsection{When to explain?}
-[15] stresses that different explainability needs call for different timings of the explanation. Showing the explanation \textbf{before} a classification or generation task is useful for justifying the next step or explaining the plan. {\color{green}\textbf{During} a task, information about the operations and features can help identifying errors for correction and foster trust.} Explaining the results of a task \textbf{after} the process is useful for reporting and knowledge discovery.
 
 
 
@@ -194,6 +183,9 @@ Inherently interpretable / transparent models:
 [15] suggests to develop a new class of learning algorithms that have an inherent ``explainability hyperparameter" to achieve high accuracy AND high explainability.\newline
 
 [36] argues that most high-dimensional real-world application data is ``concentrated on or near a lower-dimensional manifold" [36], dimension reduction techniques like PCA or other feature selection algorithms can therefore be used to overcome the curse of dimensionality. \newline
+
+single focus: feature-based explanation best for recommender systems (as compared to similar previous decisions and similar neighbour decisions) [10] \newline
+
 
 \textbf{explanations for texts}:
 [7] solution to recent development in text mining, where texts are represented in a high-dimensional vector space (e.g. fasttext, word2vec) and classified with neural nets. Compared to BOW/SVM, the W2V/CCN they used yields equally good results, because the CNN is better at identifying characteristic words.\newline
