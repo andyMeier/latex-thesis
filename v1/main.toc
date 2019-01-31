@@ -1,15 +1,15 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Background}{4}
-\contentsline {subsection}{\numberline {2.1}Interpretability in AI}{4}
-\contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{6}
-\contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{7}
-\contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{8}
-\contentsline {subsubsection}{\numberline {2.2.3}Application Areas}{10}
-\contentsline {subsection}{\numberline {2.3}Explanations}{11}
-\contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{12}
-\contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{14}
-\contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{15}
-\contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{16}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Background}{3}
+\contentsline {subsection}{\numberline {2.1}Interpretability in AI}{3}
+\contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{5}
+\contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{7}
+\contentsline {subsubsection}{\numberline {2.2.3}Application Areas}{9}
+\contentsline {subsection}{\numberline {2.3}Explanations}{10}
+\contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{11}
+\contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{13}
+\contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{14}
+\contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{17}
 \contentsline {subsection}{\numberline {2.4}Trust in AI}{17}
 \contentsline {subsubsection}{\numberline {2.4.1}Gaining User Trust}{18}
 \contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{18}
@@ -32,27 +32,12 @@
 \contentsline {subsection}{\numberline {4.6}Graphical User Interface}{25}
 \contentsline {subsection}{\numberline {4.7}Subset Sampling}{25}
 \contentsline {subsection}{\numberline {4.8}Explanation Evaluation}{26}
-\contentsline {section}{\numberline {5}Implementation}{27}
-\contentsline {subsection}{\numberline {5.1}Dataset Selection}{27}
-\contentsline {subsection}{\numberline {5.2}Dataset Construction}{27}
-\contentsline {subsection}{\numberline {5.3}Dataset Preprocessing}{28}
-\contentsline {subsection}{\numberline {5.4}Classifier}{30}
-\contentsline {paragraph}{Good System}{30}
-\contentsline {paragraph}{Medium System}{31}
-\contentsline {paragraph}{Bad System}{31}
-\contentsline {subsection}{\numberline {5.5}Explanations}{31}
-\contentsline {paragraph}{Good System}{31}
-\contentsline {paragraph}{Medium System}{31}
-\contentsline {paragraph}{Bad System}{31}
-\contentsline {subsection}{\numberline {5.6}Graphical User Interface}{31}
-\contentsline {subsection}{\numberline {5.7}Subset Sampling}{31}
-\contentsline {subsection}{\numberline {5.8}Explanation Evaluation}{32}
-\contentsline {section}{\numberline {6}User Study: Trust Evaluation}{33}
-\contentsline {subsection}{\numberline {6.1}Method}{33}
-\contentsline {paragraph}{Participants}{33}
-\contentsline {paragraph}{Apparatus}{33}
-\contentsline {paragraph}{Procedure}{33}
-\contentsline {paragraph}{Design \& Analysis}{33}
-\contentsline {subsection}{\numberline {6.2}Results}{33}
-\contentsline {section}{\numberline {7}Discussion}{34}
-\contentsline {section}{\numberline {8}Conclusion}{35}
+\contentsline {section}{\numberline {5}User Study: Trust Evaluation}{27}
+\contentsline {subsection}{\numberline {5.1}Method}{27}
+\contentsline {paragraph}{Participants}{27}
+\contentsline {paragraph}{Apparatus}{27}
+\contentsline {paragraph}{Procedure}{27}
+\contentsline {paragraph}{Design \& Analysis}{27}
+\contentsline {subsection}{\numberline {5.2}Results}{27}
+\contentsline {section}{\numberline {6}Discussion}{28}
+\contentsline {section}{\numberline {7}Conclusion}{29}

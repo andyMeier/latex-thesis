@@ -3,19 +3,29 @@ A level-1 auxiliary file: titlepage.aux
 A level-1 auxiliary file: section_Introduction.aux
 A level-1 auxiliary file: section_Background.aux
 A level-1 auxiliary file: section_Method.aux
-A level-1 auxiliary file: section_Dataset.aux
 A level-1 auxiliary file: section_Implementation.aux
 A level-1 auxiliary file: section_Evaluation.aux
 A level-1 auxiliary file: section_Discussion.aux
 A level-1 auxiliary file: section_Conclusion.aux
 The style file: plain.bst
 Database file #1: mybib.bib
+I was expecting a `,' or a `}'---line 174 of file mybib.bib
+ :  
+ :  booktitle = {Proceedings of the 1st Italian Conference on Cybersecurity},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "ruping2006learning" isn't style-file defined
---line 522 of file mybib.bib
-Repeated entry---line 652 of file mybib.bib
+--line 540 of file mybib.bib
+I was expecting a `,' or a `}'---line 605 of file mybib.bib
+ :  
+ :  year={2018}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 671 of file mybib.bib
  : @inproceedings{weller2017challenges
  :                                    ,
 I'm skipping whatever remains of this entry
 Warning--empty journal in chen2018learning
+Warning--empty booktitle in del2017hate
 Warning--empty year in van2018contrastive
-(There was 1 error message)
+(There were 3 error messages)
