@@ -21,6 +21,8 @@ I was expecting a `,' or a `}'---line 616 of file mybib.bib
  :  year={2018}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--entry type for "van2001perceived" isn't style-file defined
+--line 619 of file mybib.bib
 Repeated entry---line 682 of file mybib.bib
  : @inproceedings{weller2017challenges
  :                                    ,
