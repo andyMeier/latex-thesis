@@ -11,12 +11,12 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{14}
 \contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{17}
 \contentsline {subsection}{\numberline {2.4}Trust in AI}{17}
-\contentsline {subsubsection}{\numberline {2.4.1}Gaining User Trust}{18}
-\contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{18}
-\contentsline {subsubsection}{\numberline {2.4.3}Perceived Understanding}{19}
+\contentsline {subsubsection}{\numberline {2.4.1}Trust Factors}{18}
+\contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{19}
 \contentsline {subsection}{\numberline {2.5}Summary}{19}
 \contentsline {section}{\numberline {3}Method}{20}
 \contentsline {subsection}{\numberline {3.1}Use Case Scenario}{20}
+\contentsline {subsection}{\numberline {3.2}Evaluation setup}{20}
 \contentsline {section}{\numberline {4}Implementation}{21}
 \contentsline {subsection}{\numberline {4.1}Dataset Selection}{21}
 \contentsline {subsection}{\numberline {4.2}Dataset Construction}{21}

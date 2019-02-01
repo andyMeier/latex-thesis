@@ -15,13 +15,13 @@ I was expecting a `,' or a `}'---line 174 of file mybib.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "ruping2006learning" isn't style-file defined
---line 540 of file mybib.bib
-I was expecting a `,' or a `}'---line 605 of file mybib.bib
+--line 551 of file mybib.bib
+I was expecting a `,' or a `}'---line 616 of file mybib.bib
  :  
  :  year={2018}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 671 of file mybib.bib
+Repeated entry---line 682 of file mybib.bib
  : @inproceedings{weller2017challenges
  :                                    ,
 I'm skipping whatever remains of this entry
