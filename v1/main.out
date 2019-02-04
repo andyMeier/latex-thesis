@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Interpretability in AI}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Need for Explainability in AI}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Explanation Goals}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Regulations and Accountability}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Application Areas}{subsection.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Explanations}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Human-Human Explanations}{subsection.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.2}{AI-Human Explanations}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Explanation Systems}{subsection.2.3}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.4}{Explanation Evaluation}{subsection.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.4}{Trust in AI}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.4.1}{Trust Factors}{subsection.2.4}% 14
+\BOOKMARK [3][-]{subsubsection.2.4.2}{Trust Evaluation}{subsection.2.4}% 15
+\BOOKMARK [2][-]{subsection.2.5}{Summary}{section.2}% 16
+\BOOKMARK [1][-]{section.3}{Method}{}% 17
+\BOOKMARK [2][-]{subsection.3.1}{Use Case Scenario}{section.3}% 18
+\BOOKMARK [2][-]{subsection.3.2}{Evaluation setup}{section.3}% 19
+\BOOKMARK [1][-]{section.4}{Implementation}{}% 20
+\BOOKMARK [2][-]{subsection.4.1}{Dataset Selection}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.2}{Dataset Construction}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.3}{Dataset Preprocessing}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.4}{Classifier}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.5}{Explanations}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.6}{Graphical User Interface}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.7}{Subset Sampling}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.8}{Explanation Evaluation}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.8.1}{Evaluation 1: Accuracy on Reduced Texts}{subsection.4.8}% 29
+\BOOKMARK [3][-]{subsubsection.4.8.2}{Evaluation 2: Ability to Reproduce Classifications}{subsection.4.8}% 30
+\BOOKMARK [2][-]{subsection.4.9}{Subset Evaluation}{section.4}% 31
+\BOOKMARK [1][-]{section.5}{User Study: Trust Evaluation}{}% 32
+\BOOKMARK [2][-]{subsection.5.1}{Method}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 34
+\BOOKMARK [2][-]{subsection.5.3}{Discussion}{section.5}% 35
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 36

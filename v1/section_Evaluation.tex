@@ -5,7 +5,7 @@ In the previous section, we discussed three systems with different accuracy leve
 \subsection{Method}
 
 \paragraph{Participants}
-In total, 327 participants took part in the main user study with an average age of 29.4 years (SD = 8.8), a gender balance of 56\% (males) to 43\% (females) and two participants reporting the third gender. 87\% of the participants were recruited via the paid science crowdsourcing platform ``Prolific", while 36 participants enlisted on ``SurveyCircle", an unpaid participant recruitment platform based on mutuality.\newline
+In total, 327 participants took part in the main user study with an average age of 29.4 years (SD = 8.8), a gender balance of 56\% (males) to 43\% (females) and two participants reporting the third gender. 87\% of the participants were recruited via the paid science crowdsourcing platform ``Prolific"\footnote{https://prolific.ac}, while 36 participants enlisted on ``SurveyCircle"\footnote{https://www.surveycircle.com}, an unpaid participant recruitment platform based on mutuality.\newline
 On both platforms, individuals younger than 18 years were excluded to participate for reasons of consent by a major. The use case scenario included reading and understanding real-life Tweets with slang words, grammatical and literal errors. The platforms therefore screened for people being fluent in English. 57\% self-assessed their level of English to be equivalent to a native speaker, 23\% as advanced (C1 on the Common European Framework of Reference for Language scale \cite{council2001common}), 14\% as upper-intermediate (B2), and 5\% as lower than that. All participants claimed to be ``fluent" in English. The study questionnaire included an attention check question, asking the participants to answer ``completely disagree" in between the trust questionnaire items assessed on a 5-point Likert scale. Data from participants who failed to answer the attention check correctly was excluded from the analysis. Furthermore, only complete responses were used in the analysis, i.e. data from participants who reached the last page of the survey. The exclusion criteria invalidated 41 data points, resulting in 286 valid cases.\newline
 All participants recruited on the paid platform ``Prolific" received a compensation of 1.40 GBP (1.60 EUR) for an estimated completion time of 12 minutes. Participants from ``SurveyCircle" received a reward of 4.4 Study Points.
 
@@ -34,11 +34,12 @@ In general, the study contains three blocks plus an introduction and outroductio
 The second block introduces the automatic decision system (see figure \ref{fig:survey_tools2}). The participant is again asked to classify 15 ``very similar" Tweets, which are, in fact, identical to the ones shown in the first block. This particular formulation aims to liberate the participants from the urge to classify each text with exactly the same label as in the first block. The ordering of the Tweets is random and hence very likely to be different from the ordering of the first block. In total, 9 conditions exist: three systems (classifier with 0.95, 0.75, and 0.05 accuracy) with three explanation types (informative, placebic, no explanation) each. Each participant has one condition assigned at the beginning of the survey, such that there is an equal distribution of conditions in finished questionnaires. \newline
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/pg_5_13.PNG}\\
+	\includegraphics[width=0.8\textwidth]{img/pg_5_13.PNG}
 	\caption{Screenshot of the fictive management tool with the automatic decision system}
 	\label{fig:survey_tools2}
 \end{figure}
-Finally, the last block contains three questions regarding perceived understanding, 19 items measuring the user's trust including an attention check, and 5 demographic questions (gender, age, country, ethnicity, English language level).
+Finally, the last block contains three questions regarding perceived understanding, 19 items measuring the user's trust including an attention check, and 5 demographic questions (gender, age, country, ethnicity, English language level).\newline
+A detailed list of all questions used in the survey can be found in appendix {\color{red}X}.
 
 \paragraph{Design \& Analysis}
 The between-subject setup described in the previous paragraph was tested in a pilot study with 11 participants. The participants were recruited via ``Prolific" and received a compensation of 2.00 GBP (2.28 EUR). They completed the study in ``pretest" mode, which shows an additional comment box at the bottom of each survey page.\newline
@@ -52,18 +53,128 @@ The goal of the statistical analysis for all three topics (perceived understandi
 
 
 \subsection{Results}
-Intro \newline
+The following section presents the results of the user study. We examined perceived understanding, self-reported trust and an implicit trust measure via the willingness to follow a classifier's recommendation. For each topic, we give the mean score, standard deviation, as well as a comparison of all conditions in a 9x9 matrix.\newline
+The matrices show each condition checked for significant difference with every other condition. The colour scale is a visualisation of the p-value: Insignificant p-values, i.e. values above the critical threshold of 0.05, are coloured in dark blue, while significant p-values are presented with colours from blue over green to light yellow. P-values marked as ``0" are too small (below 0.001) to be displayed correctly in the matrix.\newline 
 
 \paragraph{Perceived Understanding}
-asd
+As figure \ref{fig:results_understanding} shows, users of the system with a very good classifier and no explanation report the highest perceived understanding. For the very good and the medium classifier, giving no explanations for the decisions leads to a higher perceived understanding than delivering placebic, i.e. random, explanations. In general, users have more confidence in their understanding of the system for the very good and medium classifiers as compared to the bad classifier. One condition, however, does not lead to significantly higher scores than the bad classifier: for the medium classifier with random explanations, users reported the same understanding as for the bad classifier with no explanations. Concerning the bad classifier, giving a truthful explanation for the decision leads to the lowest perceived understanding.
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.3\textwidth}
+		\raisebox{80pt}{\resizebox{\textwidth}{!}{
+				\begin{tabular}{lrr}
+					\textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+					super-good & 11.833 & 2.746 \\
+					super-rand & 11.188 & 2.579 \\
+					super-no & 12.441 & 2.103 \\
+					medium-good & 11.455 & 2.475 \\
+					medium-rand & 8.833 & 2.888 \\
+					medium-no & 11.100 & 2.071 \\
+					bad-good & 7.395 & 3.602 \\
+					bad-rand & 7.500 & 3.413 \\
+					bad-no & 8.833 & 3.455 \\ \bottomrule
+		\end{tabular}}}
+		\caption{Mean and standard deviation per condition}
+		\label{tab:results_table_understanding}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.65\textwidth}
+		\includegraphics[width=\textwidth]{img/results_matrix_understanding2.JPG}
+		\caption{Significance matrix with p-values per condition}
+		\label{fig:results_matrix_understanding}
+	\end{subfigure}
+	\caption{Results for perceived understanding scores}
+	\label{fig:results_understanding}
+\end{figure}
 
 
 \paragraph{Trust Questionnaire}
-asd
+The self-reported trust scores show similar results as the perceived understanding: Besides the medium classifier with random explanations, all systems lead to significantly more trust than the systems employing the bad classifier. The explanations do not play a role regarding user's trust when the bad classifier is used. Looking at the medium classifier, the random explanation leads to a lower trust score than no explanation and a good explanation, with no difference between the latter two. The most trust is evoked by the very good classifier without explanations, significantly more than for any other condition. There is no significant difference between the very good classifier with explanations and the medium classifier with meaningful explanation. For both the bad classifier and the very good classifier, the condition without any explanation again led to the highest scores within the same classifiers. The detailed results are presented in figure \ref{fig:results_trust}.
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.3\textwidth}
+		 \raisebox{80pt}{\resizebox{\textwidth}{!}{
+		\begin{tabular}{lrr}
+			\textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+			super-good & 50.967 & 7.600 \\
+			super-rand & 50.906 & 9.156 \\
+			super-no & 56.912 & 9.721 \\
+			medium-good & 50.030 & 9.150 \\
+			medium-rand & 42.000 & 9.671 \\
+			medium-no & 49.967 & 8.712 \\
+			bad-good & 36.421 & 8.129 \\
+			bad-rand & 37.067 & 7.659 \\
+			bad-no & 38.333 & 10.381 \\ \bottomrule
+		\end{tabular}}}
+		\caption{Mean and standard deviation per condition}
+		\label{tab:results_table_trust}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.65\textwidth}
+		\includegraphics[width=\textwidth]{img/results_matrix_trust2.JPG}
+		\caption{Significance matrix with p-values per condition}
+		\label{fig:results_matrix_trust}
+	\end{subfigure}
+	\caption{Results for self-reported trust scores}
+	\label{fig:results_trust}
+\end{figure}
+
 
 
 \paragraph{Observed Trust via Proxy}
-asd
+The second trust measure uses a proxy to determine the trust a user puts into a system: the willingness to follow a system's recommendation, in this case the decision about offensiveness and non-offensiveness. Figure \ref{fig:results_proxy_away} shows the results of analysing the user's willingness to change a classification to match the system's decision while contradicting the truth. As a comparison, figure \ref{fig:results_proxy_towards} deals with changes in classification that were made in favour of both the system and the truth.\newline
+The highest changing rate in favour of the system but against the true label was detected for users of the very good classifier with a meaningful explanation, but also the highest variance. Users were significantly more likely to adapt the system's faulty decision when confronted with the very good system with random and no explanations than the users of any system with the bad classifier. The same holds true for users of the medium classifier without explanations.\newline
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.3\textwidth}
+		\raisebox{80pt}{\resizebox{\textwidth}{!}{
+				\begin{tabular}{lrr}
+					\textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+					super-good & 0.286 & 0.452 \\
+					super-rand & 0.118 & 0.322 \\
+					super-no & 0.043 & 0.204 \\
+					medium-good & 0.088 & 0.189 \\
+					medium-rand & 0.083 & 0.158 \\
+					medium-no & 0.075 & 0.183 \\
+					bad-good & 0.050 & 0.066 \\
+					bad-rand & 0.054 & 0.067 \\
+					bad-no & 0.073 & 0.093 \\ \bottomrule
+		\end{tabular}}}
+		\caption{Mean and standard deviation per condition}
+		\label{tab:results_table_proxy_away}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.65\textwidth}
+		\includegraphics[width=\textwidth]{img/results_matrix_proxy_away2.JPG}
+		\caption{Significance matrix with p-values per condition}
+		\label{fig:results_matrix_proxy_away}
+	\end{subfigure}
+	\caption{Results for proxy measure of trust via willingness to accept the system's prediction changing manual label away from actual truth}
+	\label{fig:results_proxy_away}
+\end{figure}
+Looking at the changes made towards the truth in agreement with the classifiers, no significant differences are noted between any condition with the very good and medium classifier. The same holds true for the bad classifier. The very good and medium classifiers, however, evoked significantly more changes towards the truth than the bad classifier with explanations. The standard deviations of the conditions using the bad classifier are rather high as compared to any other condition.\newline
+One condition is exceptional in this analysis: Although the bad classifier without explanation has the highest mean score (i.e. changes towards the truth when the classifier made a correct prediction), the score is not significantly different from the bad classifier with a good and random explanation. The variance of all three systems (bad-no, bad-random, bad-good) are very high as compared to the variances of the other systems. The score deviates, however, from the results of the very good and medium classifier, which have lower mean scores but lower variances. The difference in variance is important to note when comparing the relatively high mean score of the bad classifier without explanation to the conditions with the very good and medium classifiers.
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.3\textwidth}
+		\raisebox{80pt}{\resizebox{\textwidth}{!}{
+				\begin{tabular}{lrr}
+					\textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+					super-good & 0.073 & 0.073 \\
+					super-rand & 0.047 & 0.064 \\
+					super-no & 0.063 & 0.093 \\
+					medium-good & 0.058 & 0.087 \\
+					medium-rand & 0.049 & 0.070 \\
+					medium-no & 0.058 & 0.066 \\
+					bad-good & 0.048 & 0.213 \\
+					bad-rand & 0.045 & 0.208 \\
+					bad-no & 0.091 & 0.287 \\ \bottomrule
+		\end{tabular}}}
+		\caption{Mean and standard deviation per condition}
+		\label{tab:results_table_proxy_towards}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.65\textwidth}
+		\includegraphics[width=\textwidth]{img/results_matrix_proxy_towards2.JPG}
+		\caption{Significance matrix with p-values per condition}
+		\label{fig:results_matrix_proxy_towards}
+	\end{subfigure}
+	\caption{Results for proxy measure of trust via willingness to accept the system's prediction changing the manual label towards the truth}
+	\label{fig:results_proxy_towards}
+\end{figure}
 
 
 
+\subsection{Discussion}
