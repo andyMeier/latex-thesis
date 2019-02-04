@@ -74,6 +74,11 @@ Jianbo Chen, Le~Song, Martin~J Wainwright, and Michael~I Jordan.
   interpretation.
 \newblock 80:883--892, 10--15 Jul 2018.
 
+\bibitem{cheung1997mann}
+Ying~Kuen Cheung and Jerome~H Klotz.
+\newblock The mann whitney wilcoxon distribution using linked lists.
+\newblock {\em Statistica Sinica}, pages 805--813, 1997.
+
 \bibitem{corritore2005measuring}
 Cynthia~L Corritore, Robert~P Marble, Susan Wiedenbeck, Beverly Kracher, and
   Ashwin Chandran.
@@ -273,6 +278,13 @@ Nazila~Gol Mohammadi, Sachar Paulus, Mohamed Bishr, Andreas Metzger, Holger
 Joaqu{\i}n~Padilla Montani.
 \newblock Tuwienkbs at germeval 2018: German abusive tweet detection.
 \newblock {\em Austrian Academy of Sciences, Vienna September 21, 2018}, 2018.
+
+\bibitem{council2001common}
+Council of~Europe. Council for Cultural Co-operation. Education Committee.
+  Modern Languages~Division.
+\newblock {\em Common European Framework of Reference for Languages: learning,
+  teaching, assessment}.
+\newblock Cambridge University Press, 2001.
 
 \bibitem{poursabzi2017manipulating}
 Forough Poursabzi-Sangdeh, Daniel~G Goldstein, Jake~M Hofman, Jennifer~Wortman

@@ -9,21 +9,21 @@ A level-1 auxiliary file: section_Discussion.aux
 A level-1 auxiliary file: section_Conclusion.aux
 The style file: plain.bst
 Database file #1: mybib.bib
-I was expecting a `,' or a `}'---line 174 of file mybib.bib
+I was expecting a `,' or a `}'---line 190 of file mybib.bib
  :  
  :  booktitle = {Proceedings of the 1st Italian Conference on Cybersecurity},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "ruping2006learning" isn't style-file defined
---line 551 of file mybib.bib
-I was expecting a `,' or a `}'---line 616 of file mybib.bib
+--line 567 of file mybib.bib
+I was expecting a `,' or a `}'---line 632 of file mybib.bib
  :  
  :  year={2018}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "van2001perceived" isn't style-file defined
---line 619 of file mybib.bib
-Repeated entry---line 682 of file mybib.bib
+--line 635 of file mybib.bib
+Repeated entry---line 698 of file mybib.bib
  : @inproceedings{weller2017challenges
  :                                    ,
 I'm skipping whatever remains of this entry
