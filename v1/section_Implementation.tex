@@ -1,5 +1,5 @@
 \section{Implementation}
-
+{\color{blue}This section is still in bullet-points state and formulations/wording is not final!}\medskip \newline
 Intro: this section is for the technical documentation of the data preprocessing, classifier implementation, explanation generation and validation. 
 
 
@@ -142,11 +142,36 @@ We generate a quantity of 100 such subsets and order them by their KLD sum. The 
 \label{subsec:expleval}
 experiments to validate whether the explanations we generate are actually ``good" explanations and those generated with the random method are actually ``bad" explanations.
 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \subsubsection{Evaluation 1: Accuracy on Reduced Texts}
+For each system, take generated explanations of Tweets in the test set, reduce the text to the selected words, and feed the ``reduced Tweets" into the system. Hypothesis: If the words are very informative for the classifier, the accuracy would not change. The new accuracy should then be close to the old accuracy.\newline
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/expleval1_logreg.JPG}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/expleval1_invL2X.JPG}
+	\end{subfigure}
+	\caption{Results for evaluation of explanation experiment 1}
+	\label{fig:results_expleval1}
+\end{figure}
+Problem: Tweets are very short, which is why the information density is high. Even when using only a single word randomly drawn from the text, the accuracy is 0.64, which is close to the medium classifier. It is therefore difficult to interpret the results for the medium classifier (0.76). Furthermore, we do not know if the Tweets have classified the same, or if only the accuracy is the same, but the mistakes were made on different Tweets. We therefore need to evaluate the ability to reproduce the very same classifications (evaluation 2).
+
 
 \subsubsection{Evaluation 2: Ability to Reproduce Classifications}
+For each system, divide the dataset in 5 chunks. Use each chunk once as testset and the remaining chunks as training set. This way, we get predictions and generated explanations for each data point in the dataset. Use the reduced version of the dataset with the predictions as truths to repeat the procedure of evaluation 1. Hypothesis: If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset. Since we take the predictions of the classifier on the non-reduced dataset as ``truth", the accuracy should be close to 1.0 .
+\begin{figure}[H]
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/expleval2_logreg.JPG}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\includegraphics[width=\textwidth]{img/expleval2_invL2X.JPG}
+	\end{subfigure}
+	\caption{Results for evaluation of explanation experiment 2}
+	\label{fig:results_expleval2}
+\end{figure}
 
-
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 \subsection{Subset Evaluation}
-same as previous section, but with the filtered subsets, basically. And on ``perfect" classifier.
+same as previous section, but with the filtered subsets, basically. And on ``perfect" classifier. For k=4, because we use k=4 for final explanation generation.

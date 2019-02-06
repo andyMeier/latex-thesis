@@ -1,57 +1,60 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}Background}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Interpretability in AI}{6}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{8}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{9}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{10}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Application Areas}{12}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Explanations}{13}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{14}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{16}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{17}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{20}{subsubsection.2.3.4}
-\contentsline {subsection}{\numberline {2.4}Trust in AI}{20}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Trust Factors}{21}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{22}{subsubsection.2.4.2}
-\contentsline {subsection}{\numberline {2.5}Summary}{23}{subsection.2.5}
-\contentsline {section}{\numberline {3}Method}{26}{section.3}
-\contentsline {subsection}{\numberline {3.1}Use Case Scenario}{26}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Dataset Selection}{27}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Twitter Data Preprocessing}{28}{subsubsection.3.1.2}
-\contentsline {subsubsection}{\numberline {3.1.3}Hate Speech Detection}{29}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Explanations}{30}{subsubsection.3.1.4}
-\contentsline {paragraph}{Good explanations}{30}{section*.4}
-\contentsline {paragraph}{Zero explanations}{30}{section*.5}
-\contentsline {paragraph}{Bad explanations}{30}{section*.6}
-\contentsline {subsection}{\numberline {3.2}Evaluation}{30}{subsection.3.2}
-\contentsline {paragraph}{Conditions}{30}{section*.7}
-\contentsline {section}{\numberline {4}Implementation}{32}{section.4}
-\contentsline {subsection}{\numberline {4.1}Dataset}{32}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Dataset Construction}{32}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Dataset Preprocessing}{32}{subsubsection.4.1.2}
-\contentsline {subsection}{\numberline {4.2}Classifier}{34}{subsection.4.2}
-\contentsline {paragraph}{Good System}{34}{section*.10}
-\contentsline {paragraph}{Medium System}{34}{section*.11}
-\contentsline {paragraph}{Bad System}{34}{section*.12}
-\contentsline {subsection}{\numberline {4.3}Explanations}{34}{subsection.4.3}
-\contentsline {paragraph}{Good System}{34}{section*.13}
-\contentsline {paragraph}{Medium System}{34}{section*.14}
-\contentsline {paragraph}{Bad System}{34}{section*.15}
-\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{34}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Subset Sampling}{35}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{37}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{37}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{37}{subsubsection.4.6.2}
-\contentsline {subsection}{\numberline {4.7}Subset Evaluation}{37}{subsection.4.7}
-\contentsline {section}{\numberline {5}User Study: Trust Evaluation}{38}{section.5}
-\contentsline {subsection}{\numberline {5.1}Method}{38}{subsection.5.1}
-\contentsline {paragraph}{Participants}{38}{section*.19}
-\contentsline {paragraph}{Apparatus}{38}{section*.20}
-\contentsline {paragraph}{Procedure}{39}{section*.21}
-\contentsline {paragraph}{Design \& Analysis}{40}{section*.24}
-\contentsline {subsection}{\numberline {5.2}Results}{41}{subsection.5.2}
-\contentsline {paragraph}{Perceived Understanding}{42}{section*.25}
-\contentsline {paragraph}{Trust Questionnaire}{42}{section*.27}
-\contentsline {paragraph}{Observed Trust via Proxy}{43}{section*.29}
-\contentsline {subsection}{\numberline {5.3}Discussion}{45}{subsection.5.3}
-\contentsline {section}{\numberline {6}Conclusion}{49}{section.6}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {section}{\numberline {2}Background}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Interpretability in AI}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Need for Explainability in AI}{9}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Explanation Goals}{10}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Regulations and Accountability}{11}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Application Areas}{13}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Explanations}{14}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Human-Human Explanations}{15}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}AI-Human Explanations}{17}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Explanation Systems}{18}{subsubsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Explanation Evaluation}{21}{subsubsection.2.3.4}
+\contentsline {subsection}{\numberline {2.4}Trust in AI}{21}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Trust Factors}{22}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Trust Evaluation}{23}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Summary}{24}{subsection.2.5}
+\contentsline {section}{\numberline {3}Method}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}Use Case Scenario}{27}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Dataset Selection}{28}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Twitter Data Preprocessing}{29}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Hate Speech Detection}{30}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {3.1.4}Explanations}{31}{subsubsection.3.1.4}
+\contentsline {paragraph}{Good explanations}{31}{section*.5}
+\contentsline {paragraph}{Zero explanations}{31}{section*.6}
+\contentsline {paragraph}{Bad explanations}{31}{section*.7}
+\contentsline {subsection}{\numberline {3.2}Evaluation}{31}{subsection.3.2}
+\contentsline {paragraph}{Conditions}{31}{section*.8}
+\contentsline {paragraph}{Measures}{32}{section*.10}
+\contentsline {section}{\numberline {4}Implementation}{33}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dataset}{33}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Dataset Construction}{33}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Dataset Preprocessing}{34}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Classifier}{35}{subsection.4.2}
+\contentsline {paragraph}{Good System}{35}{section*.12}
+\contentsline {paragraph}{Medium System}{35}{section*.13}
+\contentsline {paragraph}{Bad System}{35}{section*.14}
+\contentsline {subsection}{\numberline {4.3}Explanations}{35}{subsection.4.3}
+\contentsline {paragraph}{Good System}{35}{section*.15}
+\contentsline {paragraph}{Medium System}{35}{section*.16}
+\contentsline {paragraph}{Bad System}{35}{section*.17}
+\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{36}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Subset Sampling}{37}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{38}{subsection.4.6}
+\setcounter {tocdepth}{1}
+\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{38}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{38}{subsubsection.4.6.2}
+\setcounter {tocdepth}{2}
+\contentsline {subsection}{\numberline {4.7}Subset Evaluation}{39}{subsection.4.7}
+\contentsline {section}{\numberline {5}User Study: Trust Evaluation}{40}{section.5}
+\contentsline {subsection}{\numberline {5.1}Method}{40}{subsection.5.1}
+\contentsline {paragraph}{Participants}{40}{section*.23}
+\contentsline {paragraph}{Apparatus}{40}{section*.24}
+\contentsline {paragraph}{Procedure}{41}{section*.25}
+\contentsline {paragraph}{Design \& Analysis}{42}{section*.28}
+\contentsline {subsection}{\numberline {5.2}Results}{43}{subsection.5.2}
+\contentsline {paragraph}{Perceived Understanding}{44}{section*.29}
+\contentsline {paragraph}{Trust Questionnaire}{44}{section*.31}
+\contentsline {paragraph}{Observed Trust via Proxy}{45}{section*.33}
+\contentsline {subsection}{\numberline {5.3}Discussion}{47}{subsection.5.3}
+\contentsline {section}{\numberline {6}Conclusion}{51}{section.6}
