@@ -137,7 +137,7 @@ A machine learning system generating automatic decisions contains five elements 
 	\item Prediction, or more generally, the result
 	\item Evaluator
 \end{itemize}
-All five elements have their share in the automatic decision process and hence hold the potential for explanations. Depending on the recipient of the explanation, purely technical descriptions may not be enough to explain the system's behaviour and mechanisms. While a data scientist or system engineer might need a very complete and sound explanation, a user aiming to judge whether he or she has been treated fairly by the algorithm could be overwhelmed with such an explanation. Furthermore, it is not always possible to show all cases, parameters, and features to a lay user. A selection of information is therefore needed \cite{ribeiro2016should}. Explanations becomes more difficult to understand with increasing complexity of the system; Showing the underlying reasons for a single decision (local explanation) can be less complex than showing a holistic explanation of the whole model (global decision). However, global explanation can originate from a set of representative cases \cite{ribeiro2016should}.\newline
+All five elements have their share in the automatic decision process and hence hold the potential for explanations. Depending on the recipient of the explanation, purely technical descriptions may not be enough to explain the system's behaviour and mechanisms. While a data scientist or system engineer might need a very complete and sound explanation, a user aiming to judge whether he or she has been treated fairly by the algorithm could be overwhelmed with such an explanation. Furthermore, it is not always possible to show all cases, parameters, and features to a lay user. A selection of information is therefore needed \cite{ribeiro2016should}. Explanations becomes more difficult to understand with increasing complexity of the system; Showing the underlying reasons for a single decision (local explanation) can be less complex than showing a holistic explanation of the complete model (global explanation). However, global explanation can originate from a set of representative cases \cite{ribeiro2016should}.\newline
 Several suggestions of aspects that can be explained in an automatic decision system context have been made. \cite{biran2017explanation} categorises aspects of a machine learning decisions and respective explanation suggestions into three layers:
 \begin{itemize}
 	\item \textit{Feature-level}: feature meaning and influence, actual vs. expected contribution per feature
@@ -158,6 +158,7 @@ The categories from \cite{biran2017explanation} make a distinction between the i
 
 
 \subsubsection{Explanation Systems}
+\label{subsubsec:explanation_systems}
 Overall, two distinct categories of machine learning systems exist in the context of explainable AI. \textit{Inherently interpretable or transparent} systems do not need an explanation modelled on top, as they can be understood by humans without additional help. \textit{Opaque or shallow} systems are not inherently interpretable by humans and need additional explanation, either by an add-on explanation system, or representations simplifying the actual mechanisms.\newline
 Examples of inherently interpretable machine learning models are:
 \begin{itemize}

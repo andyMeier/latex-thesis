@@ -72,7 +72,8 @@ Jenna Burrell.
 Jianbo Chen, Le~Song, Martin~J Wainwright, and Michael~I Jordan.
 \newblock Learning to explain: An information-theoretic perspective on model
   interpretation.
-\newblock 80:883--892, 10--15 Jul 2018.
+\newblock In {\em Proceedings of the 35th International Conference on Machine
+  Learning}, volume~80, pages 883--892. PMLR, 10--15 Jul 2018.
 
 \bibitem{cheung1997mann}
 Ying~Kuen Cheung and Jerome~H Klotz.
@@ -110,7 +111,8 @@ Thomas Davidson, Dana Warmsley, Michael Macy, and Ingmar Weber.
 Fabio Del~Vigna, Andrea Cimino, Felice Dell’Orletta, Marinella Petrocchi, and
   Maurizio Tesconi.
 \newblock Hate me, hate me not: Hate speech detection on facebook.
-\newblock 2017.
+\newblock In {\em Proceedings of the 1st Italian Conference on Cybersecurity},
+  ITASEC17, 2017.
 
 \bibitem{diakopoulos2016accountability}
 Nicholas Diakopoulos.
@@ -334,7 +336,8 @@ Kristian Rother, Marker Allee, and Achim Rettberg.
 
 \bibitem{ruping2006learning}
 S~R{\"u}ping.
-\newblock Learning interpretable models, 2006.
+\newblock {\em Learning interpretable models}.
+\newblock Doctoral thesis, Technical University Dortmund, 2006.
 
 \bibitem{selbst2017meaningful}
 Andrew~D Selbst and Julia Powles.
@@ -364,12 +367,13 @@ Jasmina Smailovi{\'c}, Miha Gr{\v{c}}ar, Nada Lavra{\v{c}}, and Martin
 J~van~der Waa, J~van Diggelen, K~van~den Bosch, and M~Neerincx.
 \newblock Contrastive explanations for reinforcement learning in terms of
   expected consequences.
-\newblock {\em XAI 2018}, page 165.
+\newblock {\em XAI 2018}, page 165, 2018.
 
 \bibitem{van2001perceived}
 Cheryl~Lynn Van~Ess.
 \newblock Perceived knowledge of heart failure and adherence to self-care
-  recommendations, 2001.
+  recommendations.
+\newblock Master thesis, Grand Valley State University, 2001.
 
 \bibitem{ventocilla2018taxonomy}
 Elio Ventocilla, Tove Helldin, Maria Riveiro, Juhee Bae, Veselka Boeva,
@@ -407,7 +411,8 @@ Claus Weihs and UM~Sondhauss.
 \bibitem{weller2017challenges}
 Adrian Weller.
 \newblock Challenges for transparency.
-\newblock {\em arXiv preprint arXiv:1708.01870}, 2017.
+\newblock In {\em ICML Workshop on Human Interpretability in Machine Learning
+  (WHI 2017)}. ICML, 2017.
 
 \bibitem{xiang2012detecting}
 Guang Xiang, Bin Fan, Ling Wang, Jason Hong, and Carolyn Rose.
