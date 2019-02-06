@@ -1,24 +1,18 @@
 \section{Method}
-Intro
-
-Similar to the copy machine experiment. Comparison can be drawn because willingness to follow a recommendation is presumably somewhat similar to willingness to comply with a request 
-
-WHAT to explain
+{\color{blue}This section is still in bullet-points state and formulations/wording is not final!}\medskip \newline
+Intro\newline
+\cite{ruping2006learning}: interpretability = efficiency, accuracy, explainability.
+We therefore investigate accuracy and explainability. To satisfy efficiency, we use the minimum explanation setup suggested by \cite{goodman16eu} (explaining how input features relate to the prediction).\newline
+To examine the influence of accuracy on trust, we build three systems in total: a very good classifier, a medium classifier, and a bad classifier. We explicitly exclude random classification, since we aim to have a condition in which a meaningful (i.e. truthful) explanation is generated - which is impossible for random class assignment. We aim for classifiers with an accuracy around 0.9, 0.7, and 0.1. \newline
+Trust is as subjective experience and can therefore only be evaluated in user studies. Setup user study similar to the copy machine experiment. Comparison can be drawn because willingness to follow a recommendation (proxy for trust \cite{vorm2018assessing}) is assumed to be somewhat similar to the willingness of complying with a request. Use case (application) is needed for user study.\newline
 Requirements for a use case scenario in order to answer the research questions:
 \begin{enumerate}
 	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into
 	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection do not enclose their data either. Datasets used to gain economic advantage over competitors are often kept confidential or being censored \cite{diakopoulos2016accountability}.
 	\item \textit{Augmented intelligence setting}: human collaborating with classifier
 \end{enumerate}
-To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive Tweets supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
+To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive texts supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
 
-HOW to classify:
-
-
-
-HOW to explain:
-\cite{ruping2006learning}: interpretability = efficiency, accuracy, explainability.
-We therefore investigate accuracy and explainability. To satisfy efficiency, we use the minimum explanation setup suggested by \cite{goodman16eu} (explaining how input features relate to the prediction). 
 
 
 
@@ -30,23 +24,90 @@ Definition of offensive language given by \cite{chen2012detecting} who summarise
 	\item \textit{Pornographic language}: language with explicit sexual content for ``sexual arousal and erotic satisfaction" \cite{jay2008pragmatics}
 	\item \textit{Vulgar language}: language with obscenity and profanity referring to ``sex or bodily functions" \cite{jay2008pragmatics}	
 \end{itemize}
+To train classifiers and perform user study we need a dataset containing offensive language.
 
-\subsubsection{Hate speech detection}
-hate speech detection systems \newline
+\subsubsection{Dataset Selection}
+Few datasets with offensive language texts are publicly available. Table \ref{tab:StatsAllDatasets} presents an overview of four available datasets, their sizes and class balances. \newline
+\begin{table}[H]
+	\centering
+	\begin{tabular}{llll}
+		\textbf{Corpus} & \textbf{Size} & \textbf{Classes} & \textbf{} \\ \hline
+		Davidson\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language} & 25,000 & \begin{tabular}[c]{@{}l@{}} hate speech\\offensive\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 6\%\\77\%\\17\%\end{tabular} \\ \hline
+		Imperium\footnote{https://www.kaggle.com/c/detecting-insults-in-social-commentary/data} & 3,947 & \begin{tabular}[c]{@{}l@{}} neutral\\insulting\end{tabular} & \begin{tabular}[c]{@{}l@{}} 73\%\\27\%\end{tabular} \\ \hline
+		Analytics Vidhya\footnote{https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/} & 31,962 & \begin{tabular}[c]{@{}l@{}} hate speech\\no hate speech\end{tabular} & \begin{tabular}[c]{@{}l@{}} 7\%\\93\%\end{tabular} \\ \hline
+		SwissText\footnote{https://www.swisstext.org/workshops/2018/Hackathon.html} & 159,570 & \begin{tabular}[c]{@{}l@{}} toxic\\severe\_toxic\\obscene\\threat\\insult\\hate speech\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 10\%\\1\%\\5\%\\0.3\%\\5\%\\1\%\\72.7\%\end{tabular} \\ \hline        
+	\end{tabular}
+	\caption{Publicly available datasets for offensive language texts}
+	\label{tab:StatsAllDatasets}
+\end{table}
+While the dataset of SwissText has the most fine-grained labelling of its data points, details on how the labels were assigned (i.e. number of annotators, inter-annotator agreement score, definition of the classes) are not available. The same holds for the datasets of Analytics Vidhya and Imperium.\newline
+In contrast, Davidson's datasets comes with a description of how the data points were collected, how the classes are defined, and uses at least three annotators per text. Furthermore, Davidson's dataset contains the most data points labelled as offensive: roughly 20750 Tweets fall into this category, while the Analytics Vidhya dataset contains 2240 hate speech texts, SwissText 1600, and Imperium 1000.\newline
+Throughout the literature, different definitions of hate speech and offensive language are given. For using a dataset in a user study with the scenario of a social media administrator, the definition of the label has to be clear. We therefore chose to work with the dataset of Davidson et al., as it offers the most detailed description of its labels and how the labels were obtained.
+
+\subsubsection{Twitter Data Preprocessing}
+\label{subsubsec:tweet_cleaning}
+Tweets exhibit some special characteristics. First, the maximum length of a single Tweet is 140 characters. Twitter doubled the length in November 2017, yet the dataset was collected before this data and therefore contains only Tweets of 140 characters or shorter. Twitter users found creative ways to make use of the 140 characters given, leading to the usage of short URLs instead of original URLs \cite{xiang2012detecting}, intentional reductions of words (e.g. ``nite" instead of ``night") \cite{xiang2012detecting}, abbreviations \cite{gupta2018proposed}, emojis \cite{ghorai2016information} \cite{watanabe2018hate} and smilies \cite{smailovic2013predictive} \cite{hovelmann2017fasttext}.\newline
+Furthermore, social media content can be unstructured, with word creations that are non in standard dictionaries, like slang words \cite{gupta2018proposed} \cite{watanabe2018hate}, intentional repetitions \cite{xiang2012detecting} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs} \cite{rother2018ulmfit} (e.g. ``hhheeeey"), contractions of words \cite{smailovic2013predictive} \cite{hemalatha2012preprocessing}, and spelling mistakes. Although those new word formations do not appear in the dictionary, they are ``intuitive and popular in social media" \cite{hu2012text}. \newline
+On Twitter, it is custom to mention other users within a Tweet by adding ``@"+username \cite{xiang2012detecting} \cite{montani2018tuwienkbs} \cite{watanabe2018hate} \cite{rother2018ulmfit}, retweeting (i.e. answering to) a Tweet \cite{xiang2012detecting} \cite{hemalatha2012preprocessing}, and summarizing a Tweet's topic with ``\#"+topic \cite{xiang2012detecting} \cite{watanabe2018hate}. \newline
+Other problems in text mining are the handling of stop words \cite{xiang2012detecting} \cite{ghorai2016information} \cite{gupta2018proposed}, language detection \cite{xiang2012detecting}, punctuation \cite{ghorai2016information} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs}, negation \cite{watanabe2018hate}, and case folding \cite{ghorai2016information} \cite{gupta2018proposed} \cite{rother2018ulmfit}.\newline
+Researchers have developed different strategies for preprocessing Tweets. One possible approach is to simply remove URLs, username, hashtags, emoticons, stop words, or punctuation \cite{xiang2012detecting} \cite{ghorai2016information} \cite{hemalatha2012preprocessing} \cite{montani2018tuwienkbs} \cite{gupta2018proposed} \cite{watanabe2018hate}. A reason to eliminate those tokens can be that they assumably do not hold information relevant to the classification goal \cite{hemalatha2012preprocessing}. Words that only exist for syntactic reasons (this concerns primarily stop words) can be omitted when focussing on sentiment or other semantic characteristics \cite{ghorai2016information}. Mentions of other users are likewise not informative for sentiment analysis and are often removed from the texts \cite{xiang2012detecting} \cite{watanabe2018hate}. Depending on the dataset size, normalising the texts strongly by removing punctuation and emojis, as well as lowercasing the texts, can decrease the vocabulary size \cite{ghorai2016information}. Especially on Twitter with its restricted text size, users tend to use shortened URLs. Short URLs have a concise, but often cryptic form, and redirect to the website with the original, long URL. While website links can encode some information on a topic, this information is lost when using a shortened URL. Removing the shortened URLs without replacement can be a step in preprocessing Tweets \cite{xiang2012detecting}.\newline
+Rather than removing tokens, they can also be replaced by a signifier token, e.g. a complete link by ``$<<<$hyperlink$>>>$" \cite{hovelmann2017fasttext}. In Tweets, such signifier tokens are used for mentions of usernames \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, URLs \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, smilies \cite{hovelmann2017fasttext} or negations \cite{smailovic2013predictive}. Using signifier tokens eliminates some information, i.e. which user was mentioned or which website was linked, but retains the information that a mention or link exists. Tokens can also be grouped by using signifier tokens, i.e. tokens with similar content are summarised with a single token. \cite{hovelmann2017fasttext} uses this technique to group smilies with similar sentiment and Twitter usernames related to the same company.\newline 
+Case folding is often addressed by converting Tweets to lower case \cite{ghorai2016information} \cite{hovelmann2017fasttext} \cite{gupta2018proposed}.\newline
+
+\subsubsection{Hate Speech Detection}
+hate speech detection systems found in literature use a wide range of classifiers: \newline
+\cite{davidson2017automated} compiled the dataset we use. They tested logistic regression, Naive Bayes, decision trees, random forests, and linear support vector machines (SVM). Best results: logistic regression and linear SVM. They eventually use logistic regression because it has a continuous output and showed promising performance in similar applications.\newline
+\cite{montani2018tuwienkbs} test logistic regression and random forests as well as an ensemble classifier that uses the outputs of the first two to classify with logistic regression. Their dataset was in German language.\newline
+\cite{gupta2018proposed} use cosine similarity measured on a scale of 0.0-1.0 with the class boundary at 0.6. This approach only applies to texts in a vector space representation, e.g. using fasttext or word2vec.\newline
+\cite{rother2018ulmfit} use recurrent neural networks (RNN) for German hate speech detection.\newline
+\cite{klenner2018offensive} focusses on implicit offensiveness (texts without words found in a hate speech database, but classified as offensive) and therefore classifies single words as offensive. To determine the probability of class belonging for a text, they use the amount of offensive words divided by the total amount of words.\newline
+\cite{del2017hate} compare SVMs and a special version of an RNN, the long short term memory (LSTM) classifier. The SVM performs better on detecting hate speech and equal for classifying texts without hate speech. Their dataset is in Italian language.\newline
+Although not focussing on offensive language in particular, but on general sentiment of texts, \cite{chen2018learning} develop a system architecture called ``Learning to Explain" (L2X) that uses a convolutional neural network (CNN) to classify the texts and then determines the k most decisive words in the input text using mutual information analysis. \medskip \newline
+Our goal are three systems with accuracies of 0.9, 0.7, and 0.1, which hold the potential to create truthful explanations for the decision process. We therefore choose L2X for the very good classifier, and use its inverted version (the same setup but trained on inversely labelled training set) for the bad classifier. We then use a time-tested classifier with average results: logistic regression. The advantage of logistic regression for our purpose is that if offers the coefficients for all input features which helps to generate explanations. 
+
+\subsubsection{Explanations}
+Description of the modality of explaining:\newline
+minimum explanation setup suggested by \cite{goodman16eu} (explaining how input features relate to the prediction)\newline
+We deal with textual input, hence the input features are the words in the texts. Showing how the words relate to the prediction can be done via highlighting (\cite{arras2017relevant, chen2012detecting, feng2018pathologies}).\newline
+If we want to investigate the influence of informative content in explanations on trust, different explanations need to be generated.
+\paragraph{Good explanations}
+L2X delivers explanations, logistic regression offers information about the coefficients, which are equal to the influence of individual words. For both classifiers, the decisive words in a text can be determined and subsequently communicated to the user.
+\paragraph{Zero explanations}
+The opposite of good explanations with high informative content is zero information content - hence no explanation at all. It needs to be noted that the explanation is not tied to the classification result (the label). The system can show no explanation but still show the decision. 
+\paragraph{Bad explanations}
+Similar to the ``placebic" explanations used in the copy machine experiment \cite{langer1978mindlessness}, bad explanations are not truthful to the underlying model but, on the surface, are visually similar to the good explanations.  
 
 
 
 
+\subsection{Evaluation}
+Intro\newline
+Trust and perceived understanding are subjective experiences and hence must be evaluated with a user study. Study based on the use case scenario: Setup as to mentally put the participants in the role of a social media administrator.\newline
+As trust builds up over time and is build on repeated experiences with an agent \cite{rempel1985trust}, participants of the user study need to have repeated interaction with the system. We therefore show them a set of Tweets combined with the classifier's decision and explanation and evaluate trust afterwards.\newline
 
+\paragraph{Conditions}
+We have the aspect of \textbf{accuracy} and \textbf{explainability} that we want to vary. In the copy machine experiment \cite{langer1978mindlessness} three explanation cases were used: (1) no explanation, (2) placebic explanation, and (3) informative explanation. We want to test the influence of accuracy on trust with three classifiers: (1) very good with 0.9 accuracy level, (2) medium at 0.7 accuracy, and (3) bad with 0.1 accuracy. Evaluating each classifier-explanation combination leads to 9 conditions that we encode as follows:
+\begin{table}
+	\begin{tabular}{l}
+		\textbf{Condition}\\ \midrule
+		super-good\\
+		super-rand\\
+		super-no\\
+		medium-good\\
+		medium-rand\\
+		medium-no\\
+		bad-good\\
+		bad-rand\\
+		bad-no\\ \bottomrule
+	\end{tabular}
+	\caption{List of classifier-explanation combinations evaluated in the user study}
+	\label{tab:conditions}
+\end{table}
 
-
-\subsection{Evaluation setup}
-
-Two evaluations: 
-\begin{itemize}
-	\item explanation evaluation (generics, ability to select truthfully important words from texts) to asses whether the explanations are ``good" in terms of truthful
-	\item user evaluation to assess trust and perceived understanding
-\end{itemize}
+\paragraph{Measures}
+Study goal is to evaluate differences in trust and perceived understanding.\newline
+Perceived understanding can be evaluated with a self-assessment questionnaire.\newline
+There are questionnaires available that measure trust, but \cite{langer1978mindlessness} observed the ignorance of informational content in explanations only in 
 
 
 
