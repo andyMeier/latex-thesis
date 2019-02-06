@@ -16,34 +16,34 @@
 \contentsline {subsection}{\numberline {2.5}Summary}{22}{subsection.2.5}
 \contentsline {section}{\numberline {3}Method}{25}{section.3}
 \contentsline {subsection}{\numberline {3.1}Use Case Scenario}{25}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Evaluation setup}{25}{subsection.3.2}
-\contentsline {section}{\numberline {4}Implementation}{26}{section.4}
-\contentsline {subsection}{\numberline {4.1}Dataset Selection}{26}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Dataset Construction}{27}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Dataset Preprocessing}{27}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Classifier}{29}{subsection.4.4}
-\contentsline {paragraph}{Good System}{30}{section*.5}
-\contentsline {paragraph}{Medium System}{30}{section*.6}
-\contentsline {paragraph}{Bad System}{30}{section*.7}
-\contentsline {subsection}{\numberline {4.5}Explanations}{30}{subsection.4.5}
-\contentsline {paragraph}{Good System}{30}{section*.8}
-\contentsline {paragraph}{Medium System}{30}{section*.9}
-\contentsline {paragraph}{Bad System}{30}{section*.10}
-\contentsline {subsection}{\numberline {4.6}Graphical User Interface}{30}{subsection.4.6}
-\contentsline {subsection}{\numberline {4.7}Subset Sampling}{31}{subsection.4.7}
-\contentsline {subsection}{\numberline {4.8}Explanation Evaluation}{32}{subsection.4.8}
-\contentsline {subsubsection}{\numberline {4.8.1}Evaluation 1: Accuracy on Reduced Texts}{32}{subsubsection.4.8.1}
-\contentsline {subsubsection}{\numberline {4.8.2}Evaluation 2: Ability to Reproduce Classifications}{32}{subsubsection.4.8.2}
-\contentsline {subsection}{\numberline {4.9}Subset Evaluation}{32}{subsection.4.9}
-\contentsline {section}{\numberline {5}User Study: Trust Evaluation}{33}{section.5}
-\contentsline {subsection}{\numberline {5.1}Method}{33}{subsection.5.1}
-\contentsline {paragraph}{Participants}{33}{section*.14}
-\contentsline {paragraph}{Apparatus}{33}{section*.15}
-\contentsline {paragraph}{Procedure}{34}{section*.16}
-\contentsline {paragraph}{Design \& Analysis}{35}{section*.19}
-\contentsline {subsection}{\numberline {5.2}Results}{36}{subsection.5.2}
-\contentsline {paragraph}{Perceived Understanding}{37}{section*.20}
-\contentsline {paragraph}{Trust Questionnaire}{37}{section*.22}
-\contentsline {paragraph}{Observed Trust via Proxy}{38}{section*.24}
-\contentsline {subsection}{\numberline {5.3}Discussion}{40}{subsection.5.3}
-\contentsline {section}{\numberline {6}Conclusion}{44}{section.6}
+\contentsline {subsection}{\numberline {3.2}Evaluation setup}{26}{subsection.3.2}
+\contentsline {section}{\numberline {4}Implementation}{27}{section.4}
+\contentsline {subsection}{\numberline {4.1}Dataset Selection}{27}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Dataset Construction}{28}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Dataset Preprocessing}{28}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Classifier}{30}{subsection.4.4}
+\contentsline {paragraph}{Good System}{31}{section*.5}
+\contentsline {paragraph}{Medium System}{31}{section*.6}
+\contentsline {paragraph}{Bad System}{31}{section*.7}
+\contentsline {subsection}{\numberline {4.5}Explanations}{31}{subsection.4.5}
+\contentsline {paragraph}{Good System}{31}{section*.8}
+\contentsline {paragraph}{Medium System}{31}{section*.9}
+\contentsline {paragraph}{Bad System}{31}{section*.10}
+\contentsline {subsection}{\numberline {4.6}Graphical User Interface}{31}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Subset Sampling}{32}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Explanation Evaluation}{33}{subsection.4.8}
+\contentsline {subsubsection}{\numberline {4.8.1}Evaluation 1: Accuracy on Reduced Texts}{33}{subsubsection.4.8.1}
+\contentsline {subsubsection}{\numberline {4.8.2}Evaluation 2: Ability to Reproduce Classifications}{33}{subsubsection.4.8.2}
+\contentsline {subsection}{\numberline {4.9}Subset Evaluation}{33}{subsection.4.9}
+\contentsline {section}{\numberline {5}User Study: Trust Evaluation}{34}{section.5}
+\contentsline {subsection}{\numberline {5.1}Method}{34}{subsection.5.1}
+\contentsline {paragraph}{Participants}{34}{section*.14}
+\contentsline {paragraph}{Apparatus}{34}{section*.15}
+\contentsline {paragraph}{Procedure}{35}{section*.16}
+\contentsline {paragraph}{Design \& Analysis}{36}{section*.19}
+\contentsline {subsection}{\numberline {5.2}Results}{37}{subsection.5.2}
+\contentsline {paragraph}{Perceived Understanding}{38}{section*.20}
+\contentsline {paragraph}{Trust Questionnaire}{38}{section*.22}
+\contentsline {paragraph}{Observed Trust via Proxy}{39}{section*.24}
+\contentsline {subsection}{\numberline {5.3}Discussion}{41}{subsection.5.3}
+\contentsline {section}{\numberline {6}Conclusion}{45}{section.6}

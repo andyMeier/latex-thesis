@@ -75,6 +75,14 @@ Jianbo Chen, Le~Song, Martin~J Wainwright, and Michael~I Jordan.
 \newblock In {\em Proceedings of the 35th International Conference on Machine
   Learning}, volume~80, pages 883--892. PMLR, 10--15 Jul 2018.
 
+\bibitem{chen2012detecting}
+Ying Chen, Yilu Zhou, Sencun Zhu, and Heng Xu.
+\newblock Detecting offensive language in social media to protect adolescent
+  online safety.
+\newblock In {\em Privacy, Security, Risk and Trust (PASSAT), 2012
+  International Conference on and 2012 International Confernece on Social
+  Computing (SocialCom)}, pages 71--80. IEEE, 2012.
+
 \bibitem{cheung1997mann}
 Ying~Kuen Cheung and Jerome~H Klotz.
 \newblock The mann whitney wilcoxon distribution using linked lists.
@@ -199,6 +207,12 @@ Leonard H{\"o}velmann and Christoph~M Friedrich.
 Xia Hu and Huan Liu.
 \newblock Text analytics in social media.
 \newblock In {\em Mining text data}, pages 385--414. Springer, 2012.
+
+\bibitem{jay2008pragmatics}
+Timothy Jay and Kristin Janschewitz.
+\newblock The pragmatics of swearing.
+\newblock {\em Journal of Politeness Research. Language, Behaviour, Culture},
+  4(2):267--288, 2008.
 
 \bibitem{joffe2001quality}
 Steven Joffe, E~Francis Cook, Paul~D Cleary, Jeffrey~W Clark, and Jane~C Weeks.

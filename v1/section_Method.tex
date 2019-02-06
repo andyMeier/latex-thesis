@@ -3,11 +3,42 @@ Intro
 
 Similar to the copy machine experiment. Comparison can be drawn because willingness to follow a recommendation is presumably somewhat similar to willingness to comply with a request 
 
-explanation: minimum explanation setup suggested by \cite{goodman16eu} explaining how input features relate to the prediction.
+WHAT to explain
+Requirements for a use case scenario in order to answer the research questions:
+\begin{enumerate}
+	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into
+	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection do not enclose their data either. Datasets used to gain economic advantage over competitors are often kept confidential or being censored \cite{diakopoulos2016accountability}.
+	\item \textit{Augmented intelligence setting}: human collaborating with classifier
+\end{enumerate}
+To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive Tweets supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
+
+HOW to classify:
+
+
+
+HOW to explain:
+\cite{ruping2006learning}: interpretability = efficiency, accuracy, explainability.
+We therefore investigate accuracy and explainability. To satisfy efficiency, we use the minimum explanation setup suggested by \cite{goodman16eu} (explaining how input features relate to the prediction). 
+
+
 
 \subsection{Use Case Scenario}
-definition of offensive language [34] \newline
+Offensive language detection for the purpose of youth protection.\newline
+Definition of offensive language given by \cite{chen2012detecting} who summarise the discussion of offensiveness and swearing in \cite{jay2008pragmatics} into three aspects:
+\begin{itemize}
+	\item \textit{Hateful language}: language that disparages someone on the basis of a protected trait (e.g. ethnicity, religion, nationality, gender, sexuality, disability, age \cite{diakopoulos2016accountability})
+	\item \textit{Pornographic language}: language with explicit sexual content for ``sexual arousal and erotic satisfaction" \cite{jay2008pragmatics}
+	\item \textit{Vulgar language}: language with obscenity and profanity referring to ``sex or bodily functions" \cite{jay2008pragmatics}	
+\end{itemize}
+
+\subsubsection{Hate speech detection}
 hate speech detection systems \newline
+
+
+
+
+
+
 
 \subsection{Evaluation setup}
 
