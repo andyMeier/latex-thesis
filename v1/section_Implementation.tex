@@ -146,6 +146,7 @@ experiments to validate whether the explanations we generate are actually ``good
 \subsubsection{Evaluation 1: Accuracy on Reduced Texts}
 For each system, take generated explanations of Tweets in the test set, reduce the text to the selected words, and feed the ``reduced Tweets" into the system. Hypothesis: If the words are very informative for the classifier, the accuracy would not change. The new accuracy should then be close to the old accuracy.\newline
 \begin{figure}[H]
+	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\includegraphics[width=\textwidth]{img/expleval1_logreg.JPG}
 	\end{subfigure}
@@ -161,6 +162,7 @@ Problem: Tweets are very short, which is why the information density is high. Ev
 \subsubsection{Evaluation 2: Ability to Reproduce Classifications}
 For each system, divide the dataset in 5 chunks. Use each chunk once as testset and the remaining chunks as training set. This way, we get predictions and generated explanations for each data point in the dataset. Use the reduced version of the dataset with the predictions as truths to repeat the procedure of evaluation 1. Hypothesis: If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset. Since we take the predictions of the classifier on the non-reduced dataset as ``truth", the accuracy should be close to 1.0 .
 \begin{figure}[H]
+	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
 		\includegraphics[width=\textwidth]{img/expleval2_logreg.JPG}
 	\end{subfigure}
