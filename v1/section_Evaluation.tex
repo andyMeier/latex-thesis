@@ -127,15 +127,42 @@ The self-reported trust scores show similar results as the perceived understandi
 The second trust measure uses a proxy to determine the trust a user puts into a system: the willingness to follow a system's recommendation, in this case the decision about offensiveness and non-offensiveness. Figure \ref{fig:results_proxy_away} shows the results of analysing the user's willingness to change a classification to match the system's decision while contradicting the truth. As a comparison, figure \ref{fig:results_proxy_towards} deals with changes in classification that were made in favour of both the system and the truth.\newline
 The results presented in this section need to be analysed with caution. Consider the case of the very good classifier with meaningful explanations. Out of 30 cases in this condition, 16 did not have the possibility to show a change away from the truth towards the prediction of the classifier, because the classifier in those 16 cases did not make any mistakes. From the remaining 14 cases, 4 showed the behaviour in question, leading to a mean of 0.286. This result is rather high, compared to the other conditions' mean scores. The same issue appears in the data for changing from a faulty classification towards a correct classification in accordance with the bad classifier: Each participant in this condition had at maximum once the possibility to show the behaviour in question. Seen that the number of participants in each group is not large to begin with, which is then reduced by the number of cases where such behaviour is not possible, the remaining sample size is very small for solid statistical analysis.\newline
 The highest changing rate in favour of the system but against the true label was detected for users of the very good classifier with a meaningful explanation, but also the highest variance. Users were significantly more likely to adapt the system's faulty decision when confronted with the very good system with random and no explanations than the users of any system with the bad classifier. The same holds true for users of the medium classifier without explanations.\newline
+%\begin{table}[H]
+%	\makebox[\textwidth][c]{
+%		\begin{tabular}{lrr|lrr|lrr}
+%			\textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+%			super-good & 0.286 & 0.452 & super-rand & 0.118 & 0.322 & super-no & 0.043 & 0.204 \\
+%			medium-good & 0.088 & 0.189 & medium-rand & 0.083 & 0.158 & medium-no & 0.075 & 0.183 \\
+%			bad-good & 0.050 & 0.066 & bad-rand & 0.054 & 0.067 & bad-no & 0.073 & 0.093 \\ \bottomrule
+%	\end{tabular}}
+%	\caption{Mean scores for trust measure via proxy (changes away from truth in favour of system decision)}
+%	\label{fig:results_table_proxy_away}
+%\end{table}
+
+
 \begin{table}[H]
 	\makebox[\textwidth][c]{
-		\begin{tabular}{lrr|lrr|lrr}
-			\textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
-			super-good & 0.286 & 0.452 & super-rand & 0.118 & 0.322 & super-no & 0.043 & 0.204 \\
-			medium-good & 0.088 & 0.189 & medium-rand & 0.083 & 0.158 & medium-no & 0.075 & 0.183 \\
-			bad-good & 0.050 & 0.066 & bad-rand & 0.054 & 0.067 & bad-no & 0.073 & 0.093 \\ \bottomrule
+		\begin{tabular}{lrrrrrrrr}
+			\textbf{Condition} & 
+			\head{1.5cm}{\textbf{Total cases}} & 
+			\head{1.5cm}{\textbf{Cases with opportunities}} & 
+			\head{1.5cm}{\textbf{Avg opportunities}} & 
+			\head{1.5cm}{\textbf{Cases with changes}} & 
+			\head{1.5cm}{\textbf{Avg changes}} & 
+			\head{1.5cm}{\textbf{Cases with changes away}} & 
+			\head{1.5cm}{\textbf{Avg changes away}} & 
+			\head{1.5cm}{\textbf{Norma-lised}} \\ \midrule
+			medium-good &	33 &	 33 &	 3.48 &	 17 &	 1.12 &	 7 &	 0.30 &	 \textbf{0.09} \\
+			medium-rand &	30 &	 30 &	 3.57 &	 20 &	 1.37 &	 7 &	 0.30 &	 \textbf{0.08} \\
+			bad-good &	 	38 &	 38 &	 14.45 &	 20 &	 0.95 &	 17 &	 0.71 &	 \textbf{0.05} \\
+			bad-rand &	 	30 &	 30 &	 14.27 &	 19 &	 1.13 &	 15 &	 0.77 &	 \textbf{0.05} \\
+			medium - no &	30 &	 30 &	 3.40 &	 	20 &	 1.00 &	 5 &	 0.23 &	 \textbf{0.08} \\
+			bad - no &	 	30 &	 30 &	 14.27 &	 19 &	 1.23 &	 16 &	 1.03 &	 \textbf{0.07} \\
+			super-good &	30 &	 14 &	 0.47 &	 20 &	 1.40 &	 4 &	 0.29 &	 \textbf{0.29} \\
+			super-rand &	32 &	 17 &	 0.53 &	 18 &	 1.09 &	 2 &	 0.12 &	 \textbf{0.12} \\
+			super-no &	 	34 &	 23 &	 0.68 &	 18 &	 1.18 &	 1 &	 0.04 &	 \textbf{0.04} \\ \bottomrule
 	\end{tabular}}
-	\caption{Mean scores for trust measure via proxy (changes away from truth in favour of system decision)}
+	\caption{Statistics for trust measure via proxy (changes away from truth in favour of system decision)}
 	\label{fig:results_table_proxy_away}
 \end{table}
 
@@ -157,15 +184,41 @@ The highest changing rate in favour of the system but against the true label was
 \end{figure}
 Looking at the changes made towards the truth in agreement with the classifiers, no significant differences are noted between any condition with the very good and medium classifier. The same holds true for the bad classifier. The very good and medium classifiers, however, evoked significantly more changes towards the truth than the bad classifier with explanations. The standard deviations of the conditions using the bad classifier are rather high as compared to any other condition.\newline
 One condition is exceptional in this analysis: Although the bad classifier without explanation has the highest mean score (i.e. changes towards the truth when the classifier made a correct prediction), the score is not significantly different from the bad classifier with a good and random explanation. The variance of all three systems (bad-no, bad-random, bad-good) are very high as compared to the variances of the other systems. The score deviates, however, from the results of the very good and medium classifier, which have lower mean scores but lower variances. The difference in variance is important to note when comparing the relatively high mean score of the bad classifier without explanation to the conditions with the very good and medium classifiers.
+%\begin{table}[H]
+%	\makebox[\textwidth][c]{
+%		\begin{tabular}{lrr|lrr|lrr}
+%			\textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+%			super-good & 0.073 & 0.073 & super-rand & 0.047 & 0.064 & super-no & 0.063 & 0.093 \\
+%			medium-good & 0.058 & 0.087 & medium-rand & 0.049 & 0.070 & medium-no & 0.058 & 0.066 \\
+%			bad-good & 0.048 & 0.213 & bad-rand & 0.045 & 0.208 & bad-no & 0.091 & 0.287 \\ \bottomrule
+%	\end{tabular}}
+%	\caption{Mean scores for trust measure via proxy (changes towards truth and system decision)}
+%	\label{fig:results_table_proxy_towards}
+%\end{table}
+
 \begin{table}[H]
 	\makebox[\textwidth][c]{
-		\begin{tabular}{lrr|lrr|lrr}
-			\textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
-			super-good & 0.073 & 0.073 & super-rand & 0.047 & 0.064 & super-no & 0.063 & 0.093 \\
-			medium-good & 0.058 & 0.087 & medium-rand & 0.049 & 0.070 & medium-no & 0.058 & 0.066 \\
-			bad-good & 0.048 & 0.213 & bad-rand & 0.045 & 0.208 & bad-no & 0.091 & 0.287 \\ \bottomrule
+		\begin{tabular}{lrrrrrrrr}
+			\textbf{Condition} & 
+			\head{1.5cm}{\textbf{Total cases}} & 
+			\head{1.5cm}{\textbf{Cases with opportunities}} & 
+			\head{1.5cm}{\textbf{Avg opportunities}} & 
+			\head{1.5cm}{\textbf{Cases with changes}} & 
+			\head{1.5cm}{\textbf{Avg changes}} & 
+			\head{1.5cm}{\textbf{Cases with changes towards}} & 
+			\head{1.5cm}{\textbf{Avg changes towards}} & 
+			\head{1.5cm}{\textbf{Norma-lised}} \\ \midrule
+			medium-good &	 33 &	 33 &	 11.52 &	 17 &	 1.12 &	 12 &	 0.67 &	 \textbf{0.06} \\
+			medium-rand &	 30 &	 30 &	 11.43 &	 20 &	 1.37 &	 12 &	 0.57 &	 \textbf{0.05} \\
+			bad-good &	 	38 &	 21 &	 0.55 &	 20 &	 0.95 &	 1 &	 0.05 &	 \textbf{0.05} \\
+			bad-rand &	 	30 &	 22 &	 0.73 &	 19 &	 1.13 &	 1 &	 0.05 &	 \textbf{0.05} \\
+			medium - no &	 30 &	 30 &	 11.60 &	 20 &	 1.00 &	 16 &	 0.67 &	 \textbf{0.06} \\
+			bad - no &	 	30 &	 22 &	 0.73 &	 19 &	 1.23 &	 2 &	 0.09 &	 \textbf{0.09} \\
+			super-good &	 30 &	 30 &	 14.53 &	 20 &	 1.40 &	 18 &	 1.07 &	 \textbf{0.07} \\
+			super-rand &	 32 &	 32 &	 14.47 &	 18 &	 1.09 &	 14 &	 0.69 &	 \textbf{0.05} \\
+			super-no &	 	34 &	 34 &	 14.32 &	 18 &	 1.18 &	 15 &	 0.91 &	 \textbf{0.06} \\ \bottomrule
 	\end{tabular}}
-	\caption{Mean scores for trust measure via proxy (changes towards truth and system decision)}
+	\caption{Statistics for trust measure via proxy (changes towards truth and system decision)}
 	\label{fig:results_table_proxy_towards}
 \end{table}
 

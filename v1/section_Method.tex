@@ -1,45 +1,53 @@
 \section{Method}
-{\color{blue}This section is still in bullet-points state and formulations/wording is not final!}\medskip \newline
-Intro\newline
-\cite{ruping2006learning}: interpretability = efficiency, accuracy, explainability.
-We therefore investigate accuracy and explainability. To satisfy efficiency, we use the minimum explanation setup suggested by \cite{goodman16eu} (explaining how input features relate to the prediction).\newline
-To examine the influence of accuracy on trust, we build three systems in total: a very good classifier, a medium classifier, and a bad classifier. We explicitly exclude random classification, since we aim to have a condition in which a meaningful (i.e. truthful) explanation is generated - which is impossible for random class assignment. We aim for classifiers with an accuracy around 0.9, 0.7, and 0.1. \newline
-Trust is as subjective experience and can therefore only be evaluated in user studies. Setup user study similar to the copy machine experiment. Comparison can be drawn because willingness to follow a recommendation (proxy for trust \cite{vorm2018assessing}) is assumed to be somewhat similar to the willingness of complying with a request. Use case (application) is needed for user study.\newline
-Requirements for a use case scenario in order to answer the research questions:
+The following section presents the methodological structure of the research project, driven by the research questions described in section \ref{sec:intro}.\newline
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/model}
+	\caption{Model of interpretability as defined in \cite{ruping2006learning}}
+	\label{fig:model_interpretability}
+\end{figure}
+\noindent In his model of interpretability, \cite{ruping2006learning} mentions accuracy, explainability, and efficiency as the three main aspects (see figure \ref{fig:model_interpretability}). Interpretability is a positive factor for trust (see section \ref{subsubsec:Explanation Goals}), leading to the assumption that accuracy, explainability, and efficiency have the potential to influence user trust. \textit{Efficiency} relates to the time and mental resources an average user needs to understand the explanation. While efficiency plays a role for user trust, it is not a particular topic in question for this research project. We aim to keep the efficiency constant and minimal throughout our research and therefore adopt the minimum explanation setup suggested by \cite{goodman16eu}: showing how the input features relate to the prediction of a classifier. \newline
+\textit{Accuracy} describes the classifier's ability to correctly classify data points (differing from \textit{fidelity}, which describes the explanation's ability to correctly explain the model). To examine the influence of accuracy on user trust, the user's relation with classifiers at varying accuracy levels will be tested. We are especially interested in the extremes as well as a ``realistic" accuracy level in between both extremes and therefore build three systems in total: a very good classifier (0.9 accuracy), a medium classifier (0.7 accuracy), and a bad classifier (0.1 accuracy). We explicitly exclude random classification, since we aim to have a condition in which a meaningful (i.e. truthful) explanation is generated - which is impossible for random class assignment.\newline
+Finally, \textit{explainability}, as explained in section \ref{subsec:explainability}, concerns the communication of reasons for an event. For investigating the influence of the explanation's truthfulness, we aim to compare explanations with varying informative content (i.e. varying level of fidelity). The research design is inspired by the copy machine experiment presented in \cite{langer1978mindlessness}, that compared truthful explanations, ``placebic" or dishonest explanations, and a condition without any explanation.\medskip \newline
+Since trust is a subjective experience (see section \ref{subsec:trust}), it must be evaluated in a user study. For a user study, a use case scenario helps to create a realistic environment and ensure applicability of the results for practitioners. Based on section \ref{sec:background}, the following aspects are required for a use case scenario in order to answer the research questions:
 \begin{enumerate}
-	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into
-	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection do not enclose their data either. Datasets used to gain economic advantage over competitors are often kept confidential or being censored \cite{diakopoulos2016accountability}.
-	\item \textit{Augmented intelligence setting}: human collaborating with classifier
+	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into.
+	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection enclose their data likewise. Datasets used to gain economic advantage over competitors are often kept confidential or being censored. \cite{diakopoulos2016accountability}.
+	\item \textit{Augmented intelligence setting} in which a human collaborates with a machine learning classifier, ensuring that the user's ``willingness to accept a computer-generated recommendation" \cite{vorm2018assessing} is applicable as a proxy measure for trust.
 \end{enumerate}
 To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive texts supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
 
 
 
-
-\subsection{Use Case Scenario}
-Offensive language detection for the purpose of youth protection.\newline
-Definition of offensive language given by \cite{chen2012detecting} who summarise the discussion of offensiveness and swearing in \cite{jay2008pragmatics} into three aspects:
+\subsection{Use Case Implications}
+The use case scenario takes the user study participants to the topic of offensive language detection for the purpose of youth protection on the internet. \cite{chen2012detecting} define offensive language based on the work of \cite{jay2008pragmatics} as a composition of three categories:
 \begin{itemize}
 	\item \textit{Hateful language}: language that disparages someone on the basis of a protected trait (e.g. ethnicity, religion, nationality, gender, sexuality, disability, age \cite{diakopoulos2016accountability})
-	\item \textit{Pornographic language}: language with explicit sexual content for ``sexual arousal and erotic satisfaction" \cite{jay2008pragmatics}
-	\item \textit{Vulgar language}: language with obscenity and profanity referring to ``sex or bodily functions" \cite{jay2008pragmatics}	
+	\item \textit{Pornographic language}: language with explicit sexual content for ``sexual arousal and erotic satisfaction" \cite{chen2012detecting}
+	\item \textit{Vulgar language}: language with obscenity and profanity referring to ``sex or bodily functions" \cite{chen2012detecting}	
 \end{itemize}
-To train classifiers and perform user study we need a dataset containing offensive language.
+Although offensive language and hate speech are not accurately separated, \cite{davidson2017automated} argues that hate speech is always connected to the expression of hatred, while offensive language uses words that are hate speech in some contexts, but not in others. An example can be found in slang language. The word ``bitch" can be amongst others defamatory, neutral, or an expression of friendship. The ``urban dictionary" lists nine different typical applications\footnote{https://www.urbandictionary.com/define.php?term=bitch}, not all of them being pejorative. In this research project, we adopt the definition of \cite{chen2012detecting} and do not particularly differentiate between hate speech and offensive language to match the use case scenario. Not only hate speech, but also positively meant offensive language should not be broadcasted to a youth audience.\newline
+To train machine learning classifiers on offensive language, an annotated dataset is needed. Ideally, the dataset is labelled by human annotators, distinguishes between offensive language and non-offensive language, and contains texts from one or more social media platforms.
 
 \subsubsection{Dataset Selection}
 Few datasets with offensive language texts are publicly available. Table \ref{tab:StatsAllDatasets} presents an overview of four available datasets, their sizes and class balances. \newline
 \begin{table}[H]
 	\centering
 	\begin{tabular}{llll}
-		\textbf{Corpus} & \textbf{Size} & \textbf{Classes} & \textbf{} \\ \hline
-		Davidson\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language} & 25,000 & \begin{tabular}[c]{@{}l@{}} hate speech\\offensive\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 6\%\\77\%\\17\%\end{tabular} \\ \hline
-		Imperium\footnote{https://www.kaggle.com/c/detecting-insults-in-social-commentary/data} & 3,947 & \begin{tabular}[c]{@{}l@{}} neutral\\insulting\end{tabular} & \begin{tabular}[c]{@{}l@{}} 73\%\\27\%\end{tabular} \\ \hline
-		Analytics Vidhya\footnote{https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/} & 31,962 & \begin{tabular}[c]{@{}l@{}} hate speech\\no hate speech\end{tabular} & \begin{tabular}[c]{@{}l@{}} 7\%\\93\%\end{tabular} \\ \hline
-		SwissText\footnote{https://www.swisstext.org/workshops/2018/Hackathon.html} & 159,570 & \begin{tabular}[c]{@{}l@{}} toxic\\severe\_toxic\\obscene\\threat\\insult\\hate speech\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 10\%\\1\%\\5\%\\0.3\%\\5\%\\1\%\\72.7\%\end{tabular} \\ \hline        
+		\textbf{Corpus} & \textbf{Size} & \textbf{Classes} & \textbf{Split} \\ \hline
+		Davidson\footnotemark[1] & 25,000 & \begin{tabular}[c]{@{}l@{}} hate speech\\offensive\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 6\%\\77\%\\17\%\end{tabular} \\ \hline
+		Imperium\footnotemark[2] & 3,947 & \begin{tabular}[c]{@{}l@{}} neutral\\insulting\end{tabular} & \begin{tabular}[c]{@{}l@{}} 73\%\\27\%\end{tabular} \\ \hline
+		Analytics Vidhya\footnotemark[3] & 31,962 & \begin{tabular}[c]{@{}l@{}} hate speech\\no hate speech\end{tabular} & \begin{tabular}[c]{@{}l@{}} 7\%\\93\%\end{tabular} \\ \hline
+		SwissText\footnotemark[4] & 159,570 & \begin{tabular}[c]{@{}l@{}} toxic\\severe\_toxic\\obscene\\threat\\insult\\hate speech\\neither\end{tabular} & \begin{tabular}[c]{@{}l@{}} 10\%\\1\%\\5\%\\0.3\%\\5\%\\1\%\\72.7\%\end{tabular} \\ \hline        
 	\end{tabular}
 	\caption{Publicly available datasets for offensive language texts}
 	\label{tab:StatsAllDatasets}
 \end{table}
+\footnotetext[1]{https://github.com/t-davidson/hate-speech-and-offensive-language}
+\footnotetext[2]{https://www.kaggle.com/c/detecting-insults-in-social-commentary/data}
+\footnotetext[3]{https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/}
+\footnotetext[4]{https://www.swisstext.org/workshops/2018/Hackathon.html}
+\setcounter{footnote}{4}
 While the dataset of SwissText has the most fine-grained labelling of its data points, details on how the labels were assigned (i.e. number of annotators, inter-annotator agreement score, definition of the classes) are not available. The same holds for the datasets of Analytics Vidhya and Imperium.\newline
 In contrast, Davidson's datasets comes with a description of how the data points were collected, how the classes are defined, and uses at least three annotators per text. Furthermore, Davidson's dataset contains the most data points labelled as offensive: roughly 20750 Tweets fall into this category, while the Analytics Vidhya dataset contains 2240 hate speech texts, SwissText 1600, and Imperium 1000.\newline
 Throughout the literature, different definitions of hate speech and offensive language are given. For using a dataset in a user study with the scenario of a social media administrator, the definition of the label has to be clear. We therefore chose to work with the dataset of Davidson et al., as it offers the most detailed description of its labels and how the labels were obtained.
@@ -54,7 +62,7 @@ Researchers have developed different strategies for preprocessing Tweets. One po
 Rather than removing tokens, they can also be replaced by a signifier token, e.g. a complete link by ``$<<<$hyperlink$>>>$" \cite{hovelmann2017fasttext}. In Tweets, such signifier tokens are used for mentions of usernames \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, URLs \cite{smailovic2013predictive} \cite{hovelmann2017fasttext} \cite{rother2018ulmfit}, smilies \cite{hovelmann2017fasttext} or negations \cite{smailovic2013predictive}. Using signifier tokens eliminates some information, i.e. which user was mentioned or which website was linked, but retains the information that a mention or link exists. Tokens can also be grouped by using signifier tokens, i.e. tokens with similar content are summarised with a single token. \cite{hovelmann2017fasttext} uses this technique to group smilies with similar sentiment and Twitter usernames related to the same company.\newline 
 Case folding is often addressed by converting Tweets to lower case \cite{ghorai2016information} \cite{hovelmann2017fasttext} \cite{gupta2018proposed}.\newline
 
-\subsubsection{Hate Speech Detection}
+\subsubsection{Offensive Language Detection}
 hate speech detection systems found in literature use a wide range of classifiers: \newline
 \cite{davidson2017automated} compiled the dataset we use. They tested logistic regression, Naive Bayes, decision trees, random forests, and linear support vector machines (SVM). Best results: logistic regression and linear SVM. They eventually use logistic regression because it has a continuous output and showed promising performance in similar applications.\newline
 \cite{montani2018tuwienkbs} test logistic regression and random forests as well as an ensemble classifier that uses the outputs of the first two to classify with logistic regression. Their dataset was in German language.\newline

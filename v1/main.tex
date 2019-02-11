@@ -1,7 +1,6 @@
 \documentclass[]{article}
 
 %packages
-\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -9,7 +8,9 @@
 \usepackage{booktabs}
 \usepackage{subcaption}
 \usepackage[format=plain, font=it]{caption}
-
+\usepackage{array}
+\newcommand{\head}[2]{\multicolumn{1}{>{\centering\arraybackslash}p{#1}}{\textbf{#2}}}
+\usepackage{hyperref}
 
 \begin{document}
 
