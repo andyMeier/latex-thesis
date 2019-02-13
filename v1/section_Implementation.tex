@@ -1,4 +1,6 @@
-\section{Implementation}
+\section{Materials}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
 {\color{blue}This section is still in bullet-points state and formulations/wording is not final!}\medskip \newline
 Intro: this section is for the technical documentation of the data preprocessing, classifier implementation, explanation generation and validation. 
 
@@ -142,7 +144,7 @@ We generate a quantity of 100 such subsets and order them by their KLD sum. The 
 \label{subsec:expleval}
 experiments to validate whether the explanations we generate are actually ``good" explanations and those generated with the random method are actually ``bad" explanations.
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
 \subsubsection{Evaluation 1: Accuracy on Reduced Texts}
 For each system, take generated explanations of Tweets in the test set, reduce the text to the selected words, and feed the ``reduced Tweets" into the system. Hypothesis: If the words are very informative for the classifier, the accuracy would not change. The new accuracy should then be close to the old accuracy.\newline
 \begin{figure}[H]
@@ -173,7 +175,11 @@ For each system, divide the dataset in 5 chunks. Use each chunk once as testset 
 	\label{fig:results_expleval2}
 \end{figure}
 
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
 
 \subsection{Subset Evaluation}
 same as previous section, but with the filtered subsets, basically. And on ``perfect" classifier. For k=4, because we use k=4 for final explanation generation.
+
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}

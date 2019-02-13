@@ -1,5 +1,12 @@
-\section{Method}
+\section{Methodology}
 The following section presents the methodological structure of the research project, driven by the research questions described in section \ref{sec:intro}.\newline
+Since trust is a subjective experience (see section \ref{subsec:trust}), it must be evaluated in a user study. For a user study, a use case scenario helps to create a realistic environment and ensure applicability of the results for practitioners. Based on section \ref{sec:background}, the following aspects are required for a use case scenario to answer the research questions:
+\begin{enumerate}
+	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into.
+	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection enclose their data likewise. Datasets used to gain economic advantage over competitors are often kept confidential or being censored. \cite{diakopoulos2016accountability}.
+	\item \textit{Augmented intelligence setting} in which a human collaborates with a machine learning classifier, ensuring that the user's ``willingness to accept a computer-generated recommendation" \cite{vorm2018assessing} is applicable as a proxy measure for trust.
+\end{enumerate}
+To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive texts supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{img/model}
@@ -8,14 +15,7 @@ The following section presents the methodological structure of the research proj
 \end{figure}
 \noindent In his model of interpretability, \cite{ruping2006learning} mentions accuracy, explainability, and efficiency as the three main aspects (see figure \ref{fig:model_interpretability}). Interpretability is a positive factor for trust (see section \ref{subsubsec:Explanation Goals}), leading to the assumption that accuracy, explainability, and efficiency have the potential to influence user trust. \textit{Efficiency} relates to the time and mental resources an average user needs to understand the explanation. While efficiency plays a role for user trust, it is not a particular topic in question for this research project. We aim to keep the efficiency constant and minimal throughout our research and therefore adopt the minimum explanation setup suggested by \cite{goodman16eu}: showing how the input features relate to the prediction of a classifier. \newline
 \textit{Accuracy} describes the classifier's ability to correctly classify data points (differing from \textit{fidelity}, which describes the explanation's ability to correctly explain the model). To examine the influence of accuracy on user trust, the user's relation with classifiers at varying accuracy levels will be tested. We are especially interested in the extremes as well as a ``realistic" accuracy level in between both extremes and therefore build three systems in total: a very good classifier (0.9 accuracy), a medium classifier (0.7 accuracy), and a bad classifier (0.1 accuracy). We explicitly exclude random classification, since we aim to have a condition in which a meaningful (i.e. truthful) explanation is generated - which is impossible for random class assignment.\newline
-Finally, \textit{explainability}, as explained in section \ref{subsec:explainability}, concerns the communication of reasons for an event. For investigating the influence of the explanation's truthfulness, we aim to compare explanations with varying informative content (i.e. varying level of fidelity). The research design is inspired by the copy machine experiment presented in \cite{langer1978mindlessness}, that compared truthful explanations, ``placebic" or dishonest explanations, and a condition without any explanation.\medskip \newline
-Since trust is a subjective experience (see section \ref{subsec:trust}), it must be evaluated in a user study. For a user study, a use case scenario helps to create a realistic environment and ensure applicability of the results for practitioners. Based on section \ref{sec:background}, the following aspects are required for a use case scenario in order to answer the research questions:
-\begin{enumerate}
-	\item \textit{Realistic application scenario} that participants of a user study can relate to and feel into.
-	\item \textit{Negative consequences for classification errors}: Possible areas are presented in section \ref{subsubsec:application_areas}, but not all of them are feasible to be investigated in this research project. Data with sensitive content are (fortunately) not freely available, and high-risk domains like criminal justice and terrorism detection enclose their data likewise. Datasets used to gain economic advantage over competitors are often kept confidential or being censored. \cite{diakopoulos2016accountability}.
-	\item \textit{Augmented intelligence setting} in which a human collaborates with a machine learning classifier, ensuring that the user's ``willingness to accept a computer-generated recommendation" \cite{vorm2018assessing} is applicable as a proxy measure for trust.
-\end{enumerate}
-To meet the requirements, we use the scenario of a company's social media channel targetting teenagers and young adults of 15-20 years old. The use case task concerns the identification of offensive texts supported by a machine learning system trained to detect offensiveness. Participants of the study take on the role of a social media moderator and administrator responsible for the content posted within the social media channel. 
+Finally, \textit{explainability}, as explained in section \ref{subsec:explainability}, concerns the communication of reasons for an event. For investigating the influence of the explanation's truthfulness, we aim to compare explanations with varying informative content (i.e. varying level of fidelity). The research design is inspired by the copy machine experiment presented in \cite{langer1978mindlessness}, that compared truthful explanations, ``placebic" or dishonest explanations, and a condition without any explanation.
 
 
 
@@ -30,7 +30,7 @@ Although offensive language and hate speech are not accurately separated, \cite{
 To train machine learning classifiers on offensive language, an annotated dataset is needed. Ideally, the dataset is labelled by human annotators, distinguishes between offensive language and non-offensive language, and contains texts from one or more social media platforms.
 
 \subsubsection{Dataset Selection}
-Few datasets with offensive language texts are publicly available. Table \ref{tab:StatsAllDatasets} presents an overview of four available datasets, their sizes and class balances. \newline
+Few datasets with offensive language texts are publicly available. Table \ref{tab:StatsAllDatasets} presents an overview of four available datasets, their sizes and class balances.\newline
 \begin{table}[H]
 	\centering
 	\begin{tabular}{llll}
@@ -48,9 +48,10 @@ Few datasets with offensive language texts are publicly available. Table \ref{ta
 \footnotetext[3]{https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/}
 \footnotetext[4]{https://www.swisstext.org/workshops/2018/Hackathon.html}
 \setcounter{footnote}{4}
-While the dataset of SwissText has the most fine-grained labelling of its data points, details on how the labels were assigned (i.e. number of annotators, inter-annotator agreement score, definition of the classes) are not available. The same holds for the datasets of Analytics Vidhya and Imperium.\newline
+\noindent While the dataset of SwissText has the most fine-grained labelling of its data points, details on how the labels were assigned (i.e. number of annotators, inter-annotator agreement score, definition of the classes) are not available. The same holds for the datasets of Analytics Vidhya and Imperium.\newline
 In contrast, Davidson's datasets comes with a description of how the data points were collected, how the classes are defined, and uses at least three annotators per text. Furthermore, Davidson's dataset contains the most data points labelled as offensive: roughly 20750 Tweets fall into this category, while the Analytics Vidhya dataset contains 2240 hate speech texts, SwissText 1600, and Imperium 1000.\newline
-Throughout the literature, different definitions of hate speech and offensive language are given. For using a dataset in a user study with the scenario of a social media administrator, the definition of the label has to be clear. We therefore chose to work with the dataset of Davidson et al., as it offers the most detailed description of its labels and how the labels were obtained.
+Throughout the literature, different definitions of hate speech and offensive language are given. For using a dataset in a user study with the scenario of a social media administrator, the definition of the label has to be clear. We therefore choose to work with the dataset of Davidson et al., as it offers the most detailed description of its labels and how the labels were obtained.
+
 
 \subsubsection{Twitter Data Preprocessing}
 \label{subsubsec:tweet_cleaning}
@@ -63,14 +64,16 @@ Rather than removing tokens, they can also be replaced by a signifier token, e.g
 Case folding is often addressed by converting Tweets to lower case \cite{ghorai2016information} \cite{hovelmann2017fasttext} \cite{gupta2018proposed}.\newline
 
 \subsubsection{Offensive Language Detection}
-hate speech detection systems found in literature use a wide range of classifiers: \newline
-\cite{davidson2017automated} compiled the dataset we use. They tested logistic regression, Naive Bayes, decision trees, random forests, and linear support vector machines (SVM). Best results: logistic regression and linear SVM. They eventually use logistic regression because it has a continuous output and showed promising performance in similar applications.\newline
-\cite{montani2018tuwienkbs} test logistic regression and random forests as well as an ensemble classifier that uses the outputs of the first two to classify with logistic regression. Their dataset was in German language.\newline
-\cite{gupta2018proposed} use cosine similarity measured on a scale of 0.0-1.0 with the class boundary at 0.6. This approach only applies to texts in a vector space representation, e.g. using fasttext or word2vec.\newline
+Offensive language and hate speech detection systems noted in related literature use a wide range of classifiers.\newline
+The data engineers of the dataset we chose tested a variety of classifiers for distinguishing hate speech, offensive language, and non-offensive language \cite{davidson2017automated}. The best results were found for a logistic regression system and a linear support vector machine (SVM), reaching a better performance than Naive Bayes, decision tree, and random forests. They eventually use logistic regression because it offers continuous output and showed promising performance in similar applications.\newline
+\cite{montani2018tuwienkbs} use an ensemble setting with a logistic regression classifier and a random forests system to generate features that are subsequently forwarded to a final logistic regression classifier.\newline
+
+\cite{del2017hate} compare SVMs and a special version of an RNN, the long short term memory (LSTM) classifier. The SVM performs better on detecting hate speech and equal for classifying texts without hate speech. Their dataset is in Italian language.\newline
 \cite{rother2018ulmfit} use recurrent neural networks (RNN) for German hate speech detection.\newline
 \cite{klenner2018offensive} focusses on implicit offensiveness (texts without words found in a hate speech database, but classified as offensive) and therefore classifies single words as offensive. To determine the probability of class belonging for a text, they use the amount of offensive words divided by the total amount of words.\newline
-\cite{del2017hate} compare SVMs and a special version of an RNN, the long short term memory (LSTM) classifier. The SVM performs better on detecting hate speech and equal for classifying texts without hate speech. Their dataset is in Italian language.\newline
-Although not focussing on offensive language in particular, but on general sentiment of texts, \cite{chen2018learning} develop a system architecture called ``Learning to Explain" (L2X) that uses a convolutional neural network (CNN) to classify the texts and then determines the k most decisive words in the input text using mutual information analysis. \medskip \newline
+\cite{gupta2018proposed} use cosine similarity measured on a scale of 0.0-1.0 with the class boundary at 0.6. This approach only applies to texts in a vector space representation, e.g. when encoding texts with fasttext or word2vec.\newline
+
+Although not focussing on offensive language in particular, but on general sentiment of texts, \cite{chen2018learning} developed a system architecture called ``Learning to Explain" (L2X) that uses a convolutional neural network (CNN) to classify. In a sexond step, the algorithm determines the $k$ most decisive words in the input text using mutual information analysis. \medskip \newline
 Our goal are three systems with accuracies of 0.9, 0.7, and 0.1, which hold the potential to create truthful explanations for the decision process. We therefore choose L2X for the very good classifier, and use its inverted version (the same setup but trained on inversely labelled training set) for the bad classifier. We then use a time-tested classifier with average results: logistic regression. The advantage of logistic regression for our purpose is that if offers the coefficients for all input features which helps to generate explanations. 
 
 \subsubsection{Explanations}
@@ -88,14 +91,14 @@ Similar to the ``placebic" explanations used in the copy machine experiment \cit
 
 
 
-\subsection{Evaluation}
+\subsection{User Study}
 Intro\newline
 Trust and perceived understanding are subjective experiences and hence must be evaluated with a user study. Study based on the use case scenario: Setup as to mentally put the participants in the role of a social media administrator.\newline
 As trust builds up over time and is build on repeated experiences with an agent \cite{rempel1985trust}, participants of the user study need to have repeated interaction with the system. We therefore show them a set of Tweets combined with the classifier's decision and explanation and evaluate trust afterwards.\newline
 
-\paragraph{Conditions}
+\subsubsection{Conditions}
 We have the aspect of \textbf{accuracy} and \textbf{explainability} that we want to vary. In the copy machine experiment \cite{langer1978mindlessness} three explanation cases were used: (1) no explanation, (2) placebic explanation, and (3) informative explanation. We want to test the influence of accuracy on trust with three classifiers: (1) very good with 0.9 accuracy level, (2) medium at 0.7 accuracy, and (3) bad with 0.1 accuracy. Evaluating each classifier-explanation combination leads to 9 conditions that we encode as follows:
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{l}
 		\textbf{Condition}\\ \midrule
@@ -113,10 +116,40 @@ We have the aspect of \textbf{accuracy} and \textbf{explainability} that we want
 	\label{tab:conditions}
 \end{table}
 
-\paragraph{Measures}
-Study goal is to evaluate differences in trust and perceived understanding.\newline
+\paragraph{Participants}
+Participants are recruited via the paid science crowdsourcing platform ``Prolific"\footnote{https://prolific.ac} and ``SurveyCircle"\footnote{https://www.surveycircle.com}, an unpaid participant recruitment platform based on mutuality. All participants recruited on the paid platform ``Prolific" receive a compensation of 1.40 GBP (1.60 EUR) for an estimated expenditure of time of 12 minutes. Participants from ``SurveyCircle" receive a reward of 4.4 Study Points. On both platforms, individuals younger than 18 years are excluded to participate for reasons of consent by a major. The use case scenario includes reading and understanding real-life Tweets with slang words, grammatical and literal errors. The platforms therefore screen for people being fluent in English. The study questionnaire includes an attention check question, asking the participants to answer ``completely disagree" in between the trust questionnaire items assessed on a 5-point Likert scale. Data from participants who fail to answer the attention check correctly is excluded from the analysis. Furthermore, only complete responses are analysed, i.e. data from participants who reach the last page of the survey. 
+
+\subsubsection{Measures}
 Perceived understanding can be evaluated with a self-assessment questionnaire.\newline
-There are questionnaires available that measure trust, but \cite{langer1978mindlessness} observed the ignorance of informational content in explanations only in a ``mindless", i.e. inattentive state. We therefore use a second measure of trust, the proxy measure of willingness to adopt a classifier's recommendation. The proxy can be measured by exposing the participants to the Tweets once without the system and a second time with the system and observe the changes in classification that were made. 
+For measuring trust in the automatic decision system, we use the trust questionnaire for automtated systems by \cite{ruping2006learning}. However, \cite{langer1978mindlessness} observed the ignorance of informational content in explanations only in a ``mindless", i.e. inattentive state. We therefore use a second measure of trust, the proxy measure of willingness to adopt a classifier's recommendation. The proxy can be measured by exposing the participants to the Tweets once without the system and a second time with the system and observe the changes in classification that were made. A detailed list of all questions used in the survey can be found in appendix {\color{red}X}.
+
+\subsubsection{Procedure}
+On both platforms, the participants receive a link to the survey. As soon as the participant opens the survey URL, the survey starts. The survey consists of the following content:
+\begin{enumerate}
+	\item Introduction \& consent form
+	\item \textit{Scenario 1}: Social media administrator and manual offensive language detection
+	\item \textit{Tweet block 1}: 15 Tweets for classification, on individual pages (no system)
+	\item \textit{Scenario 2}: Introduction to automatic decision system supporting the task
+	\item \textit{Tweet block 2}: Repetition of 15 Tweets for classification, on individual pages (with system)
+	\item Perceived understanding \& trust questionnaire
+	\item Demographics
+	\item Outroduction \& crowdsourcing completion codes
+\end{enumerate}
+In general, the study contains three blocks plus an introduction and outroduction section. The first block treats a scenario in which the participant plays the role of a ``social media administrator" of a company with a young target group (15-20 years old). The task of the social media administrator is to identify content with offensive language in order to block such comments or Tweets. The next 15 pages of the survey contain one Tweet each, shown on a screenshot of a management tool, and ask the participant to classify the text as offensive or not offensive as shown in figure. The order in which the Tweets are shown is randomised for each participant. There are 10 different sets of Tweets available (without overlap), to avoid effects from the specific wording or topics in the small set of 15 Tweets. At the start of the survey, each participant is randomly assigned to one Tweet set by the system.\newline
+The second block introduces the automatic decision system. The participant is again asked to classify 15 ``very similar" Tweets, which are, in fact, identical to the ones shown in the first block. This particular formulation aims to liberate the participants from the urge to classify each text with exactly the same label as in the first block. The ordering of the Tweets is random and hence very likely to be different from the ordering of the first block. In total, 9 conditions exist: three systems (classifier with 0.95, 0.75, and 0.05 accuracy) with three explanation types (informative, placebic, no explanation) each. Each participant has one condition assigned at the beginning of the survey, such that there is an equal distribution of conditions in finished questionnaires. \newline
+Finally, the last block contains three questions regarding perceived understanding, 19 items measuring the user's trust including an attention check, and 5 demographic questions (gender, age, country, ethnicity, English language level).\newline
+
+\subsubsection{Analysis}
+The between-subject setup described in the previous paragraph is tested in a pilot study with 11 participants. The participants are recruited via ``Prolific" and receive a compensation of 2.00 GBP (2.28 EUR). They complete the study in ``pretest" mode, which shows an additional comment box at the bottom of each survey page.\newline
+The main study is set up as a quantitative study without open questions or free text input. Basic frequency analysis is used for the demographic items in order to understand the background of the participants. Three topics are investigated in a statistical manner: perceived understanding (3 items), self-reported trust (19 items), and observed trust via proxy. For the first two, a 5-point Likert scale is employed.\newline
+A \textit{Perceived understanding} score is calculated for each participant by taking the mean of the ratings for all three items in the questionnaire. The trust questionnaire used to measure \textit{self-reported trust} contains 14 positive items and 5 inverse items. A single mean score is calculated by taking the average over the positive items and the maximum rating minus the mean of the inverse items. As a second trust measure, \textit{observed trust} is investigated via the proxy of willingness to follow a system's recommendation. The survey contains a block of manual classification without the system, and a second round with the information provided by the automated decision system. In each block, participants classify the same set of Tweets. We can therefore determine how often a participant switches his or her classification out of 15 possible cases, and how often the change is made in agreement with the classifier's prediction but against the truth. Since the three classifiers offer different amount of opportunities to change with the classifier's prediction away from the truth (maximum 14 cases for the bad classifier as opposed to maximum 1 case for the very good classifier), the proxy measure is calculated and normalised as follows for each participant:
+\[ \frac{changes\_towards\_prediction\_against\_truth}{opportunities\_for\_change\_against\_truth} \]
+Cases in which the very good classifier does not make any misclassification (hence no opportunity for the user to change in favour of the classifier and in contradiction to the truth) are excluded, because no valid conclusion can be drawn from these cases.\newline
+The goal of the statistical analysis for all three topics (perceived understanding, self-reported trust, observed trust via proxy) is to identify differences between different conditions. To determine whether the samples are normally distributed, we use the Shapiro-Wilk test \footnote{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html} for normality from the SciPy library). We use the Mann-Whitney U test to compare two samples, since it does not assume normal distribution nor equal sample sizes or variances. For sample sizes above 20 data points, we employ SciPy's approximation\footnote{https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html} of the Mann-Whitney U test. In case of smaller sample sizes, we use the exact implementation\footnote{https://mail.python.org/pipermail/scipy-dev/2015-March/020475.html} of the Mann-Whitney U test as described in \cite{cheung1997mann}.
+
+\subsubsection{Apparatus}
+The user study is set up as an online study, the study can therefore be taken at a self-chosen location on private devices. Participants are asked to completed the survey on a notebook, desktop computer or tablet. For consistency with the use case scenario, screenshots of a fictive social media management platform show the input texts, decisions and explanations. The screenshots have a ratio of 900px (width) to 253px (height). To ensure that improper scaling of the screenshots does not influence the participants' perception, devices with small screens (e.g. smartphones and other mobile devices) are excluded. However, which device participants finally use cannot be verified. No further requirements are made regarding the equipment of the participant's device.
+
 
 
 

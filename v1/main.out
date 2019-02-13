@@ -5,10 +5,10 @@
 \BOOKMARK [2][-]{subsection.2.3}{Explanations}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.4}{Trust in AI}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.5}{Summary}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Method}{}% 8
+\BOOKMARK [1][-]{section.3}{Methodology}{}% 8
 \BOOKMARK [2][-]{subsection.3.1}{Use Case Implications}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.2}{Evaluation}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 11
+\BOOKMARK [2][-]{subsection.3.2}{User Study}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Materials}{}% 11
 \BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 12
 \BOOKMARK [2][-]{subsection.4.2}{Classifier}{section.4}% 13
 \BOOKMARK [2][-]{subsection.4.3}{Explanations}{section.4}% 14
@@ -16,8 +16,6 @@
 \BOOKMARK [2][-]{subsection.4.5}{Subset Sampling}{section.4}% 16
 \BOOKMARK [2][-]{subsection.4.6}{Explanation Evaluation}{section.4}% 17
 \BOOKMARK [2][-]{subsection.4.7}{Subset Evaluation}{section.4}% 18
-\BOOKMARK [1][-]{section.5}{User Study: Trust Evaluation}{}% 19
-\BOOKMARK [2][-]{subsection.5.1}{Method}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.2}{Results}{section.5}% 21
-\BOOKMARK [2][-]{subsection.5.3}{Discussion}{section.5}% 22
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 23
+\BOOKMARK [1][-]{section.5}{Results}{}% 19
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 20
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 21
