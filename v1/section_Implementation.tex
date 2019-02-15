@@ -1,8 +1,7 @@
 \section{Materials}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
-{\color{blue}This section is still in bullet-points state and formulations/wording is not final!}\medskip \newline
-Intro: this section is for the technical documentation of the data preprocessing, classifier implementation, explanation generation and validation. 
+The following section presents the technical documentation of the data preprocessing, classifier implementation, and explanation generation.\newline
+As described in section \ref{subsubsec:method_classifier}, we train three classifiers on a dataset of social media texts containing offensive language. The goal is to produce classifiers with varying accuracies on a testset
 
 
 \subsection{Dataset}
@@ -10,7 +9,7 @@ Intro: this section is for the technical documentation of the data preprocessing
 \subsubsection{Dataset Construction}
 The original dataset was collected by Davidson et al. \cite{davidson2017automated} for their research on defining and differentiating hate speech from offensive language. They constructed a dataset with offensive Tweets and hate speech by conducting a keyword search on Twitter, using keywords registered in the hatebase dictionary\footnote{https://www.hatebase.org}. The timelines of Twitter users identified with the keyword search were scraped, resulting in a dataset of over 8 million Tweets. They selected 25 000 Tweets at random and had at least 3 annotators from Figure Eight\footnote{https://www.figure-eight.com} (formerly Crowd Flower) who labelled each Tweet as containing hate speech, offensive language, or neither. They reached an inter-annotator agreement of 0.92 \cite{davidson2017automated}. The dataset is publicly available on GitHub\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language}.\newline
 The biggest class in the dataset are the offensive language Tweets (77\%), while non-offensive Tweets represent 17\%, and hate speech 6\% of the dataset. \newline
-For our research, we are only interested in offensive and not offensive Tweets. We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.
+For our research, we are interested in offensive and not offensive Tweets. The Tweets labelled as hate speech in this dataset have characteristics that offensive language does not necessarily have, i.e. is always pejorative, while offensive language can also be found in positive contexts (see \cite{davidson2017automated}). We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.
 %-------------------------------------------------------
 \begin{table}[!ht]
 	\centering
@@ -27,7 +26,7 @@ For our research, we are only interested in offensive and not offensive Tweets. 
 	\label{tab:StatsDataset}
 \end{table}
 %-------------------------------------------------------
-
+The dataset is split into a training set and a test set, with the test set containing 20\% of the data points. The training set is used to build the classifier models, while the Tweets of the test set are used to evaluate the classifiers and to generate the data points for the user study.
 
 
 
@@ -67,13 +66,15 @@ into a cleaned version:
 Intro
 
 \paragraph{Good System}
-L2X 
+L2X, accuracy on testset
 
 \paragraph{Medium System}
 Logistic Regression with binary (1 / -1) coefficients to bring down accuracy towards the needed 0.7. In a way, \cite{klenner2018offensive} does the same, but identify the ``sign" (offensiveness) of words not by using a logistic regression classifier. In the end, it leads to the same result: with binary coefficients, the label corresponds to the class that has the most words in the sentence.
+accuracy on testset
 
 \paragraph{Bad System}
 Inverse L2X
+accuracy on test set
 
 
 

@@ -26,18 +26,19 @@
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Procedure}{subsection.3.2}% 26
 \BOOKMARK [3][-]{subsubsection.3.2.4}{Analysis}{subsection.3.2}% 27
 \BOOKMARK [3][-]{subsubsection.3.2.5}{Apparatus}{subsection.3.2}% 28
-\BOOKMARK [1][-]{section.4}{Materials}{}% 29
-\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Dataset Construction}{subsection.4.1}% 31
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Dataset Preprocessing}{subsection.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.2}{Classifier}{section.4}% 33
-\BOOKMARK [2][-]{subsection.4.3}{Explanations}{section.4}% 34
-\BOOKMARK [2][-]{subsection.4.4}{Graphical User Interface}{section.4}% 35
-\BOOKMARK [2][-]{subsection.4.5}{Subset Sampling}{section.4}% 36
-\BOOKMARK [2][-]{subsection.4.6}{Explanation Evaluation}{section.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Evaluation 1: Accuracy on Reduced Texts}{subsection.4.6}% 38
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Evaluation 2: Ability to Reproduce Classifications}{subsection.4.6}% 39
-\BOOKMARK [2][-]{subsection.4.7}{Subset Evaluation}{section.4}% 40
-\BOOKMARK [1][-]{section.5}{Results}{}% 41
-\BOOKMARK [1][-]{section.6}{Discussion}{}% 42
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 43
+\BOOKMARK [3][-]{subsubsection.3.2.6}{Participants}{subsection.3.2}% 29
+\BOOKMARK [1][-]{section.4}{Materials}{}% 30
+\BOOKMARK [2][-]{subsection.4.1}{Dataset}{section.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Dataset Construction}{subsection.4.1}% 32
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Dataset Preprocessing}{subsection.4.1}% 33
+\BOOKMARK [2][-]{subsection.4.2}{Classifier}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.3}{Explanations}{section.4}% 35
+\BOOKMARK [2][-]{subsection.4.4}{Graphical User Interface}{section.4}% 36
+\BOOKMARK [2][-]{subsection.4.5}{Subset Sampling}{section.4}% 37
+\BOOKMARK [2][-]{subsection.4.6}{Explanation Evaluation}{section.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Evaluation 1: Accuracy on Reduced Texts}{subsection.4.6}% 39
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Evaluation 2: Ability to Reproduce Classifications}{subsection.4.6}% 40
+\BOOKMARK [2][-]{subsection.4.7}{Subset Evaluation}{section.4}% 41
+\BOOKMARK [1][-]{section.5}{Results}{}% 42
+\BOOKMARK [1][-]{section.6}{Discussion}{}% 43
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 44
