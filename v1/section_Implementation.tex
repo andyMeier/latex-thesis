@@ -1,7 +1,6 @@
 \section{Materials}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-The following section presents the technical documentation of the data preprocessing, classifier implementation, and explanation generation.\newline
-As described in section \ref{subsubsec:method_classifier}, we train three classifiers on a dataset of social media texts containing offensive language. The goal is to produce classifiers with varying accuracies on a testset
+As described in section \ref{subsubsec:method_classifier}, we train three classifiers on a dataset of social media texts containing offensive language. Using the trained models, Tweets in a test set can be classified. The models also serve to generate explanations for the classification result. The following section documents the implementation of the classifiers and the generation of explanations. Furthermore, we show the implementation of a graphical user interface (GUI) needed to evaluate the systems in a user study. The user study imposes another constraint: Participants can only be confronted with a limited amount of data points (Tweets). This section therefore also presents the selection of subsets to be shown in the user study.
 
 
 \subsection{Dataset}
@@ -9,8 +8,7 @@ As described in section \ref{subsubsec:method_classifier}, we train three classi
 \subsubsection{Dataset Construction}
 The original dataset was collected by Davidson et al. \cite{davidson2017automated} for their research on defining and differentiating hate speech from offensive language. They constructed a dataset with offensive Tweets and hate speech by conducting a keyword search on Twitter, using keywords registered in the hatebase dictionary\footnote{https://www.hatebase.org}. The timelines of Twitter users identified with the keyword search were scraped, resulting in a dataset of over 8 million Tweets. They selected 25 000 Tweets at random and had at least 3 annotators from Figure Eight\footnote{https://www.figure-eight.com} (formerly Crowd Flower) who labelled each Tweet as containing hate speech, offensive language, or neither. They reached an inter-annotator agreement of 0.92 \cite{davidson2017automated}. The dataset is publicly available on GitHub\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language}.\newline
 The biggest class in the dataset are the offensive language Tweets (77\%), while non-offensive Tweets represent 17\%, and hate speech 6\% of the dataset. \newline
-For our research, we are interested in offensive and not offensive Tweets. The Tweets labelled as hate speech in this dataset have characteristics that offensive language does not necessarily have, i.e. is always pejorative, while offensive language can also be found in positive contexts (see \cite{davidson2017automated}). We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.
-%-------------------------------------------------------
+For our research, we are interested in offensive and not offensive Tweets. The Tweets labelled as hate speech in this dataset have characteristics that offensive language does not necessarily have, i.e. is always pejorative, while offensive language can also be found in positive contexts (see \cite{davidson2017automated}). We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.\newline
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lll}
@@ -25,7 +23,6 @@ For our research, we are interested in offensive and not offensive Tweets. The T
 	\caption{Statistical characteristics of the constructed dataset}
 	\label{tab:StatsDataset}
 \end{table}
-%-------------------------------------------------------
 The dataset is split into a training set and a test set, with the test set containing 20\% of the data points. The training set is used to build the classifier models, while the Tweets of the test set are used to evaluate the classifiers and to generate the data points for the user study.
 
 
@@ -43,9 +40,8 @@ To prepare the data to be used in a machine learning application, we adopt the f
 	\item Replacement of more than one subsequent whitespace by a single whitespace
 	\item Tokenization on whitespaces
 \end{enumerate}
-After training the classifiers, the URL and username tokens are replaced by a more readable version (``http://website.com/website" and ``@username", respectively) to make it easier for participants of the user study to envision themselves in the scenario of a social media administrator reading real-world Tweets. Replacing the tokens by their original URLs and usernames would give the participants more information than the classifiers had; we therefore chose to use a dummy URL and username.\medskip\newline
-
-Following the preprocessing steps, the following Tweet is processed from its original form:
+After training the classifiers, the URL and username tokens are replaced by a more readable version (``http://website.com/website" and ``@username", respectively) to make it easier for participants of the user study to envision themselves in the scenario of a social media administrator reading real-world Tweets. Replacing the tokens by their original URLs and usernames would give the participants more information than the classifiers had; we therefore chose to use a dummy URL and username.\newline
+Applying the preprocessing steps, the following Tweet is processed from its original form:
 \medskip \hrule \medskip
 \begin{verbatim}
 	"@WBUR: A smuggler explains how he helped fighters along the \end{verbatim}\begin{verbatim}"Jihadi Highway": http://t.co/UX4anxeAwd"
@@ -60,8 +56,7 @@ into a cleaned version:
 
 
 
-
-
+{\color{blue}
 \subsection{Classifier}
 Intro
 
@@ -117,7 +112,7 @@ Inverse good system
 	\caption{Screenshot of the ``Administration Tool" showing a non-offensive Tweet with explanation for its decision}
 	\label{fig:admin_tool_not_offensive}
 \end{figure}
-
+}
 
 
 \subsection{Subset Sampling}
@@ -140,7 +135,7 @@ We generate a quantity of 100 such subsets and order them by their KLD sum. The 
 
 
 
-
+{\color{blue}
 \subsection{Explanation Evaluation}
 \label{subsec:expleval}
 experiments to validate whether the explanations we generate are actually ``good" explanations and those generated with the random method are actually ``bad" explanations.
@@ -180,7 +175,7 @@ For each system, divide the dataset in 5 chunks. Use each chunk once as testset 
 
 \subsection{Subset Evaluation}
 same as previous section, but with the filtered subsets, basically. And on ``perfect" classifier. For k=4, because we use k=4 for final explanation generation.
-
+}
 
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
