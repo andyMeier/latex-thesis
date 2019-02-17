@@ -9,6 +9,7 @@ As described in section \ref{subsubsec:method_classifier}, we train three classi
 The original dataset was collected by Davidson et al. \cite{davidson2017automated} for their research on defining and differentiating hate speech from offensive language. They constructed a dataset with offensive Tweets and hate speech by conducting a keyword search on Twitter, using keywords registered in the hatebase dictionary\footnote{https://www.hatebase.org}. The timelines of Twitter users identified with the keyword search were scraped, resulting in a dataset of over 8 million Tweets. They selected 25 000 Tweets at random and had at least 3 annotators from Figure Eight\footnote{https://www.figure-eight.com} (formerly Crowd Flower) who labelled each Tweet as containing hate speech, offensive language, or neither. They reached an inter-annotator agreement of 0.92 \cite{davidson2017automated}. The dataset is publicly available on GitHub\footnote{https://github.com/t-davidson/hate-speech-and-offensive-language}.\newline
 The biggest class in the dataset are the offensive language Tweets (77\%), while non-offensive Tweets represent 17\%, and hate speech 6\% of the dataset. \newline
 For our research, we are interested in offensive and not offensive Tweets. The Tweets labelled as hate speech in this dataset have characteristics that offensive language does not necessarily have, i.e. is always pejorative, while offensive language can also be found in positive contexts (see \cite{davidson2017automated}). We therefore excluded Tweets labelled as hate speech for the further construction of our dataset. We produced a balanced dataset by selecting only Tweets with the maximum inter-annotator agreement from each of the two remaining classes, and randomly drew Tweets from the bigger class (offensive Tweets) until the size of the subset was equal to the size of the smaller class (non-offensive Tweets). Table \ref{tab:StatsDataset} presents statistical information about the resulting dataset.\newline
+The dataset is split into a training set and a test set, with the test set containing 20\% of the data points. The training set is used to build the classifier models, while the Tweets of the test set are used to evaluate the classifiers and to generate the data points for the user study.
 \begin{table}[!ht]
 	\centering
 	\begin{tabular}{lll}
@@ -22,8 +23,6 @@ For our research, we are interested in offensive and not offensive Tweets. The T
 	\caption{Statistical characteristics of the constructed dataset}
 	\label{tab:StatsDataset}
 \end{table}
-The dataset is split into a training set and a test set, with the test set containing 20\% of the data points. The training set is used to build the classifier models, while the Tweets of the test set are used to evaluate the classifiers and to generate the data points for the user study.
-
 
 
 \subsubsection{Dataset Preprocessing}
@@ -67,7 +66,7 @@ For the system with high accuracy (aiming 0.9 accuracy), we adopt the setup used
 \end{figure}
 
 \paragraph{Medium System}
-In \cite{davidson2017automated}, logistic regression is used to identify offensive language and hate speech. They achieve an F1-score of 0.9 on their test set, with an L2 norm optimiser. We adopt the same setup, implementing a logistic regression classifier with the \textit{scikit-learn}\footnote{https://scikit-learn.org/stable/} Python library. We use the limited-memory BFGS algorithm for optimising and a fixed seed (random\_state=0) for shuffling the data. The dataset is encoded in a vector using the bag-of-words (BOW) method. The vocabulary of the training set is used for all further computations and out-of-vocabulary words are not considered. The accuracy on the training set of the logistic regression classifier is 0.9658. However, for the medium classifier, we aim for a system with an accuracy around 0.7\setcounter{footnote}{0}\renewcommand*{\thefootnote}{\fnsymbol{footnote}}\footnote{We also implemented a dictionary-based approach with characteristic words found by their tf-idf values, and a decision tree, with both methods reaching an accuracy of more than 0.9 - hence not applicable as a medium system.}\renewcommand*{\thefootnote}{\arabic{footnote}}\setcounter{footnote}{18}. Therefore, we reduce the resolution of all coefficients $c_i$ with $i \in \{0,I\}$, where $I$ is the number of coefficients (equal to the length of the vocabulary): 
+In \cite{davidson2017automated}, logistic regression is used to identify offensive language and hate speech. They achieve an F1-score of 0.9 on their test set, with an L2 norm optimiser. We adopt the same setup, implementing a logistic regression classifier with the \textit{scikit-learn}\footnote{https://scikit-learn.org} Python library. We use the limited-memory BFGS algorithm for optimising and a fixed seed (random\_state=0) for shuffling the data. The dataset is encoded in a vector using the bag-of-words (BOW) method. The vocabulary of the training set is used for all further computations and out-of-vocabulary words are not considered. The accuracy on the training set of the logistic regression classifier is 0.9658. However, for the medium classifier, we aim for a system with an accuracy around 0.7\setcounter{footnote}{0}\renewcommand*{\thefootnote}{\fnsymbol{footnote}}\footnote{We also implemented a dictionary-based approach with characteristic words found by their tf-idf values, and a decision tree, with both methods reaching an accuracy of more than 0.9 - hence not applicable as a medium system.}\renewcommand*{\thefootnote}{\arabic{footnote}}\setcounter{footnote}{18}. Therefore, we reduce the resolution of all coefficients $c_i$ with $i \in \{0,I\}$, where $I$ is the number of coefficients (equal to the length of the vocabulary): 
 \[c_i =
 \begin{cases}
 	-1 & \text{for   } c_i<0 \\
@@ -98,21 +97,17 @@ As described in section \ref{subsubsec:method_explanations}, we generate nonsens
 In the case of no information at all, we select zero words per Tweet, hence no word is highlighted at all. Nevertheless, the user still receives the information about the classification result.
 
 
-{\color{blue}
-\subsection{Graphical User Interface}
-reference to section \ref{subsubsec:explanation_systems}: explanations for text via highlighting of important features (here: words).
-\begin{itemize}
-	\item the ``environment": administration tool
-	\item visualisation of the decisions
-	\item visualisation of the explanations (why changing text colour, why those two colours, why not gradient)
-\end{itemize}
 
+\subsection{Graphical User Interface}
+For testing the effect of explanations of an automatic decision tool on users, we aim to create an authentic environment matching the use case scenario (see introduction to section \ref{sec:method}). The environment, in our case, is a software tool supporting the work of the ``social media administrator". The tool is a means to display the Tweets and the user interface to classify those Tweets. It also serves to show the classification result of the automatic decision system and its explanations.\newline
 \begin{figure} [H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{img/administrationTool.JPG}\\
+	\includegraphics[width=0.8\textwidth]{img/administrationTool.JPG}
 	\caption{Screenshot of the ``Administration Tool" to support the scenario of a social media administrator}
 	\label{fig:admin_tool}
 \end{figure}
+\noindent The general layout of the software tool should remind the user of a modern web portal incorporating vital functions that are useful for a social media administrator (e.g. showing the social media profiles, showing the feed of the social media channels, reporting incidents, scheduling tasks, etc.). Furthermore, the user should believe that the system is capable of providing intelligent functionality, such as an automatic decision system. We therefore use the front-end web framework \textit{Bootstrap}\footnote{https://getbootstrap.com} to generate a modern and responsive web interface and include a menu bar with items for the various functionalities (see figure \ref{fig:admin_tool}). The interface design is minimalistic, as to not distract the user from the main task.\newline
+The classifiers' decisions are visualised both with words and colours for an efficient usage. Texts classified as offensive have a red colouring, while a decision for the non-offensive class has a green colour scheme (see figure \ref{fig:admin_tool_offensive} and \ref{fig:admin_tool_not_offensive}). The colours are the extreme colours from the \textit{ColorBrewer}\footnote{http://colorbrewer2.org} ``RdYlGn" scale. The explanations are shown by highlighting words from the texts. We chose to display the Tweets in black font on a white background, while selected words are coloured according to the colour scheme.\newline
 \begin{figure} [H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/pg_2_12.PNG}\\
@@ -125,25 +120,40 @@ reference to section \ref{subsubsec:explanation_systems}: explanations for text 
 	\caption{Screenshot of the ``Administration Tool" showing a non-offensive Tweet with explanation for its decision}
 	\label{fig:admin_tool_not_offensive}
 \end{figure}
-}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/button_notoffensive.png}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.25\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/button_offensive.png}	
+	\end{minipage}}
+	\caption{Graphics of manual classification buttons matching the user interface}
+	\label{fig:impl_buttons}
+\end{figure}
+\noindent Since the user study is run online and answers need to be registered within the survey tool, we convert the running system into static images by taking screenshots and incorporating the buttons used for user input directly in the survey tool as graphics (see figure \ref{fig:impl_buttons}). We automated the screenshot generation using \textit{Selenium}\footnote{https://www.seleniumhq.org}, a framework for automatic web application testing. The screenshots are taken with a size of 900x253 (in pixels, w x h).
+
 
 
 \subsection{Subset Sampling}
-For evaluating the different system-explanation conditions, users have to experience the system. However, it is not feasible to present them with the complete testeset, since it has a size of 1665 Tweets. Consequently, a subset of Tweets needs to be drawn from the testset, with a size that a human observer can understand and process within the time frame of a user study.\newline
+For evaluating the different system-explanation conditions, users have to experience the system. However, it is not feasible to present them with the complete test set, since it has a size of 1665 Tweets. Consequently, a subset of Tweets needs to be drawn from the test set, with a size that a human observer can understand and process within the time frame of a user study.\newline
 We furthermore aim to find 10 suitable subsets and assign participants randomly to one of the subsets, in order to reduce possible side effects from biases specific to single Tweets.\newline
-There are several requirements for the subsamples, originating from the conflict of reducing the sample for a human observer, yet still yielding a good representation of the testset and classifier:\newline
+There are several requirements for the subsamples, originating from the conflict of reducing the sample for a human observer, yet still yielding a good representation of the test set and classifier:\newline
 \begin{itemize}
-	\item A class balance of the true labels similar to the testset, 
-	\item a balance of correctly to incorrectly classified data points similar to the classifier's performance on the complete testset, 
-	\item no overlap of Tweets within the set of 10 subsets,
-	\item a feature distribution as close to the feature distribution in the complete testset.
+	\item A class balance of the true labels similar to the test set
+	\item A balance of correctly to incorrectly classified data points similar to the classifier's performance on the complete test set
+	\item No overlap of Tweets in between the 10 subsets and within a single subset
+	\item A feature distribution close to the feature distribution in the complete test set
 \end{itemize}
 We set the subsample size to 15 Tweets, which is enough to show accuracies to the first decimal place, yet assumably not too much to process for an observer in a user study.\newline
-To create a subset, 15 data points are randomly drawn from the testset. \newline
-First, the class balance of the subset is calculated. The difference to the class balance of the whole testset needs to be smaller than 0.1.\newline
-Additionally, for each classifier in the user study, the prediction accuracy on the subset is compared to the prediction accuracy on the complete testset. If, for all classifiers, the difference is smaller than 0.1, the next check is performed.\newline
+To create a subset, 15 data points are randomly drawn from the test set. \newline
+First, the class balance of the subset is calculated. The difference to the class balance of the whole test set needs to be smaller than 0.1.\newline
+Additionally, for each classifier in the user study, the prediction accuracy on the subset is compared to the prediction accuracy on the complete test set. If, for all classifiers, the difference is smaller than 0.1, the next check is performed.\newline
 To ensure the uniqueness of the subsets, the randomly drawn Tweets are compared with the content of previously found subsets. The subset is only accepted if none of the contained Tweets appear in any previously found subset.\newline
-In the last step, the feature distribution of the subset is tested against the features of the complete testset using the \textit{Kullback-Leibler Divergence} (KLD) metric. As the focus is directed towards the explanations (i.e. the highlighted words within a Tweet), only the explanations are used to examine the feature distribution. First, the feature distribution of the complete testset is calculated by constructing a word vector with tuples of words and their respective word counts. The word counts are divided by the total amount of words in the set, such that the sum of regularised counts equals 1. Next, a copy of the word vector is used to count and regularise the word frequencies in the subset. The result are two comparable vectors, yet the vector of the subset is very likely to contain zero counts for words that appear in the complete set but were never selected as explanation in the subset. Since the KLD uses the logarithm, it is undefined for zero counts. We use Laplace smoothing with k=1 to handle zero counts. For each classifier, the KLD is calculated and summed to a total divergence score for the subset.\newline
+In the last step, the feature distribution of the subset is tested against the features of the complete test set using the \textit{Kullback-Leibler Divergence} (KLD) metric. As the focus is directed towards the explanations (i.e. the highlighted words within a Tweet), only the explanations are used to examine the feature distribution. First, the feature distribution of the complete test set is calculated by constructing a word vector with tuples of words and their respective word counts. The word counts are divided by the total amount of words in the set, such that the sum of regularised counts equals 1. Next, a copy of the word vector is used to count and regularise the word frequencies in the subset. The result are two comparable vectors, yet the vector of the subset is very likely to contain zero counts for words that appear in the complete set but were never selected as explanation in the subset. Since the KLD uses the logarithm, it is undefined for zero counts. We use Laplace smoothing with k=1 to handle zero counts. For each classifier, the KLD is calculated and summed to a total divergence score for the subset.\newline
 We generate a quantity of 100 such subsets and order them by their KLD sum. The 10 subsets with the smallest score are chosen as the final set of subsets.\newline
 
 
@@ -171,7 +181,7 @@ Problem: Tweets are very short, which is why the information density is high. Ev
 
 
 \subsubsection{Evaluation 2: Ability to Reproduce Classifications}
-For each system, divide the dataset in 5 chunks. Use each chunk once as testset and the remaining chunks as training set. This way, we get predictions and generated explanations for each data point in the dataset. Use the reduced version of the dataset with the predictions as truths to repeat the procedure of evaluation 1. Hypothesis: If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset. Since we take the predictions of the classifier on the non-reduced dataset as ``truth", the accuracy should be close to 1.0 .
+For each system, divide the dataset in 5 chunks. Use each chunk once as test set and the remaining chunks as training set. This way, we get predictions and generated explanations for each data point in the dataset. Use the reduced version of the dataset with the predictions as truths to repeat the procedure of evaluation 1. Hypothesis: If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset. Since we take the predictions of the classifier on the non-reduced dataset as ``truth", the accuracy should be close to 1.0 .
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.4\textwidth}
