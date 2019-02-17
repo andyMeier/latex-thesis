@@ -56,28 +56,40 @@ into a cleaned version:
 
 
 
-{\color{blue}
 \subsection{Classifier}
-Intro
 
 \paragraph{Good System}
-L2X, accuracy on testset
+For the system with high accuracy (aiming 0.9 accuracy), we adopt the setup used by \cite{chen2018learning}. They achieve an accuracy of 0.9 in sentiment analysis on a movie review dataset (IMDB) with a convolutional neural network (CNN) and add their L2X algorithm to generate explanations for the CNN's decisions. The CNN consists of five layers, with an embeddings layer to transform sparse data into dense vectors, a convolution with subsequent pooling (max pooling with factor 2), a fully connected layer with 250 hidden dimensions, and an output layer with two nodes (see figure \ref{fig:impl_cnn}). Similar to \cite{chen2012detecting}, we use Categorical Cross-Entropy as loss function, and the Adam algorithm for optimisation. The L2X algorithm and the working example with a CNN on the IMDB dataset is publicly available on GitHub\footnote{https://github.com/Jianbo-Lab/L2X}. The CNN is implemented using the \textit{Keras}\footnote{https://keras.io} Python library with a TensorFlow\footnote{https://www.tensorflow.org} back end. With this setup, we achieve an accuracy of 0.9718 on our test set. 
+\begin{figure} [!ht]
+	\centering
+	\includegraphics[width=0.7\textwidth]{img/impl_cnn.JPG}\\
+	\caption{Architecture of the CNN with input vector and 5 layers, depicting layer goal, dimensionality, and activation function where applicable. Architecture adopted from \cite{chen2018learning}.}
+	\label{fig:impl_cnn}
+\end{figure}
 
 \paragraph{Medium System}
-Logistic Regression with binary (1 / -1) coefficients to bring down accuracy towards the needed 0.7. In a way, \cite{klenner2018offensive} does the same, but identify the ``sign" (offensiveness) of words not by using a logistic regression classifier. In the end, it leads to the same result: with binary coefficients, the label corresponds to the class that has the most words in the sentence.
-accuracy on testset
+In \cite{davidson2017automated}, logistic regression is used to identify offensive language and hate speech. They achieve an F1-score of 0.9 on their test set, with an L2 norm optimiser. We adopt the same setup, implementing a logistic regression classifier with the \textit{scikit-learn}\footnote{https://scikit-learn.org/stable/} Python library. We use the limited-memory BFGS algorithm for optimising and a fixed seed (random\_state=0) for shuffling the data. The dataset is encoded in a vector using the bag-of-words (BOW) method. The vocabulary of the training set is used for all further computations and out-of-vocabulary words are not considered. The accuracy on the training set of the logistic regression classifier is 0.9658. However, for the medium classifier, we aim for a system with an accuracy around 0.7\setcounter{footnote}{0}\renewcommand*{\thefootnote}{\fnsymbol{footnote}}\footnote{We also implemented a dictionary-based approach with characteristic words found by their tf-idf values, and a decision tree, with both methods reaching an accuracy of more than 0.9 - hence not applicable as a medium system.}\renewcommand*{\thefootnote}{\arabic{footnote}}\setcounter{footnote}{18}. Therefore, we reduce the resolution of all coefficients $c_i$ with $i \in \{0,I\}$, where $I$ is the number of coefficients (equal to the length of the vocabulary): 
+\[c_i =
+\begin{cases}
+	-1 & \text{for   } c_i<0 \\
+	+1 & \text{for   } c_i>0 \\
+\end{cases}\]
+The logistic regression classifier determines the probability estimate $p$ as:
+\[
+p=\frac{1}{1+e^{-(\alpha_0+\alpha_1x_1+\alpha_2x_2...+\alpha_ix_i)}}
+\]
+where $\alpha$ denotes the coefficients and $x$ the feature value. Since we encode the texts with BOW, all $x$ take a value of either $0$ (not present in Tweet) or $1$ (present in Tweet). The coefficients are binarised and either $-1$ (decisive for the non-offensive class) or $1$ (more influence towards the offensive class). As a result, the exponent of $e$ becomes \textit{positive} if the number of non-offensive words predominates in a text, and \textit{negative} if the Tweet contains more words decisive for the offensive class. With $e$ having a positive exponent, i.e. more words pivoting towards the non-offensive class, $p$ lies in the interval $]0.0,0.5[$. Contrarily, $p$ is in the interval $]0.5,1.0[$ for negative exponents (i.e. words decisive for the offensive class predominate the text). This approach is similar to the one used in \cite{klenner2018offensive}: After determining the class affiliation of the individual words in a text, they assign the class that has the most words in the text. The accuracy of the binarised logistic regression classifier on the test set is 0.7628.
 
 \paragraph{Bad System}
-Inverse L2X
-accuracy on test set
+The bad system is equal to the good classifier, but trained on a training set with inversed labels. The accuracy on the training set (with original labels) is 0.0282.
 
 
-
+{\color{blue}
 \subsection{Explanations}
-reference to section \ref{subsubsec:explanation_systems}: explanations for text via highlighting of important features (here: words). 
+%reference to section \ref{subsubsec:explanation_systems}: explanations for text via highlighting of important features (here: words). 
 
 \paragraph{Good System}
-L2X mutual information
+The L2X algorithm is model-agnostic; it does not need to have information about the algorithm used by the classifier, but analyses the global classification behaviour to generate local explanations. L2X tries to optimize the selection of features given the classification results - it learns ``a distribution over the subset of features given the input vector" \cite{chen2018learning} using an approximation of mutual information. 
 
 \paragraph{Medium System}
 randomly choosing k words from the words with positive (offensive) or negative (not offensive) class. With logreg, a sentence of n words, all n could have the same sign (i.e. adding towards the same class). But since we use the binarised version of the coefficients (to bring down accuracy), we are confronted with n selected words. We need to choose k words to be consistent with the explanations of the L2X classifier. We therefore randomly draw k words from the set of words with the same sign.

@@ -37,23 +37,23 @@
 \contentsline {subsubsection}{\numberline {4.1.2}Dataset Preprocessing}{39}{subsubsection.4.1.2}
 \contentsline {subsection}{\numberline {4.2}Classifier}{40}{subsection.4.2}
 \contentsline {paragraph}{Good System}{40}{section*.11}
-\contentsline {paragraph}{Medium System}{40}{section*.12}
-\contentsline {paragraph}{Bad System}{40}{section*.13}
-\contentsline {subsection}{\numberline {4.3}Explanations}{40}{subsection.4.3}
-\contentsline {paragraph}{Good System}{40}{section*.14}
-\contentsline {paragraph}{Medium System}{40}{section*.15}
-\contentsline {paragraph}{Bad System}{41}{section*.16}
-\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{41}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Subset Sampling}{42}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{43}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{43}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{43}{subsubsection.4.6.2}
-\contentsline {subsection}{\numberline {4.7}Subset Evaluation}{44}{subsection.4.7}
+\contentsline {paragraph}{Medium System}{40}{section*.13}
+\contentsline {paragraph}{Bad System}{42}{section*.14}
+\contentsline {subsection}{\numberline {4.3}Explanations}{42}{subsection.4.3}
+\contentsline {paragraph}{Good System}{42}{section*.15}
+\contentsline {paragraph}{Medium System}{42}{section*.16}
+\contentsline {paragraph}{Bad System}{42}{section*.17}
+\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{42}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Subset Sampling}{43}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{45}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{45}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{45}{subsubsection.4.6.2}
+\contentsline {subsection}{\numberline {4.7}Subset Evaluation}{46}{subsection.4.7}
 \setcounter {tocdepth}{3}
-\contentsline {section}{\numberline {5}Results}{45}{section.5}
-\contentsline {paragraph}{Demographics}{45}{section*.22}
-\contentsline {paragraph}{Perceived Understanding}{45}{section*.23}
-\contentsline {paragraph}{Trust Questionnaire}{46}{section*.26}
-\contentsline {paragraph}{Observed Trust via Proxy}{47}{section*.29}
-\contentsline {section}{\numberline {6}Discussion}{50}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{54}{section.7}
+\contentsline {section}{\numberline {5}Results}{47}{section.5}
+\contentsline {paragraph}{Demographics}{47}{section*.23}
+\contentsline {paragraph}{Perceived Understanding}{47}{section*.24}
+\contentsline {paragraph}{Trust Questionnaire}{48}{section*.27}
+\contentsline {paragraph}{Observed Trust via Proxy}{49}{section*.30}
+\contentsline {section}{\numberline {6}Discussion}{52}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{56}{section.7}
