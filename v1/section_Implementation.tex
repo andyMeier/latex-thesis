@@ -57,7 +57,7 @@ into a cleaned version:
 \subsection{Classifier}
 
 \paragraph{Good System}
-For the system with high accuracy (aiming 0.9 accuracy), we adopt the setup used by \cite{chen2018learning}. They achieve an accuracy of 0.9 in sentiment analysis on a movie review dataset (IMDB) with a convolutional neural network (CNN) and add their L2X algorithm to generate explanations for the CNN's decisions. The CNN consists of five layers, with an embeddings layer to transform sparse data into dense vectors, a convolution with subsequent pooling (max pooling with factor 2), a fully connected layer with 250 hidden dimensions, and an output layer with two nodes (see figure \ref{fig:impl_cnn}). Similar to \cite{chen2012detecting}, we use Categorical Cross-Entropy as loss function, and the Adam algorithm for optimisation. The L2X algorithm and the working example with a CNN on the IMDB dataset is publicly available on GitHub\footnote{https://github.com/Jianbo-Lab/L2X}. The CNN is implemented using the \textit{Keras}\footnote{https://keras.io} Python library with a TensorFlow\footnote{https://www.tensorflow.org} back end. With this setup, we achieve an accuracy of 0.9718 on our test set. 
+For the system with high accuracy (aiming 0.9 accuracy), we adopt the setup used by \cite{chen2018learning}. They achieve an accuracy of 0.9 in sentiment analysis on a movie review dataset (IMDB) with a convolutional neural network (CNN) and add their L2X algorithm to generate explanations for the CNN's decisions. The CNN consists of five layers, with an embeddings layer to transform sparse data into dense vectors, a convolution with subsequent pooling (max pooling with factor 2), a fully connected layer with 250 hidden dimensions, and an output layer with two nodes (see figure \ref{fig:impl_cnn}). Similar to \cite{chen2012detecting}, we use Categorical Cross-Entropy as loss function, and the Adam algorithm for optimisation. The L2X algorithm and the working example with a CNN on the IMDB dataset is publicly available on GitHub\footnote{https://github.com/Jianbo-Lab/L2X}. The CNN is implemented using the \textit{Keras}\footnote{https://keras.io} Python library with a TensorFlow\footnote{https://www.tensorflow.org} back end. With this setup, we achieve an accuracy of 0.9712 on our test set. 
 \begin{figure} [!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{img/impl_cnn.JPG}\\
@@ -79,11 +79,12 @@ p=\frac{1}{1+e^{-(\alpha_0+\alpha_1x_1+\alpha_2x_2...+\alpha_ix_i)}}
 where $\alpha$ denotes the coefficients and $x$ the feature value. Since we encode the texts with BOW, all $x$ take a value of either $0$ (not present in Tweet) or $1$ (present in Tweet). The coefficients are binarised and either $-1$ (decisive for the non-offensive class) or $1$ (more influence towards the offensive class). As a result, the exponent of $e$ becomes \textit{positive} if the number of non-offensive words predominates in a text, and \textit{negative} if the Tweet contains more words decisive for the offensive class. With $e$ having a positive exponent, i.e. more words pivoting towards the non-offensive class, $p$ lies in the interval $]0.0,0.5[$. Contrarily, $p$ is in the interval $]0.5,1.0[$ for negative exponents (i.e. words decisive for the offensive class predominate the text). This approach is similar to the one used in \cite{klenner2018offensive}: After determining the class affiliation of the individual words in a text, they assign the class that has the most words in the text. The accuracy of the binarised logistic regression classifier on the test set is 0.7628.
 
 \paragraph{Bad System}
-The bad system is equal to the good classifier, but trained on a training set with inversed labels. The accuracy on the training set (with original labels) is 0.0282.
+The bad system is equal to the good classifier, but trained on a training set with inversed labels. The accuracy on the training set (with original labels) is 0.0288.
 
 
 
 \subsection{Explanations} 
+\label{subsec:impl_expl}
 We chose the minimum explanation type that shows how input features relate to the classification result. In our use scenario, the input texts are Tweets with a maximum length of 140 characters. The average Tweet in the data set contains between 14 and 15 words (see table \ref{tab:StatsDataset}). We aim to select between $\frac{1}{3}$ and $\frac{1}{4}$ of the texts, which is around 4 words per Tweet. We assume that too few or too much words provide not enough or too much information to derive meaningful patterns. 
 
 \paragraph{Good Explanations}
@@ -138,6 +139,7 @@ The classifiers' decisions are visualised both with words and colours for an eff
 
 
 \subsection{Subset Sampling}
+\label{subsec:subset_sampling}
 For evaluating the different system-explanation conditions, users have to experience the system. However, it is not feasible to present them with the complete test set, since it has a size of 1665 Tweets. Consequently, a subset of Tweets needs to be drawn from the test set, with a size that a human observer can understand and process within the time frame of a user study.\newline
 We furthermore aim to find 10 suitable subsets and assign participants randomly to one of the subsets, in order to reduce possible side effects from biases specific to single Tweets.\newline
 There are several requirements for the subsamples, originating from the conflict of reducing the sample for a human observer, yet still yielding a good representation of the test set and classifier:\newline
@@ -162,42 +164,75 @@ We generate a quantity of 100 such subsets and order them by their KLD sum. The 
 In section \ref{subsubsec:back_expleval}, we defined a ``good" explanation as one that is truthful to the underlying model. Although the explanations are constructed such that they theoretically represent the underlying model (see section \ref{subsubsec:method_explanations}), the possibility exists - especially in the case of the model-agnostic L2X algorithm - that the explanations are meaningful but not truthful.\newline
 We therefore set up a series of experiments to examine the quality of the generated explanations. In the experiments, we look at the classifiers' behaviour when being confronted with the Tweets reduced to the words selected as explanation. The first experiment deals with the classifier's accuracy when given the reduced Tweets. In the second experiment, we examine whether the classifiers can reproduce the exact labels when using the reduced Tweets. Finally, we look at the subsets selected for the user study and validate the quality of the explanations only in the subsets.
 
-{\color{blue}
+
 \subsubsection{Evaluation 1: Accuracy on Reduced Texts}
-For each system, take generated explanations of Tweets in the test set, reduce the text to the selected words, and feed the ``reduced Tweets" into the system. Hypothesis: If the words are very informative for the classifier, the accuracy would not change. The new accuracy should then be close to the old accuracy.\newline
-\begin{figure}[H]
+The explanations generated for each classifier are meant to show the $k$ features (words) that are decisive for the classifier's decisions. To validate that the selected features are an actual representation of the classifier's reasoning, we investigate the generated explanations by reducing the texts of the test set to only the selected features and subsequently feeding them as new input to the respective classifier. If the selected features are indeed informative for the classifier's behaviour, the accuracy on the reduced test set should be equal to the classifier's accuracy on the original test set. The same test can be run with the placebic, i.e. nonsensical, explanations. They were generated by randomly drawing $k$ words from each text. If the Tweets are reduced to random words, the classifiers should not reproduce the same labels as for the original test set.\newline
+Table \ref{tab:exp1} shows the performance on the test set for all three classifiers and both types of explanations. We vary $k$ from a single word to all words in the texts.\newline
+\begin{table}[H]
 	\centering
-	\begin{subfigure}[b]{0.4\textwidth}
-		\includegraphics[width=\textwidth]{img/expleval1_logreg.JPG}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.4\textwidth}
-		\includegraphics[width=\textwidth]{img/expleval1_invL2X.JPG}
-	\end{subfigure}
-	\caption{Results for evaluation of explanation experiment 1}
-	\label{fig:results_expleval1}
-\end{figure}
-Problem: Tweets are very short, which is why the information density is high. Even when using only a single word randomly drawn from the text, the accuracy is 0.64, which is close to the medium classifier. It is therefore difficult to interpret the results for the medium classifier (0.76). Furthermore, we do not know if the Tweets have classified the same, or if only the accuracy is the same, but the mistakes were made on different Tweets. We therefore need to evaluate the ability to reproduce the very same classifications (evaluation 2).
+	\begin{tabular}{l|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}}
+		& \multicolumn{2}{l|}{\textbf{Good classifier}} & \multicolumn{2}{l|}{\textbf{Medium classifier}} & \multicolumn{2}{l}{\textbf{Bad classifier}} \\ 
+		& \multicolumn{2}{l|}{\textbf{0.9712}} & \multicolumn{2}{l|}{\textbf{0.7628}} & \multicolumn{2}{l}{\textbf{0.0288}} \\ \midrule
+		$k$& good & placebic & good & placebic & good & placebic \\ \midrule
+		1  &  0.9676  &  0.5826  & 0.7628 & 0.6210 & 0.0330  &  0.4048  \\
+		2  &  0.9646  &  0.6390  & 0.7628 & 0.6012 & 0.0390  &  0.3676  \\
+		3  &  0.9688  &  0.6835  & 0.7628 & 0.6541 & 0.0348  &  0.3219  \\
+		\textbf{4}  &  \textbf{0.9658}  &  \textbf{0.7345}  & \textbf{0.7628} & \textbf{0.6468} & \textbf{0.0348}  &  \textbf{0.2667}  \\
+		5  &  0.9682  &  0.7724  & 0.7628 & 0.7165 & 0.0402  &  0.2420  \\
+		6  &  0.9664  &  0.8066  & 0.7628 &  0.6853 & 0.0348  &  0.2090  \\
+		all  &  0.9712  &  0.9718  & 0.7628 & 0.7628 & 0.0288  &  0.0312  \\ \bottomrule
+	\end{tabular}
+	\caption{Results of evaluating explanations, experiment 1}
+	\label{tab:exp1}
+\end{table}
+\noindent Table \ref{tab:exp1} shows that even when reducing the Tweets to a single informative word, the classifiers have a comparable accuracy as on the complete Tweets. When reducing the texts at random, the accuracy is lower (or, in case of the bad classifier, higher). Looking at $k=4$, the accuracy of the good classifier on the randomly reduced test set is at 0.7345. This is not surprising since the average length of the texts is between 14 and 15 words. Chances are between $\frac{1}{3}$ and $\frac{1}{4}$ that the most informative feature is selected in that case, leading to a relatively high accuracy.\newline
+Although this evaluation shows that the explanations at $k=4$ lead to similar accuracies as the original Tweets, we do not know if only the same number of classification errors was made, or if the errors were made on the same Tweets. That is, we do not know if the classifiers behave the same. We therefore need to evaluate the ability to reproduce the very same classifications (evaluation 2).
 
 
 \subsubsection{Evaluation 2: Ability to Reproduce Classifications}
-For each system, divide the dataset in 5 chunks. Use each chunk once as test set and the remaining chunks as training set. This way, we get predictions and generated explanations for each data point in the dataset. Use the reduced version of the dataset with the predictions as truths to repeat the procedure of evaluation 1. Hypothesis: If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset. Since we take the predictions of the classifier on the non-reduced dataset as ``truth", the accuracy should be close to 1.0 .
-\begin{figure}[H]
+In the second experiment, we repeat experiment 1, but evaluate against the classifiers' original predictions rather than the truth label. The accuracy is therefore not computed using the labels from the data set, but using the classification result from classifying the unreduced test set. In this evaluation, a classification mistake is not a prediction that diverts from the given ground label, but one that diverts from the classifiers' original prediction. We aim to investigate how well the classifiers can reproduce their own classifications when given only the features that are - supposedly - informative for the classifiers' behaviours. If the selected words are very informative for the classifier's prediction, the very same predictions can be reproduced with the reduced dataset and the accuracy should be close to 1.0 . In the case of the nonsensical explanations, the accuracy should be lower than 1.0 .\newline
+\begin{table}[H]
 	\centering
-	\begin{subfigure}[b]{0.4\textwidth}
-		\includegraphics[width=\textwidth]{img/expleval2_logreg.JPG}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.4\textwidth}
-		\includegraphics[width=\textwidth]{img/expleval2_invL2X.JPG}
-	\end{subfigure}
-	\caption{Results for evaluation of explanation experiment 2}
-	\label{fig:results_expleval2}
-\end{figure}
-
+	\begin{tabular}{l|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}}
+		& \multicolumn{2}{l|}{\textbf{Good classifier}} & \multicolumn{2}{l|}{\textbf{Medium classifier}} & \multicolumn{2}{l}{\textbf{Bad classifier}} \\ \midrule
+		$k$& good & placebic & good & placebic & good & placebic \\ \midrule
+		1  &  0.9670  &  0.5808 & 1.0000 & 0.6402 & 0.9694  &  0.5898  \\
+		2  &  0.9700  &  0.6366 & 1.0000 & 0.6961 & 0.9694  &  0.6474  \\
+		3  &  0.9718  &  0.6871 & 1.0000 & 0.7417 & 0.9736  &  0.6961  \\
+		\textbf{4}  &  \textbf{0.9748}  &  \textbf{0.7393} & \textbf{1.0000} & \textbf{0.7664} & \textbf{0.9700}  &  \textbf{0.7225}  \\
+		5  &  0.9760  &  0.7730 & 1.0000 & 0.8126 & 0.9718  &  0.7754  \\
+		6  &  0.9766  &  0.8132 & 1.0000 & 0.8252 & 0.9748  &  0.8144  \\
+		all  &  0.9790  &  0.9784 & 1.0000 & 1.0000 & 0.9784  &  0.9796  \\\bottomrule
+	\end{tabular}
+	\caption{Results of evaluating explanations, experiment 2}
+	\label{tab:exp2}
+\end{table}
+\noindent As table \ref{tab:exp2} shows, the supposedly meaningful explanations are enough to reproduce the original prediction in almost all cases and even when reducing the texts to a single word. The nonsensical explanations, on the contrary, have an accuracy around 0.6 for a single selected word. We conclude that the generated explanations are on average a good representation for the relation between input features (words in a Tweet) and label prediction.
 
 
 \subsubsection{Evaluation 3: Subset Evaluation}
-same as previous section, but with the filtered subsets, basically. And on ``perfect" classifier. For k=4, because we use k=4 for final explanation generation.
-}
-
+Although we have shown that the meaningful explanations generated by the systems satisfy our definition of a ``good" explanation and those generated at random do not, we looked at the average performance on the complete test set containing 1665 Tweets. The participants of the user study, however, only see a small subset of the data set: They have to judge the systems on the basis of 15 Tweets. The subsets used in the user study are constructed such that they have a feature distribution similar to that of the complete test set, and that the class balance and accuracies of the subset are not biased (see section \ref{subsec:subset_sampling}). With this last evaluation, we want to investigate whether the assumption about the explanations' quality that we  confirmed in evaluation 1 and 2 also hold for the much smaller subsets. We repeat evaluation 2 for each subset, with $k$ at a fixed value of $4$, which is the value used in the user study (see section \ref{subsec:impl_expl}).\newline
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}|m{1.4cm}m{1.4cm}}
+		\textbf{Subset} & \multicolumn{2}{l|}{\textbf{Good classifier}} & \multicolumn{2}{l|}{\textbf{Medium classifier}} & \multicolumn{2}{l}{\textbf{Bad classifier}} \\ \midrule
+		& good & placebic & good & placebic & good & placebic \\ \midrule
+		0 & 0.9333 & 0.5333 & 1.0000 & 0.6000 & 0.9333 & 0.5333 \\
+		1 & 1.0000 & 0.8000 & 1.0000 & 0.8000 & 1.0000 & 0.7333 \\
+		2 & 1.0000 & 0.7333 & 1.0000 & 0.4667 & 1.0000 & 0.7333 \\
+		3 & 1.0000 & 0.8667 & 1.0000 & 0.7333 & 0.9333 & 0.8667 \\
+		4 & 0.9333 & 0.7333 & 1.0000 & 0.5333 & 0.9333 & 0.7333 \\
+		5 & 0.9333 & 0.8667 & 1.0000 & 0.6667 & 0.9333 & 0.8667 \\
+		6 & 1.0000 & 0.7333 & 1.0000 & 0.4667 & 1.0000 & 0.6667 \\
+		7 & 0.9333 & 0.5333 & 1.0000 & 0.8000 & 1.0000 & 0.6667 \\
+		8 & 1.0000 & 0.9333 & 1.0000 & 0.7333 & 1.0000 & 0.8667 \\
+		9 & 0.9333 & 0.6667 & 1.0000 & 0.6000 & 0.9333 & 0.7333 \\ \midrule
+		\textbf{mean} & \textbf{0.9666} & \textbf{0.7400} & \textbf{1.0000} & \textbf{0.6400} & \textbf{0.9666} & \textbf{0.7400}  \\ \bottomrule
+	\end{tabular}
+	\caption{Results of evaluating explanations for subsets, experiment 3}
+	\label{tab:exp3}
+\end{table}
+\noindent Table \ref{tab:exp3} shows that the ``good" explanations of the subsets comply with our definition of a good explanation. The classifiers almost always output the same classifications for the Tweets in the subsets when being confronted with the reduced version of the texts. Reducing the Tweets to $4$ words at random, however, is not enough to reliably show the same behaviour as on the unreduced Tweets. Only subset 8 shows a similar accuracy for the good classifier when comparing the meaningful and the nonsensical explanations. A reason for this result could be the selection method. Selecting 4 words out of 14 at random bears the risk of selecting useful features at some point, and leads to a very nonsensical selection at others. The standard deviation of the performance of placebic information is on average 3 to 4 times higher than the standard deviation of the meaningful explanations, confirming that the selection at random leads to a broad variety of different explanation qualities. Taking out the cases in which meaningful explanations were created ``by accident" in the nonsensical condition would, however, influence the randomness of the explanations.\newline
+We conclude that in general, the explanations generated to communicate meaningful information about the systems reasoning fulfil our definition of ``good" explanations for the subsets and the test set in general. The randomly reduced texts, on the other hand, are not a truthful explanation for the classifiers' behaviours, nor in the complete test set and neither in the subsets. 
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}

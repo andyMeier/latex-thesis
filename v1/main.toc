@@ -50,10 +50,10 @@
 \contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{46}{subsubsection.4.6.2}
 \contentsline {subsubsection}{\numberline {4.6.3}Evaluation 3: Subset Evaluation}{47}{subsubsection.4.6.3}
 \setcounter {tocdepth}{3}
-\contentsline {section}{\numberline {5}Results}{48}{section.5}
-\contentsline {paragraph}{Demographics}{48}{section*.24}
-\contentsline {paragraph}{Perceived Understanding}{48}{section*.25}
-\contentsline {paragraph}{Trust Questionnaire}{49}{section*.28}
-\contentsline {paragraph}{Observed Trust via Proxy}{50}{section*.31}
-\contentsline {section}{\numberline {6}Discussion}{53}{section.6}
-\contentsline {section}{\numberline {7}Conclusion}{57}{section.7}
+\contentsline {section}{\numberline {5}Results}{49}{section.5}
+\contentsline {paragraph}{Demographics}{49}{section*.25}
+\contentsline {paragraph}{Perceived Understanding}{49}{section*.26}
+\contentsline {paragraph}{Trust Questionnaire}{50}{section*.29}
+\contentsline {paragraph}{Observed Trust via Proxy}{51}{section*.32}
+\contentsline {section}{\numberline {6}Discussion}{54}{section.6}
+\contentsline {section}{\numberline {7}Conclusion}{58}{section.7}
