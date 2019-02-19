@@ -54,6 +54,11 @@ O.~Biran and C.~Cotton.
 \newblock Explanation and justification in machine learning: A survey.
 \newblock In {\em IJCAI-17 Workshop on Explainable AI (XAI)}, page~8, 2017.
 
+\bibitem{blumer1987occam}
+A.~Blumer, A.~Ehrenfeucht, D.~Haussler, and M.~K. Warmuth.
+\newblock Occam's razor.
+\newblock {\em Information processing letters}, 24(6):377--380, 1987.
+
 \bibitem{broadbent2006brief}
 E.~Broadbent, K.~J. Petrie, J.~Main, and J.~Weinman.
 \newblock The brief illness perception questionnaire.
@@ -436,5 +441,10 @@ M.~Zamalia and A.~L. Porter.
   concepts in an e-learning environment: An australian experience.
 \newblock {\em Pertanika Journal of Social Science and Humanities}, 24:73--82,
   2016.
+
+\bibitem{vzliobaite2017measuring}
+I.~{\v{Z}}liobait{\.e}.
+\newblock Measuring discrimination in algorithmic decision making.
+\newblock {\em Data Mining and Knowledge Discovery}, 31(4):1060--1089, 2017.
 
 \end{thebibliography}
