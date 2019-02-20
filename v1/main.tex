@@ -12,18 +12,28 @@
 \newcommand{\head}[2]{\multicolumn{1}{>{\centering\arraybackslash}p{#1}}{\textbf{#2}}}
 \usepackage{hyperref}
 \usepackage{amsmath}
-%\DeclareLanguageMapping{american}{american-apa}
 
 \begin{document}
 
 \include{titlepage}
 
+\thispagestyle{empty}
 \begin{abstract}
 	{\color{blue}Abstract and conclusion section will be written at the end.}
 \end{abstract}
 
 \newpage
+\thispagestyle{empty}
 \tableofcontents
+\setcounter{tocdepth}{1}
+\newpage
+\thispagestyle{empty}
+\listoffigures
+\newpage
+\thispagestyle{empty}
+\listoftables
+\newpage
+\setcounter{page}{1}
 
 
 
@@ -35,6 +45,7 @@
 \include{section_Method}
 \include{section_Implementation}
 \include{section_Evaluation}
+\include{section_Discussion}
 \include{section_Conclusion}
 
 
@@ -42,7 +53,7 @@
 \bibliographystyle{abbrv}
 \bibliography{mybib}
 
-
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \appendix
 \include{section_AppendixA}
 \include{section_AppendixB}

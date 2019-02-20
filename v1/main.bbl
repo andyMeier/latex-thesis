@@ -335,6 +335,11 @@ M.~T. Ribeiro, S.~Singh, and C.~Guestrin.
 \newblock In {\em Proceedings of the 22nd ACM SIGKDD international conference
   on knowledge discovery and data mining}, pages 1135--1144. ACM, 2016.
 
+\bibitem{ribeiro2018anchors}
+M.~T. Ribeiro, S.~Singh, and C.~Guestrin.
+\newblock Anchors: High-precision model-agnostic explanations.
+\newblock In {\em AAAI Conference on Artificial Intelligence}, 2018.
+
 \bibitem{richardson2018survey}
 A.~Richardson and A.~Rosenfeld.
 \newblock A survey of interpretability and explainability in human-agent
