@@ -161,6 +161,7 @@ We generate a quantity of 100 such subsets and order them by their KLD sum. The 
 
 
 \subsection{Explanation Evaluation}
+\label{subsec:expleval}
 In section \ref{subsubsec:back_expleval}, we defined a ``good" explanation as one that is truthful to the underlying model. Although the explanations are constructed such that they theoretically represent the underlying model (see section \ref{subsubsec:method_explanations}), the possibility exists - especially in the case of the model-agnostic L2X algorithm - that the explanations are meaningful but not truthful.\newline
 We therefore set up a series of experiments to examine the quality of the generated explanations. In the experiments, we look at the classifiers' behaviour when being confronted with the Tweets reduced to the words selected as explanation. The first experiment deals with the classifier's accuracy when given the reduced Tweets. In the second experiment, we examine whether the classifiers can reproduce the exact labels when using the reduced Tweets. Finally, we look at the subsets selected for the user study and validate the quality of the explanations only in the subsets.
 

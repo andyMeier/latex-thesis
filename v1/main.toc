@@ -56,18 +56,23 @@
 \contentsline {paragraph}{Trust Questionnaire}{48}{section*.32}
 \contentsline {paragraph}{Observed Trust via Proxy}{49}{section*.35}
 \contentsline {section}{\numberline {6}Discussion}{53}{section.6}
-\contentsline {paragraph}{Future work}{56}{section*.40}
-\contentsline {paragraph}{Societal impact}{56}{section*.41}
-\contentsline {section}{\numberline {7}Conclusion}{57}{section.7}
+\contentsline {paragraph}{Accuracy}{53}{section*.40}
+\contentsline {paragraph}{Presence of Explanations}{53}{section*.41}
+\contentsline {paragraph}{Level of Truthfulness}{55}{section*.42}
+\contentsline {paragraph}{Perceived Understanding}{56}{section*.43}
+\contentsline {paragraph}{Trust proxy}{56}{section*.44}
+\contentsline {paragraph}{Limitations \& future work}{56}{section*.45}
+\contentsline {paragraph}{Societal impact}{57}{section*.46}
+\contentsline {section}{\numberline {7}Conclusion}{58}{section.7}
 \setcounter {tocdepth}{0}
-\contentsline {section}{\numberline {A}Appendix}{64}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{64}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{65}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{66}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{66}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{67}{subsection.A.5}
-\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{67}{subsection.A.6}
-\contentsline {subsection}{\numberline {A.7}Demographics}{68}{subsection.A.7}
-\contentsline {section}{\numberline {B}Appendix}{70}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{70}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{71}{subsection.B.2}
+\contentsline {section}{\numberline {A}Appendix}{65}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{65}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{66}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{67}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{67}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{68}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{68}{subsection.A.6}
+\contentsline {subsection}{\numberline {A.7}Demographics}{69}{subsection.A.7}
+\contentsline {section}{\numberline {B}Appendix}{71}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{71}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{72}{subsection.B.2}
