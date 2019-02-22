@@ -165,3 +165,37 @@ One condition is exceptional in this analysis: Although the bad classifier witho
 	\end{minipage}}
 \end{figure}
 
+\paragraph{Observed Trust via Proxy}
+The questionnaire used to measure self-perceived trust categorises six factors of trust. Although this research does not aim to investigate trust in more detail, we look at predictability in isolation, since we have two classifiers at the extremes which are predictable in their behaviour. Figure \ref{fig:results_matrix_predictability} and \ref{fig:results_matrix_predictability_reordered} show the results of comparing the predictability scores. The highest predictability was reported for \textit{super-no}, and the lowest for \textit{bad-rand}. All systems using the very good classifier are perceived to be significantly more predictable than the systems based on the bad classifier.
+\begin{table}[h]
+	\makebox[\textwidth][c]{
+		\begin{tabular}{lrr|lrr|lrr}
+			\textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} & \textbf{Condition} & \textbf{Mean} & \textbf{SD} \\ \midrule
+			super-good & 3.033 & 0.755 & super-rand & 2.914 & 0.814 & super-no & 3.213 & 0.725 \\
+			medium-good & 2.864 & 0.594 & medium-rand & 2.308 & 0.833 & medium-no & 2.675 & 0.756 \\
+			bad-good & 2.013 & 0.644 & bad-rand & 1.850 & 0.679 & bad-no & 2.117 & 0.763 \\ \bottomrule
+	\end{tabular}}
+	\caption{Mean scores for predictability}
+	\label{fig:results_table_predictability}
+\end{table}
+
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_predictability.JPG}
+			\caption{Comparison of predictability scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+			\label{fig:results_matrix_predictability}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_predictability_reordered.JPG}
+			\caption{Comparison of predictability scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+			\label{fig:results_matrix_predictability_reordered}
+	\end{minipage}}
+\end{figure}
+
+
+
+
