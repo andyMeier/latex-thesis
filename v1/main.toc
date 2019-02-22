@@ -62,18 +62,18 @@
 \contentsline {paragraph}{Level of Truthfulness}{56}{section*.45}
 \contentsline {paragraph}{Perceived Understanding}{57}{section*.46}
 \contentsline {paragraph}{Trust Proxy}{57}{section*.47}
-\contentsline {paragraph}{Limitations \& Future Work}{57}{section*.48}
+\contentsline {paragraph}{Limitations \& Future Work}{58}{section*.48}
 \contentsline {paragraph}{Societal Impact}{59}{section*.49}
-\contentsline {section}{\numberline {7}Conclusion}{60}{section.7}
+\contentsline {section}{\numberline {7}Conclusion}{61}{section.7}
 \setcounter {tocdepth}{0}
-\contentsline {section}{\numberline {A}Appendix}{67}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{67}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{68}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{69}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{69}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{70}{subsection.A.5}
-\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{70}{subsection.A.6}
-\contentsline {subsection}{\numberline {A.7}Demographics}{71}{subsection.A.7}
-\contentsline {section}{\numberline {B}Appendix}{73}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{73}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{74}{subsection.B.2}
+\contentsline {section}{\numberline {A}Appendix}{68}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{68}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{69}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{70}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{70}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{71}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{71}{subsection.A.6}
+\contentsline {subsection}{\numberline {A.7}Demographics}{72}{subsection.A.7}
+\contentsline {section}{\numberline {B}Appendix}{74}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{74}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{75}{subsection.B.2}
