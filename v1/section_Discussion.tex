@@ -40,20 +40,16 @@ The study results are furthermore limited by the cultural background of the part
 % Further discussions
 \paragraph{Societal Impact}
 Our findings show that for all three classifiers, none of the explanations led to higher trust than not showing an explanation at all. We explained this observation with the process of building the mental model: At first, the user has no knowledge and has to derive a rough mental model from related, known concepts. If humans take human-like reasoning as a basis for their mental model of the system, they have an ``expectation mismatch" when confronted with information about the actual factors that drove the system's decision. Consequently, users have most trust in a system that imitates human classification, without showing its internal workings.\newline
-% GDPR case: engineer, user, and data subject
-If this assumption is true, there is a conflict of interest when employing opaque machine learning in productive systems. The best strategy for engineers to convince a user of a system would then be to optimise accuracy and reduce transparency. Without transparency, data subjects (i.e. people whose data is processed by the algorithm) cannot judge on the fairness and correctness of a system. A bank officer would then refuse a loan based on an intransparent decision, potentially discriminating minorities. A better option would be to use machines to extend the cognitive abilities of humans by analysing large amounts of data, and have the human apply legal, moral, and ethical norms. But to do so, the human collaborator needs profound knowledge of the system.\newline
-% Own responsibility of users
-Users of a machine learning system are likewise in the obligation to take an informed decision rather than trusting a system without disclosing information. Humans need to be conscious about their tendency to assume human-like characteristics and behaviour, but at the same time be prepared to see explanations that do not draw on causal relationships. 
 
 
-% Engineers: selection of algorithms based on explainability
-We also see that a classifier's accuracy had the more impact on trust than the explanations. If humans have the tendency to judge not based on whether the system is ``right for the right reasons" but foremost based on the performance, users need stronger support in their judgement process. Not having enough information to judge the classifier's fairness and correctness should immediately lead to doubt and caution. Since this is not what we see in our results, we encourage a more critical discussion of opaque machine learning systems. Especially when processing sensitive data or applying machine learning to safety-critical tasks, selecting an algorithm based on its performance cannot be enough. The final metric for 
+If this assumption is true, there are multiple implications for machine learning in the wild:
 
+#1: The best strategy for engineers to build a system that is accepted and trusted would then be to optimize accuracy and suppress transparency. This is in fact what is already happening, especially for algorithms used to optimise an economical goal (e.g. advertisement, search algorithsm). This leads to a conflict of interest with people impacted by the algorithm's decision, e.g. people denied a loan by a bank employee using a ml system to determine creditworthiness. They cannot easily determine whether they have been subject to automated discrimination. If there is no incentive on the company side for explainability, users will have a hard time to get their explanation. 
 
+2#: People are apparently not able to accept statistical evidence without loosing trust. But machine learning is basically the act of finding statistical patterns in data and using those patterns to generalise for new instances. That means that a very good and fair classifier WITH explanations would be trusted less than a classifier with the same accuracy that takes racist decisions but does not show its workings. 
+--> Users need to become conscious about their bias in perception. They need to understand that their feeling of trust or attitude is impacted by the fact that a statistical classifier is profoundly different from human reasoning, leading to a distorted judgement. 
+People need to stop trusting that easily, and stop trusting if they do not know how a decision came to place. This is even more important for applications that treat sensitive data, and crucial for high-risk and safety-critical domains.
 
-
-
-
-
+3#: accuracy is more important than transparency for the development of user trust. Users need to accept the possibility that ML systems can have a high accuracy while still being ``wrong". The metrics for evaluating a ML system in domains that need explainability should combine performance and transparency, because users are not able to judge the transparency part later on. After having some experience with the systems, and the systems have proven to make the same decisions as the evaluator would, we just accept and trust it without knowing whether it is actually right for the right reasons.
 
 
