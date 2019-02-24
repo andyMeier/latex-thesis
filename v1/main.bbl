@@ -1,10 +1,10 @@
 \begin{thebibliography}{10}
 
 \bibitem{allahyari2011user}
-H.~Allahyari and N.~Lavesson.
+H.~Alahyari and N.~Lavesson.
 \newblock User-oriented assessment of classification model understandability.
-\newblock In {\em 11th scandinavian conference on Artificial intelligence}. IOS
-  Press, 2011.
+\newblock In {\em Frontiers in Artificial Intelligence and Applications},
+  volume 227, pages 11--19. SCAI, 05 2011.
 
 \bibitem{arras2017relevant}
 L.~Arras, F.~Horn, G.~Montavon, K.-R. M{\"u}ller, and W.~Samek.
@@ -21,8 +21,7 @@ D.~Artz and Y.~Gil.
 \bibitem{baldoni2016computational}
 M.~Baldoni, C.~Baroglio, K.~M. May, R.~Micalizio, and S.~Tedeschi.
 \newblock Computational accountability.
-\newblock In {\em CEUR Workshop Proceedings}, volume 1802, pages 56--62. CEUR
-  Workshop Proceedings, 2016.
+\newblock In {\em CEUR Workshop Proceedings}, volume 1802, pages 56--62, 2016.
 
 \bibitem{ball2015development}
 L.~E. Ball and M.~D. Leveritt.
