@@ -22,58 +22,58 @@
 \contentsline {subsubsection}{\numberline {3.1.4}Explanations}{30}{subsubsection.3.1.4}
 \contentsline {paragraph}{Good explanations}{30}{section*.9}
 \contentsline {paragraph}{Bad explanations}{30}{section*.10}
-\contentsline {paragraph}{Zero explanations}{30}{section*.11}
+\contentsline {paragraph}{Zero explanations}{31}{section*.11}
 \contentsline {subsection}{\numberline {3.2}User Study}{31}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}Conditions}{31}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Measures}{31}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.2}Measures}{32}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.3}Procedure}{32}{subsubsection.3.2.3}
 \contentsline {subsubsection}{\numberline {3.2.4}Analysis}{33}{subsubsection.3.2.4}
 \contentsline {subsubsection}{\numberline {3.2.5}Apparatus}{34}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Participants}{34}{subsubsection.3.2.6}
-\contentsline {section}{\numberline {4}Materials}{35}{section.4}
+\contentsline {subsubsection}{\numberline {3.2.6}Participants}{35}{subsubsection.3.2.6}
+\contentsline {section}{\numberline {4}Materials}{36}{section.4}
 \setcounter {tocdepth}{2}
-\contentsline {subsection}{\numberline {4.1}Dataset}{35}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Dataset Construction}{35}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Dataset Preprocessing}{36}{subsubsection.4.1.2}
-\contentsline {subsection}{\numberline {4.2}Classifier}{37}{subsection.4.2}
-\contentsline {paragraph}{Good System}{37}{section*.14}
-\contentsline {paragraph}{Medium System}{38}{section*.16}
-\contentsline {paragraph}{Bad System}{39}{section*.17}
-\contentsline {subsection}{\numberline {4.3}Explanations}{39}{subsection.4.3}
-\contentsline {paragraph}{Good Explanations}{39}{section*.18}
-\contentsline {paragraph}{Bad Explanations}{40}{section*.19}
-\contentsline {paragraph}{No Explanations}{40}{section*.20}
-\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{40}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Subset Sampling}{42}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{43}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{43}{subsubsection.4.6.1}
-\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{44}{subsubsection.4.6.2}
-\contentsline {subsubsection}{\numberline {4.6.3}Evaluation 3: Subset Evaluation}{45}{subsubsection.4.6.3}
+\contentsline {subsection}{\numberline {4.1}Dataset}{36}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Dataset Construction}{36}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Dataset Preprocessing}{37}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Classifier}{38}{subsection.4.2}
+\contentsline {paragraph}{Good System}{38}{section*.14}
+\contentsline {paragraph}{Medium System}{39}{section*.16}
+\contentsline {paragraph}{Bad System}{40}{section*.17}
+\contentsline {subsection}{\numberline {4.3}Explanations}{40}{subsection.4.3}
+\contentsline {paragraph}{Good Explanations}{40}{section*.18}
+\contentsline {paragraph}{Bad Explanations}{41}{section*.19}
+\contentsline {paragraph}{No Explanations}{41}{section*.20}
+\contentsline {subsection}{\numberline {4.4}Graphical User Interface}{41}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Subset Sampling}{43}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Explanation Evaluation}{44}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}Evaluation 1: Accuracy on Reduced Texts}{44}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}Evaluation 2: Ability to Reproduce Classifications}{45}{subsubsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.3}Evaluation 3: Subset Evaluation}{46}{subsubsection.4.6.3}
 \setcounter {tocdepth}{3}
-\contentsline {section}{\numberline {5}Results}{47}{section.5}
-\contentsline {paragraph}{Demographics}{47}{section*.28}
-\contentsline {paragraph}{Perceived Understanding}{47}{section*.29}
-\contentsline {paragraph}{Trust Questionnaire}{48}{section*.32}
-\contentsline {paragraph}{Observed Trust via Proxy}{49}{section*.35}
-\contentsline {paragraph}{Observed Trust via Proxy}{52}{section*.40}
-\contentsline {section}{\numberline {6}Discussion}{54}{section.6}
-\contentsline {paragraph}{Accuracy}{54}{section*.43}
-\contentsline {paragraph}{Presence of Explanations}{54}{section*.44}
-\contentsline {paragraph}{Level of Truthfulness}{56}{section*.45}
-\contentsline {paragraph}{Perceived Understanding}{57}{section*.46}
-\contentsline {paragraph}{Trust Proxy}{57}{section*.47}
-\contentsline {paragraph}{Limitations \& Future Work}{58}{section*.48}
-\contentsline {paragraph}{Societal Impact}{59}{section*.49}
-\contentsline {section}{\numberline {7}Conclusion}{61}{section.7}
+\contentsline {section}{\numberline {5}Results}{48}{section.5}
+\contentsline {paragraph}{Demographics}{48}{section*.28}
+\contentsline {paragraph}{Perceived Understanding}{48}{section*.29}
+\contentsline {paragraph}{Trust Questionnaire}{49}{section*.32}
+\contentsline {paragraph}{Observed Trust via Proxy}{50}{section*.35}
+\contentsline {paragraph}{Predictability}{53}{section*.40}
+\contentsline {section}{\numberline {6}Discussion}{55}{section.6}
+\contentsline {paragraph}{Accuracy}{55}{section*.43}
+\contentsline {paragraph}{Presence of Explanations}{55}{section*.44}
+\contentsline {paragraph}{Level of Truthfulness}{57}{section*.45}
+\contentsline {paragraph}{Perceived Understanding}{58}{section*.46}
+\contentsline {paragraph}{Trust Proxy}{58}{section*.47}
+\contentsline {paragraph}{Limitations \& Future Work}{59}{section*.48}
+\contentsline {paragraph}{Societal Impact}{60}{section*.49}
+\contentsline {section}{\numberline {7}Conclusion}{62}{section.7}
 \setcounter {tocdepth}{0}
-\contentsline {section}{\numberline {A}Appendix}{68}{appendix.A}
-\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{68}{subsection.A.1}
-\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{69}{subsection.A.2}
-\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{70}{subsection.A.3}
-\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{70}{subsection.A.4}
-\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{71}{subsection.A.5}
-\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{71}{subsection.A.6}
-\contentsline {subsection}{\numberline {A.7}Demographics}{72}{subsection.A.7}
-\contentsline {section}{\numberline {B}Appendix}{74}{appendix.B}
-\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{74}{subsection.B.1}
-\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{75}{subsection.B.2}
+\contentsline {section}{\numberline {A}Appendix}{69}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Scenario 1: Scene}{69}{subsection.A.1}
+\contentsline {subsection}{\numberline {A.2}Tweet Block 1: Without System}{70}{subsection.A.2}
+\contentsline {subsection}{\numberline {A.3}Scenario 2: Task}{71}{subsection.A.3}
+\contentsline {subsection}{\numberline {A.4}Tweet Block 2: With System}{71}{subsection.A.4}
+\contentsline {subsection}{\numberline {A.5}Questionnaire Perceived Understanding}{72}{subsection.A.5}
+\contentsline {subsection}{\numberline {A.6}Questionnaire Trust}{72}{subsection.A.6}
+\contentsline {subsection}{\numberline {A.7}Demographics}{73}{subsection.A.7}
+\contentsline {section}{\numberline {B}Appendix}{75}{appendix.B}
+\contentsline {subsection}{\numberline {B.1}Results Demographic Items}{75}{subsection.B.1}
+\contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{76}{subsection.B.2}
