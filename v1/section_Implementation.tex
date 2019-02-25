@@ -60,7 +60,7 @@ into a cleaned version:
 For the system with high accuracy (aiming 0.9 accuracy), we adopt the setup used by \cite{chen2018learning}. They achieve an accuracy of 0.9 in sentiment analysis on a movie review dataset (IMDB) with a convolutional neural network (CNN) and add their L2X algorithm to generate explanations for the CNN's decisions. The CNN consists of five layers, with an embedding layer to transform sparse data into dense vectors, a convolution with subsequent pooling (max pooling with window size of 2), a fully connected layer of size 250, and an output layer with two nodes (see figure \ref{fig:impl_cnn}). Similar to \cite{chen2012detecting}, we use Categorical Cross-Entropy as loss function, and the Adam optimiser. The L2X algorithm and the working example with a CNN on the IMDB dataset is publicly available on GitHub\footnote{https://github.com/Jianbo-Lab/L2X accessed on 24.02.2019}. The CNN is implemented using the \textit{Keras}\footnote{https://keras.io accessed on 24.02.2019} Python library with a TensorFlow\footnote{https://www.tensorflow.org accessed on 24.02.2019} back end. With this setup, we achieve an accuracy of 0.9712 on our test set. 
 \begin{figure} [!ht]
 	\centering
-	\includegraphics[width=0.7\textwidth]{img/impl_cnn.JPG}\\
+	\includegraphics[width=0.8\textwidth]{img/impl_cnn.JPG}\\
 	\caption{Architecture of the CNN with input vector and 5 layers, depicting layer goal, dimensionality, and activation function where applicable. Architecture adopted from \cite{chen2018learning}.}
 	\label{fig:impl_cnn}
 \end{figure}

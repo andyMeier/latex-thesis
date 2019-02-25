@@ -10,7 +10,7 @@ H.~Alahyari and N.~Lavesson.
 L.~Arras, F.~Horn, G.~Montavon, K.-R. M{\"u}ller, and W.~Samek.
 \newblock ``what is relevant in a text document?": An interpretable machine
   learning approach.
-\newblock {\em PloS one}, 12(8):e0181142, 2017.
+\newblock {\em PloS one}, 12(8):1--23, 2017.
 
 \bibitem{artz2007survey}
 D.~Artz and Y.~Gil.
@@ -67,7 +67,7 @@ E.~Broadbent, K.~J. Petrie, J.~Main, and J.~Weinman.
 J.~Burrell.
 \newblock How the machine 'thinks': Understanding opacity in machine learning
   algorithms.
-\newblock {\em Big Data \& Society}, 3(1):2053951715622512, 2016.
+\newblock {\em Big Data \& Society}, 3(1), 2016.
 
 \bibitem{chen2018learning}
 J.~Chen, L.~Song, M.~J. Wainwright, and M.~I. Jordan.
@@ -158,9 +158,9 @@ A.~Glass, D.~L. McGuinness, and M.~Wolverton.
 
 \bibitem{goodman16eu}
 B.~Goodman and S.~Flaxman.
-\newblock Eu regulations on algorithmic decision-making and a "right to
+\newblock Eu regulations on algorithmic decision-making and a ``right to
   explanation".
-\newblock {\em AI Magazine}, 38, 06 2016.
+\newblock {\em AI Magazine}, 38, June 2016.
 
 \bibitem{guidotti2018survey}
 R.~Guidotti, A.~Monreale, S.~Ruggieri, F.~Turini, F.~Giannotti, and
@@ -275,12 +275,6 @@ P.~Melville, W.~Gryc, and R.~D. Lawrence.
   classification.
 \newblock In {\em Proceedings of the 15th ACM SIGKDD international conference
   on Knowledge discovery and data mining}, pages 1275--1284. ACM, 2009.
-
-\bibitem{miller2017explanation}
-T.~Miller.
-\newblock Explanation in artificial intelligence: insights from the social
-  sciences.
-\newblock {\em arXiv preprint arXiv:1706.07269}, 2017.
 
 \bibitem{mohammadi2013trustworthiness}
 N.~G. Mohammadi, S.~Paulus, M.~Bishr, A.~Metzger, H.~K{\"o}nnecke,
