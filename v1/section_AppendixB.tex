@@ -81,6 +81,224 @@
 \end{table}
 
 
+\subsection{Visually Impaired Friendly Colour Scale}
+
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_understanding3.JPG}
+			\caption{Comparison of perceived understanding scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_understanding_reordered3.JPG}
+			\caption{Comparison of perceived understanding scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+	\end{minipage}}
+\end{figure}
+\vspace{-5mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_trust3.JPG}
+			\caption{Comparison of trust scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_trust_reordered3.JPG}
+			\caption{Comparison of trust scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+	\end{minipage}}
+\end{figure}
+\vspace{-5mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_proxy_away3.JPG}
+			\caption{Comparison of proxy trust (away) scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_proxy_away_reordered3.JPG}
+			\caption{Comparison of proxy trust (away) scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+	\end{minipage}}
+\end{figure}
+\vspace{-5mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_proxy_towards3.JPG}
+			\caption{Comparison of proxy trust (towards) scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_proxy_towards_reordered3.JPG}
+			\caption{Comparison of proxy trust (towards) scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+	\end{minipage}}
+\end{figure}
+\vspace{-5mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_predictability3.JPG}
+			\caption{Comparison of predictability scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{img/results_matrix_predictability_reordered3.JPG}
+			\caption{Comparison of predictability scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
+	\end{minipage}}
+\end{figure}
 
 
 
+
+\newpage
+\subsection{Confusion Matrices Proxy Measure (Absolute Counts)}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 32 & 4 \\
+					& Away & 0 & 6 \\ \bottomrule
+				\end{tabular}
+				\caption{Super-good}
+			\end{table}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 22 & 2 \\
+					& Away & 0 & 11 \\ \bottomrule
+				\end{tabular}
+				\caption{Super-rand}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-2mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 31 & 1 \\
+					& Away & 0 & 8 \\ \bottomrule
+				\end{tabular}
+				\caption{Super-no}
+			\end{table}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 22 & 10 \\
+					& Away & 3 & 2 \\ \bottomrule
+				\end{tabular}
+				\caption{Medium-good}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-2mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 17 & 9 \\
+					& Away & 3 & 12 \\ \bottomrule
+				\end{tabular}
+				\caption{Medium-rand}
+			\end{table}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 20 & 7 \\
+					& Away & 1 & 2 \\ \bottomrule
+				\end{tabular}
+				\caption{Medium-no}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-2mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 1 & 27 \\
+					& Away & 7 & 1 \\ \bottomrule
+				\end{tabular}
+				\caption{Bad-good}
+			\end{table}
+		\end{minipage}%
+		\hspace{5mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 1 & 23 \\
+					& Away & 10 & 0 \\ \bottomrule
+				\end{tabular}
+				\caption{Bad-rand}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-2mm}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ll|rr}
+		\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+		\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+		\multirow{2}{*}{\textbf{Classifier}} & Towards & 2 & 31 \\
+		& Away & 4 & 0 \\ \bottomrule
+	\end{tabular}
+	\caption{Bad-no}
+\end{table}
+
+
+%\newpage
+%\subsection{Confusion Matrices Proxy Measure (Normalised over opportunities)}
+%\vspace{-5mm}

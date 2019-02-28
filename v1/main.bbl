@@ -246,6 +246,11 @@ T.~Kulesza, S.~Stumpf, M.~Burnett, S.~Yang, I.~Kwan, and W.-K. Wong.
 \newblock In {\em Visual Languages and Human-Centric Computing (VL/HCC), 2013
   IEEE Symposium on}, pages 3--10. IEEE, 2013.
 
+\bibitem{lage2019evaluation}
+I.~Lage, E.~Chen, J.~He, M.~Narayanan, B.~Kim, S.~Gershman, and F.~Doshi-Velez.
+\newblock An evaluation of the human-interpretability of explanation.
+\newblock {\em arXiv preprint arXiv:1902.00006}, 2019.
+
 \bibitem{langer1978mindlessness}
 E.~J. Langer, A.~Blank, and B.~Chanowitz.
 \newblock The mindlessness of ostensibly thoughtful action: The role of

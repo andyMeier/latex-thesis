@@ -1,6 +1,6 @@
 \section{Results}
 The following section presents the results of the user study. We examined perceived understanding, self-reported trust and an implicit trust measure via the willingness to follow a classifier's recommendation. For each topic, we give the mean score, standard deviation, as well as a comparison of all conditions in a 9x9 matrix.\newline
-The matrices show each condition checked for significant difference with every other condition. The colour scale is a visualisation of the differences in means ($\bar{x}_{row} - \bar{x}_{column}$ ), with negative differences coloured in red and positive differences in green. Per cell, the net difference values are displayed as well. The significance test results are added with asterisks, where one asterisk means significant at $\alpha=0.05$ significance level, while two asterisks denote significance at $\alpha=0.01$ significance level.\newline 
+The matrices show each condition checked for significant difference with every other condition. The colour scale is a visualisation of the differences in means ($\bar{x}_{row} - \bar{x}_{column}$ ), with negative differences coloured in red and positive differences in green. Per cell, the net difference values are displayed as well. The significance test results are added with asterisks, where one asterisk means significant at $\alpha=0.05$ significance level, while two asterisks denote significance at $\alpha=0.01$ significance level. The figures are available with a blue-red colour scheme in appendix B.\newline 
 
 \paragraph{Demographics}
 In total, 327 participants took part in the main user study with an average age of 29.4 years (SD = 8.8), a gender balance of 56\% (females) to 43\% (males) and two participants reporting the third gender. 87\% of the participants were recruited via ``Prolific", while 36 participants enlisted on ``SurveyCircle". 57\% self-assessed their level of English to be equivalent to a native speaker, 23\% as advanced (C1), 14\% as upper-intermediate (B2), and 5\% as lower than that. All participants claimed to be ``fluent" in English. The exclusion criteria (passed attention check and completion of whole questionnaire) invalidated 41 data points, resulting in 286 valid cases. More detailed statistics about the participants' backgrounds are given in appendix B.\newline
@@ -72,11 +72,9 @@ The self-reported trust scores show similar results as the perceived understandi
 
 
 \paragraph{Observed Trust via Proxy}
-The second trust measure uses a proxy to determine the trust a user puts into a system: the willingness to follow a system's recommendation, in this case the decision about offensiveness and non-offensiveness. Figure \ref{fig:results_proxy_away} shows the results of analysing the user's willingness to change a classification to match the system's decision while contradicting the truth. As a comparison, figure \ref{fig:results_proxy_towards} deals with changes in classification that were made in favour of both the system and the truth.\newline
-The results presented in this section need to be analysed with caution. Consider the case of the very good classifier with meaningful explanations. Out of 30 cases in this condition, 16 did not have the possibility to show a change away from the truth towards the prediction of the classifier, because the classifier in those 16 cases did not make any mistakes. From the remaining 14 cases, 4 showed the behaviour in question, leading to a mean of 0.286. This result is rather high, compared to the other conditions' mean scores. The same issue appears in the data for changing from a faulty classification towards a correct classification in accordance with the bad classifier: Each participant in this condition had at most one possibility to show the behaviour in question. The sample sizes have to be reduced by the number of cases without possibility, leaving a size that is quite small for reliably detecting significant differences.\newline
+The second trust measure uses a proxy to determine the trust a user puts into a system: the willingness to follow a system's recommendation, in this case the decision about offensiveness and non-offensiveness. Figure \ref{fig:results_proxy_away} shows the results of analysing the user's willingness to change a classification to match the system's decision while contradicting the truth.\newline
+The results presented in this section need to be analysed with caution. Consider the case of the very good classifier with meaningful explanations. Out of 30 cases in this condition, 16 did not have the possibility to show a change away from the truth towards the prediction of the classifier, because the classifier in those 16 cases did not make any mistakes. From the remaining 14 cases, 4 showed the behaviour in question, leading to a mean of 0.286. This result is higher than the other conditions' mean scores. The same issue appears in the data for changing from a faulty classification towards a correct classification in accordance with the bad classifier: Each participant in this condition had at most one possibility to show the behaviour in question. The sample sizes have to be reduced by the number of cases without possibility, leaving a size that is quite small for reliably detecting significant differences.\newline
 The highest changing rate in favour of the system but against the true label was detected for users of the good classifier with a meaningful explanation, but also the highest variance. Users were significantly more likely to adapt the system's faulty decision when confronted with the good system with random and no explanations than the users of any system with the bad classifier. The same holds true for users of the medium classifier without explanations.\newline
-
-
 \begin{table}[H]
 	\makebox[\textwidth][c]{
 		\begin{tabular}{lrrrrrrrr}
@@ -119,51 +117,164 @@ The highest changing rate in favour of the system but against the true label was
 			\label{fig:results_proxy_away_reordered}
 	\end{minipage}}
 \end{figure}
-\noindent Looking at the changes made towards the truth in agreement with the classifiers, no significant differences are noted between any condition with the good and medium classifier. The same holds true for the bad classifier. The good and medium classifiers, however, evoked significantly more changes towards the truth than the bad classifier with explanations. The standard deviations of the conditions using the bad classifier are rather high as compared to any other condition.\newline
-One condition is exceptional in this analysis: Although the bad classifier without explanation has the highest mean score (i.e. changes towards the truth when the classifier made a correct prediction), the score is not significantly different from the bad classifier with a good and random explanation. The variance of all three systems (bad-no, bad-random, bad-good) are very high as compared to the variances of the other systems. The score deviates, however, from the results of the good and medium classifier, which have lower mean scores but lower variances. The difference in variance is important to note when comparing the relatively high mean score of the bad classifier without explanation to the conditions with the good and medium classifiers.
-
-\begin{table}[H]
-	\makebox[\textwidth][c]{
-		\begin{tabular}{lrrrrrrrr}
-			\textbf{Condition} & 
-			\head{1.5cm}{\textbf{Total cases}} & 
-			\head{1.5cm}{\textbf{Cases with opportunities}} & 
-			\head{1.5cm}{\textbf{Avg opportunities}} & 
-			\head{1.5cm}{\textbf{Cases with changes}} & 
-			\head{1.5cm}{\textbf{Avg changes}} & 
-			\head{1.5cm}{\textbf{Cases with changes towards}} & 
-			\head{1.5cm}{\textbf{Avg changes towards}} & 
-			\head{1.5cm}{\textbf{Norma-lised mean}} \\ \midrule
-			super-good &	 30 &	 30 &	 14.53 &	 20 &	 1.40 &	 18 &	 1.07 &	 \textbf{0.07} \\
-			super-rand &	 32 &	 32 &	 14.47 &	 18 &	 1.09 &	 14 &	 0.69 &	 \textbf{0.05} \\
-			super-no &	 	34 &	 34 &	 14.32 &	 18 &	 1.18 &	 15 &	 0.91 &	 \textbf{0.06} \\
-			medium-good &	 33 &	 33 &	 11.52 &	 17 &	 1.12 &	 12 &	 0.67 &	 \textbf{0.06} \\
-			medium-rand &	 30 &	 30 &	 11.43 &	 20 &	 1.37 &	 12 &	 0.57 &	 \textbf{0.05} \\
-			medium-no &	 30 &	 30 &	 11.60 &	 20 &	 1.00 &	 16 &	 0.67 &	 \textbf{0.06} \\
-			bad-good &	 	38 &	 21 &	 0.55 &	 20 &	 0.95 &	 1 &	 0.05 &	 \textbf{0.05} \\
-			bad-rand &	 	30 &	 22 &	 0.73 &	 19 &	 1.13 &	 1 &	 0.05 &	 \textbf{0.05} \\
-			bad-no &	 	30 &	 22 &	 0.73 &	 19 &	 1.23 &	 2 &	 0.09 &	 \textbf{0.09} \\ \bottomrule
-	\end{tabular}}
-	\caption{Statistics for trust measure via proxy (changes towards truth and system decision)}
-	\label{fig:results_table_proxy_towards}
-\end{table}
+\noindent Tables \ref{tab:changes_super-good} to \ref{tab:changes_bad-no} show the changing behaviour of participants per condition, normalised over the amount of opportunities per cell. That is, if a classifier correctly classified 10 Tweets, and the participant correctly classified 9 of them as well, there are 9 opportunities to change \textit{away from the classifier} and \textit{away from the truth}, or, conversely, 1 opportunity to change \textit{towards the classifier} and \textit{towards the truth}. The absolute counts of changes can be found in appendix B.\newline
+We interpret the behaviour of changing \textit{towards the classifier} but \textit{away from the truth} as being convinced by the system and willingness to accept a system's recommendation. Changes made \textit{away from the classifier} and \textit{towards the truth} is the ignorance or mistrust of the system, showing that the user is not following the system's recommendation. For the good classifier, the most relative changes indicating persuasion can be seen with \textit{super-good} and the least persuasion with \textit{super-no}. The same ordering is present in the changing behaviour with the medium classifier. For the bad classifier, the highest changing rate \textit{towards the classifier} and \textit{away from the truth} is seen with \textit{bad-no}, although the changing rates are lower than those measured with the good classifier.
 
 \begin{figure}[H]
 	\makebox[\textwidth][c]{
 		\begin{minipage}[t]{0.65\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{img/results_matrix_proxy_towards.JPG}
-			\caption{Comparison of proxy trust (towards) scores ordered by classifier, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
-			\label{fig:results_proxy_towards}
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.3048 & 0.3636 \\
+					& Away & 0.0000 & 0.0181 \\ \midrule
+					&  & 0.3048 & 0.3817 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with super-good}
+				\label{tab:changes_super-good}
+			\end{table}
 		\end{minipage}%
-		\hspace{5mm}
+		\hspace{2mm}
 		\begin{minipage}[t]{0.65\textwidth}
 			\centering
-			\includegraphics[width=\textwidth]{img/results_matrix_proxy_towards_reordered.JPG}
-			\caption{Comparison of proxy trust (towards) scores ordered by explanation type, value reporting difference of means ($\bar{x}_{row} - \bar{x}_{column}$ ), asterisk reporting significance (* significant at $\alpha=0.05$, ** significant at $\alpha=0.01$)}
-			\label{fig:results_proxy_towards_reordered}
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.2115 & 0.1667 \\
+					& Away & 0.0000 & 0.0306 \\ \midrule
+					&  & 0.2115 & 0.1973 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with super-rand}
+				\label{tab:changes_super-rand}
+			\end{table}
 	\end{minipage}}
 \end{figure}
+\vspace{-9mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.3163 & 0.0588 \\
+					& Away & 0.0000 & 0.0206 \\ \midrule
+					&  & 0.3163 & 0.0794 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with super-no}
+				\label{tab:changes_super-no}
+			\end{table}
+		\end{minipage}%
+		\hspace{2mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.3143 & 0.1163 \\
+					& Away & 0.1034 & 0.0065 \\ \midrule
+					&  & 0.4177 & 0.1228 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with medium-good}
+				\label{tab:changes_medium-good}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-9mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.2125 & 0.1071 \\
+					& Away & 0.1304 & 0.0456 \\ \midrule
+					&  & 0.3429 & 0.1527 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with medium-rand}
+				\label{tab:changes_medium-rand}
+			\end{table}
+		\end{minipage}%
+		\hspace{2mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.2985 & 0.0921 \\
+					& Away & 0.0385 & 0.0071 \\ \midrule
+					&  & 0.3370 & 0.0992 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with medium-no}
+				\label{tab:changes_medium-no}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-9mm}
+\begin{figure}[H]
+	\makebox[\textwidth][c]{
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.1667 & 0.0607 \\
+					& Away & 0.0673 & 0.0667 \\ \midrule
+					&  & 0.2340 & 0.1274 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with bad-good}
+				\label{tab:changes_bad-good}
+			\end{table}
+		\end{minipage}%
+		\hspace{2mm}
+		\begin{minipage}[t]{0.65\textwidth}
+			\centering
+			\begin{table}[H]
+				\centering
+				\begin{tabular}{ll|rr}
+					\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+					\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+					\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.2500 & 0.0689 \\
+					& Away & 0.1064 & 0.0000 \\ \midrule
+					&  & 0.3564 & 0.0689 \\ \bottomrule
+				\end{tabular}
+				\caption{Change rates with bad-rand}
+				\label{tab:changes_bad-rand}
+			\end{table}
+	\end{minipage}}
+\end{figure}
+\vspace{-5mm}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{ll|rr}
+		\multicolumn{2}{l|}{} & \multicolumn{2}{c}{\textbf{Truth}}\\
+		\multicolumn{2}{l|}{} & Towards & Away \\ \midrule
+		\multirow{2}{*}{\textbf{Classifier}} & Towards & 0.3333 & 0.0920 \\
+		& Away & 0.0440 & 0.0000 \\ \midrule
+		&  & 0.3773 & 0.0920 \\ \bottomrule
+	\end{tabular}
+	\caption{Change rates with bad-no}
+	\label{tab:changes_bad-no}
+\end{table}
+
+
+
 
 \paragraph{Predictability}
 The questionnaire used to measure self-perceived trust categorises six factors of trust. Although this research does not aim to investigate trust in more detail, we look at predictability in isolation, since we have two classifiers at the extremes which are predictable in their behaviour. Figure \ref{fig:results_matrix_predictability} and \ref{fig:results_matrix_predictability_reordered} show the results of comparing the predictability scores. The highest predictability was reported for \textit{super-no}, and the lowest for \textit{bad-rand}. All systems using the very good classifier are perceived to be significantly more predictable than the systems based on the bad classifier.

@@ -55,15 +55,15 @@
 \contentsline {paragraph}{Perceived Understanding}{48}{section*.29}
 \contentsline {paragraph}{Trust Questionnaire}{49}{section*.32}
 \contentsline {paragraph}{Observed Trust via Proxy}{50}{section*.35}
-\contentsline {paragraph}{Predictability}{53}{section*.40}
+\contentsline {paragraph}{Predictability}{54}{section*.51}
 \contentsline {section}{\numberline {6}Discussion}{55}{section.6}
-\contentsline {paragraph}{Accuracy}{55}{section*.43}
-\contentsline {paragraph}{Presence of Explanations}{55}{section*.44}
-\contentsline {paragraph}{Level of Truthfulness}{57}{section*.45}
-\contentsline {paragraph}{Perceived Understanding}{58}{section*.46}
-\contentsline {paragraph}{Trust Proxy}{58}{section*.47}
-\contentsline {paragraph}{Limitations \& Future Work}{59}{section*.48}
-\contentsline {paragraph}{Societal Impact}{60}{section*.49}
+\contentsline {paragraph}{Accuracy}{55}{section*.54}
+\contentsline {paragraph}{Presence of Explanations}{55}{section*.55}
+\contentsline {paragraph}{Level of Truthfulness}{57}{section*.56}
+\contentsline {paragraph}{Perceived Understanding}{58}{section*.57}
+\contentsline {paragraph}{Trust Proxy}{59}{section*.58}
+\contentsline {paragraph}{Limitations \& Future Work}{59}{section*.59}
+\contentsline {paragraph}{Societal Impact}{60}{section*.60}
 \contentsline {section}{\numberline {7}Conclusion}{62}{section.7}
 \setcounter {tocdepth}{0}
 \contentsline {section}{\numberline {A}Appendix}{69}{appendix.A}
@@ -77,3 +77,5 @@
 \contentsline {section}{\numberline {B}Appendix}{75}{appendix.B}
 \contentsline {subsection}{\numberline {B.1}Results Demographic Items}{75}{subsection.B.1}
 \contentsline {subsection}{\numberline {B.2}Participant Distribution over Conditions}{76}{subsection.B.2}
+\contentsline {subsection}{\numberline {B.3}Visually Impaired Friendly Colour Scale}{76}{subsection.B.3}
+\contentsline {subsection}{\numberline {B.4}Confusion Matrices Proxy Measure (Absolute Counts)}{79}{subsection.B.4}
